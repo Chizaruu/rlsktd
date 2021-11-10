@@ -9,14 +9,13 @@ namespace RLSKTD.Map
     public class MapManager : SerializedMonoBehaviour
     {
         public static MapManager instance; // The instance of the map manager.
-        
+
         public Grid grid; // The grid of the map.
         public Tilemap floorMap; // The floor map of the map.
         public Tilemap obstacleMap; // The obstacle map of the map.
         public Tilemap fogMap; // The fog map of the map.
 
-
-        public Dictionary<Vector3, WorldTile> floorTiles = new Dictionary<Vector3, WorldTile>(); // The floor tiles of the map.
+        public Dictionary<Vector3, WorldTile> floorTiles = new Dictionary<Vector3, WorldTile>(); // The floor tiles of the map.8
         public Dictionary<Vector3, WorldTile> obstacleTiles = new Dictionary<Vector3, WorldTile>(); // The obstacle tiles of the map.
         public Dictionary<Vector3, WorldTile> fogTiles = new Dictionary<Vector3, WorldTile>(); // The fog tiles of the map.
 
@@ -59,6 +58,7 @@ namespace RLSKTD.Map
                     tileBase = map.GetTile(lPos).name, // Sets the tile base.
                     isVisible = false, // Sets the visibility.
                     isExplored = false, // Sets the exploration.
+                    color = map.GetColor(lPos), // Sets the color.
                 };
                 tiles.Add(tile.gridLocation, tile); // Adds the tile to the fog tiles.
             }

@@ -9,6 +9,7 @@ namespace RLSKTD.Character.Actions
     {
         public UseAction(Item item, GameObject character)
         {
+            /*
             //for each string in the item's Bools
             foreach(string key in item.Purposes.Keys)
             {
@@ -40,6 +41,7 @@ namespace RLSKTD.Character.Actions
                         return;
                 }
             }
+            */
         }
     }
 }

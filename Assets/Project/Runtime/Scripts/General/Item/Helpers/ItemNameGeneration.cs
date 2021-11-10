@@ -2,6 +2,7 @@
 
 namespace RLSKTD.General.ItemHelper
 {
+    /*
     /// <summary> Item name generation. </summary>
     sealed class ItemNameGeneration
     {
@@ -29,5 +30,6 @@ namespace RLSKTD.General.ItemHelper
             }
         }
     }
+    */
 }
 

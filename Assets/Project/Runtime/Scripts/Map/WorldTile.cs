@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Sirenix.Serialization;
 
 namespace RLSKTD.Map
 {
@@ -11,6 +12,7 @@ namespace RLSKTD.Map
         public bool isVisible; // Whether the tile is visible.
         public Vector3Int localPlace; // The local place of the tile.
         public Vector3 gridLocation; // The grid location of the tile.
+        public Color color; // The color of the tile.
     }
 }
 

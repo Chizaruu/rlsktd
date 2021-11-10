@@ -77,13 +77,13 @@ public class SaveManager : MonoBehaviour
             switch (mapName)
             {
                 case "Floor":
-                    MapSerializer.LoadMap(mapName, mapPath, MapManager.instance.floorMap, MapManager.instance.floorTiles);
+                    MapManager.instance.floorTiles = MapSerializer.LoadMap(mapName, mapPath, MapManager.instance.floorMap, MapManager.instance.floorTiles);
                     break;
                 case "Obstacle":
-                    MapSerializer.LoadMap(mapName, mapPath, MapManager.instance.obstacleMap, MapManager.instance.obstacleTiles);
+                    MapManager.instance.obstacleTiles =MapSerializer.LoadMap(mapName, mapPath, MapManager.instance.obstacleMap, MapManager.instance.obstacleTiles);
                     break;
                 case "Fog":
-                    MapSerializer.LoadMap(mapName, mapPath, MapManager.instance.fogMap, MapManager.instance.fogTiles);
+                    MapManager.instance.fogTiles =MapSerializer.LoadMap(mapName, mapPath, MapManager.instance.fogMap, MapManager.instance.fogTiles);
                     break;
                 default:
                     break;

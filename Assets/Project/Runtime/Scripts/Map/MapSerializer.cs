@@ -61,9 +61,18 @@ namespace RLSKTD.Map
                     if(tileAsset[i].name == tile.tileBase)
                     {
                         map.SetTile(tile.localPlace, tileAsset[i]);
+                        map.SetTileFlags(tile.localPlace, TileFlags.None);
+
+                        if(mapName == "Fog" && tile.isExplored && !tile.isVisible)
+                        {
+                            map.SetColor(tile.localPlace, new Color(tile.color.r, tile.color.g, tile.color.b, 0.5f));
+                        }
+                        else
+                        {
+                            map.SetColor(tile.localPlace, tile.color);
+                        }
+                        
                         i = tileAsset.Length;
-
-
                     }
                 }
             }
