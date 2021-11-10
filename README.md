@@ -1,5 +1,5 @@
 # RLSKTD
- Roguelike Stater Kit (Top Down)
+ Roguelike Starter Kit (Top Down)
 
 
 
