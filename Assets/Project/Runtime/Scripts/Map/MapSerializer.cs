@@ -51,8 +51,8 @@ namespace RLSKTD.Map
             byte[] loadJson = File.ReadAllBytes(path); //loadJson = byte[]
             tiles = SerializationUtility.DeserializeValue<Dictionary<Vector3, WorldTile>>(loadJson, DataFormat.JSON); //DeserializeValue<T> is a generic method that takes in a byte array and a data format and returns a T.
 
-            Tile[] tileAsset = Resources.LoadAll<Tile>("Tilemaps"); 
-            map.ClearAllTiles();
+            Tile[] tileAsset = Resources.LoadAll<Tile>("Tilemaps"); //Load all the tiles in the Tilemaps folder
+            map.ClearAllTiles(); //Clear all tiles from the map
 
             foreach (WorldTile tile in tiles.Values)
             {
@@ -60,24 +60,24 @@ namespace RLSKTD.Map
                 {
                     if(tileAsset[i].name == tile.tileBase)
                     {
-                        map.SetTile(tile.localPlace, tileAsset[i]);
-                        map.SetTileFlags(tile.localPlace, TileFlags.None);
+                        map.SetTile(tile.localPlace, tileAsset[i]); //Set the tile at the local place to the tile asset
+                        map.SetTileFlags(tile.localPlace, TileFlags.None); //Set the tile flags to none
 
                         if(mapName == "Fog" && tile.isExplored && !tile.isVisible)
                         {
-                            map.SetColor(tile.localPlace, new Color(tile.color.r, tile.color.g, tile.color.b, 0.5f));
+                            map.SetColor(tile.localPlace, new Color(tile.color.r, tile.color.g, tile.color.b, 0.5f)); //Set the color of the tile to 50% transparent
                         }
                         else
                         {
-                            map.SetColor(tile.localPlace, tile.color);
+                            map.SetColor(tile.localPlace, tile.color); //Set the color of the tile
                         }
                         
-                        i = tileAsset.Length;
+                        i = tileAsset.Length; //Break out of the loop
                     }
                 }
             }
-            Resources.UnloadUnusedAssets();
-            return tiles;
+            Resources.UnloadUnusedAssets(); //Unload unused assets
+            return tiles; //Return the tiles
         }
     }
 }
