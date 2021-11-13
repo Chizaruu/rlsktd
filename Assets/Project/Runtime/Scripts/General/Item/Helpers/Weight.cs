@@ -1,3 +1,5 @@
+using UnityEngine;
+using Sirenix.OdinInspector;
 
 namespace RLSKTD.General.ItemHelper
 {
@@ -5,25 +7,55 @@ namespace RLSKTD.General.ItemHelper
     [System.Serializable]
     public class Weight
     {
-        public float value;
+        /// <summary> Enumeration of all item weight classes. </summary>
+        public enum WeightEnum
+        {
+            /// <summary> The item is very light. </summary>
+            VeryLight,
+            /// <summary> The item is light. </summary>
+            Light,
+            /// <summary> The item is medium. </summary>
+            Medium,
+            /// <summary> The item is heavy. </summary>
+            Heavy,
+            /// <summary> The item is very heavy. </summary>
+            VeryHeavy,
+        }
 
-        public Weight(Item item) => this.value = GetWeight(item);
+        /// <summary> The weight class of the item. </summary>
+        [SerializeField, HideInInspector]
+        private WeightEnum weightClass;
+
+        [ShowInInspector]
+        public WeightEnum WeightClass { get => weightClass; set => weightClass = value; }
+
+        /// <summary> Constructor for the weight class. </summary>
+        /// <param name="weightClass"> The weight class of the item. </param>
+        /// <returns> The weight class of the item. </returns>
+        public Weight(WeightEnum weightClass, float itemWeight)
+        {
+            this.weightClass = weightClass;
+        }
 
         /// <summary> Gets the weight of an item. </summary>
         /// <param name="item"> The item. </param>
         /// <returns> The weight of the item. </returns>
-        private float GetWeight(Item item)
+        public static float GetBaseWeight(WeightEnum weightEnum)
         {
-            switch (item.Material.ToString())
+            switch (weightEnum)
             {
-                case "Mithril":
-                    return 0.05f;
-                case "Paper":
-                    return 0.01f;
-                case "Glass":
-                    return 0.02f;
-                default :
+                case WeightEnum.VeryLight:
+                    return 0.1f;
+                case WeightEnum.Light:
+                    return 0.5f;
+                case WeightEnum.Medium:
                     return 1f;
+                case WeightEnum.Heavy:
+                    return 2f;
+                case WeightEnum.VeryHeavy:
+                    return 5f;
+                default:
+                    return 0;
             }
         }
     }

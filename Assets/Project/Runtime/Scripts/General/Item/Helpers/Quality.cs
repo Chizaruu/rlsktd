@@ -50,7 +50,7 @@ namespace RLSKTD.General.ItemHelper
                 case ItemQuality.Legendary:
                     return "Legendary";
                 default:
-                    return "";
+                    return "???";
             }
         }
 
