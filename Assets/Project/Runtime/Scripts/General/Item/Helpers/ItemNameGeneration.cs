@@ -20,7 +20,7 @@ namespace RLSKTD.General.ItemHelper
                 //else item is not artifact
                 else
                 {
-                    item.ItemName = "A " + item.Material.Material + " " + item.ItemType.SubType;
+                    item.ItemName = "A" +  item.Material.Material + " " + item.ItemType.SubType;
                 }
             }
             //else item is not equipable
