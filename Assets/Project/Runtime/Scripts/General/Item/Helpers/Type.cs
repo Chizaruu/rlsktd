@@ -1,10 +1,6 @@
-using Sirenix.OdinInspector;
-using UnityEngine;
-
 namespace RLSKTD.General.ItemHelper
 {
     /// <summary> The type of an item. </summary>
-    [System.Serializable]
     public class Type 
     {
         /// <summary> Enumeration of all item types. </summary>
@@ -39,10 +35,9 @@ namespace RLSKTD.General.ItemHelper
         }
 
         /// <summary> The type of the item. </summary>
-        [SerializeField, HideInInspector]
         private TypeEnum itemType;
 
-        [ShowInInspector]public TypeEnum ItemType { get => itemType; set => itemType = value; }
+        public TypeEnum ItemType { get => itemType; set => itemType = value; }
 
         /// <summary> Constructor for the item type. </summary>
         /// <param name="type"> The type of the item. </param>

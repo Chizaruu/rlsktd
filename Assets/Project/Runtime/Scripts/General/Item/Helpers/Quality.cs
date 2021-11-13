@@ -1,7 +1,6 @@
 namespace RLSKTD.General.ItemHelper
 {
     /// <summary> The quality of an item. </summary>
-    [System.Serializable]
     public class Quality
     {
         /// <summary> Enumeration of all item qualities. </summary>

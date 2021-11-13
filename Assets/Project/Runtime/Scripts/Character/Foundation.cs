@@ -32,7 +32,7 @@ namespace RLSKTD.Character
         [ShowInInspector, TabGroup("Information")]public int PP { get => this.state.pp; set => this.state.pp = value; }
         [ShowInInspector, TabGroup("Information")]public Vector3 Position { get => this.state.position; set => this.state.position = this.gameObject.transform.position; }
         [ShowInInspector, TabGroup("Information")]public string Scene { get => this.state.scene; set => this.state.scene = value; } 
-        [SerializeField, TabGroup("Information")]private bool isPlayer; // Used to determine if the character is the player or not
+        [OdinSerialize, TabGroup("Information")]private bool isPlayer; // Used to determine if the character is the player or not
 
         [ShowInInspector, TabGroup("Stats")]public int Strength { get => this.state.strength; set => this.state.strength = value; }
         [ShowInInspector, TabGroup("Stats")]public int Constitution { get => this.state.constitution; set => this.state.constitution = value; }
@@ -46,19 +46,18 @@ namespace RLSKTD.Character
         {
             get => this.state.hp; set
             {
-                if(value <= 0)
+                switch(value)
                 {
-                    this.state.hp = 0;
-                    
-                    Debug.Log(CharacterName + " has died.");
-                }
-                else if(value > this.state.maxHp)
-                {
-                    this.state.hp = this.state.maxHp;
-                }
-                else
-                {
-                    this.state.hp = value;
+                    case int n when n <= 0:
+                        this.state.hp = 0;
+                        Debug.Log(CharacterName + " has died.");
+                        break;
+                    case int n when n > this.state.maxHp:
+                        this.state.hp = this.state.maxHp;
+                        break;
+                    default:
+                        this.state.hp = value;
+                        break;
                 }
 
                 if(isPlayer)
@@ -71,25 +70,23 @@ namespace RLSKTD.Character
         {
             get => this.state.mp; set
             {
-                if(value <= 0)
+                switch(value)
                 {
-                    this.state.mp = 0;
-                    
-                    Hp -= 10;
-                    Debug.Log(CharacterName + " takes mental damage.");
-                }
-                else if(value >= this.state.maxMp)
-                {
-                    this.state.mp = this.state.maxMp;
-                }
-                else
-                {
-                    this.state.mp = value;
+                    case int n when n <= 0:
+                        this.state.mp = 0;
+                        Debug.Log(CharacterName + " takes mental damage.");
+                        break;
+                    case int n when n > this.state.maxMp:
+                        this.state.mp = this.state.maxMp;
+                        break;
+                    default:
+                        this.state.mp = value;
+                        break;
                 }
                 
                 if(isPlayer)
                 {
-                    this.GetComponent<Player.UIController>().SetMP(this.state.mp, this.state.maxMp);
+                    this.GetComponent<Player.UIController>().SetHP(this.state.hp, this.state.maxHp);
                 }
             }
         }
@@ -148,8 +145,8 @@ namespace RLSKTD.Character
         [ShowInInspector, TabGroup("Abilities")]public Dictionary<string, int> SkillDictionary { get => this.state.skillDictionary; set => this.state.skillDictionary = value; }
         [ShowInInspector, TabGroup("Abilities")]public Dictionary<string, int> SpellDictionary { get => this.state.spellDictionary; set => this.state.spellDictionary = value; }
 
-        [ShowInInspector, TabGroup("Group 2", "Inventory & Equipment")]public List<Item> Inventory { get => this.state.inventory; set => this.state.inventory = value; }
-        [ShowInInspector, TabGroup("Group 2", "Inventory & Equipment")]public List<Item> Equipment { get => this.state.equipment; set => this.state.equipment = value; }
+        [OdinSerialize, TabGroup("Group 2", "Inventory & Equipment")]public List<Item> Inventory { get => this.state.inventory; set => this.state.inventory = value; }
+        [OdinSerialize, TabGroup("Group 2", "Inventory & Equipment")]public List<Item> Equipment { get => this.state.equipment; set => this.state.equipment = value; }
         
         [ShowInInspector, TabGroup("Group 2", "Status")]public Dictionary<string, int> StatusEffects { get => this.state.statusEffects; set => this.state.statusEffects = value; }
 
@@ -254,7 +251,7 @@ namespace RLSKTD.Character
 
     /// <summary> The state of the character </summary>
     [System.Serializable]
-    public class CharacterState 
+    public class CharacterState
     {
         public string characterName; //The name of the character
         public string characterAlias; //The alias of the character

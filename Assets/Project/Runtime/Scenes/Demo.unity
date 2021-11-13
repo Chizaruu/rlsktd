@@ -650,89 +650,547 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  state:
-    characterName: NPC4
-    characterAlias: 
-    race: 
-    gender: 
-    classPreset: 
-    religion: 
-    guild: 
-    age: 0
-    height: 0
-    weight: 0
-    level: 0
-    experience: 0
-    requiredExperience: 0
-    gold: 0
-    pp: 0
-    strength: 0
-    constitution: 0
-    dexterity: 0
-    intelligence: 0
-    willpower: 0
-    wisdom: 0
-    charisma: 0
-    hp: 0
-    mp: 0
-    maxHp: 0
-    maxMp: 0
-    sanity: 15
-    intiative: 0
-    speed: 0
-    fatigue: 0
-    maxFatigue: 0
-    sleepiness: 750
-    life: 0
-    soul: 0
-    hunger: 10
-    thirst: 5
-    fire: 0
-    cold: 0
-    lightning: 0
-    nature: 0
-    magic: 0
-    space: 0
-    time: 0
-    sound: 0
-    chaos: 0
-    difficulty: 0
-    luck: 5
-    karma: 0
-    favour: 0
-    fame: 0
-    talentList: []
-    racialTraits: []
-    inventory: []
-    equipment: []
-    mainHandModifier: 0
-    mainHandAttackRollDice: 1
-    mainHandAttackRollDiceAmount: 20
-    mainHandDamageRollDice: 0
-    mainHandDamageAmount: 0
-    offHandModifier: 0
-    offHandAttackRollDice: 1
-    offHandAttackRollDiceAmount: 20
-    offHandDamageRollDice: 0
-    offHandDamageAmount: 0
-    rangedModifier: 0
-    rangedAttackRollDice: 1
-    rangedAttackRollDiceAmount: 20
-    rangedDamageRollDice: 0
-    rangedDamageAmount: 0
-    ammoModifer: 0
-    defensiveValue: 0
-    protectionValue: 0
-    reductionPercentage: 0
-    protectionValueDiceRolls: 0
-    diceRollAmount: 0
-    shieldDV: 0
-    evadeDV: 0
-    armorWeight: 0
-    position: {x: 0, y: 0, z: 0}
-    scene: 
-  isPlayer: 0
+    SerializationNodes:
+    - Name: CharacterName
+      Entry: 1
+      Data: NPC4
+    - Name: CharacterAlias
+      Entry: 1
+      Data: 
+    - Name: Race
+      Entry: 1
+      Data: 
+    - Name: Gender
+      Entry: 1
+      Data: 
+    - Name: ClassPreset
+      Entry: 1
+      Data: 
+    - Name: Religion
+      Entry: 1
+      Data: 
+    - Name: Guild
+      Entry: 1
+      Data: 
+    - Name: Age
+      Entry: 3
+      Data: 0
+    - Name: Height
+      Entry: 3
+      Data: 0
+    - Name: Weight
+      Entry: 3
+      Data: 0
+    - Name: Level
+      Entry: 3
+      Data: 0
+    - Name: Experience
+      Entry: 3
+      Data: 0
+    - Name: RequiredExperience
+      Entry: 3
+      Data: 0
+    - Name: Gold
+      Entry: 3
+      Data: 0
+    - Name: PP
+      Entry: 3
+      Data: 0
+    - Name: Scene
+      Entry: 1
+      Data: 
+    - Name: Strength
+      Entry: 3
+      Data: 0
+    - Name: Constitution
+      Entry: 3
+      Data: 0
+    - Name: Dexterity
+      Entry: 3
+      Data: 0
+    - Name: Intelligence
+      Entry: 3
+      Data: 0
+    - Name: Willpower
+      Entry: 3
+      Data: 0
+    - Name: Wisdom
+      Entry: 3
+      Data: 0
+    - Name: Charisma
+      Entry: 3
+      Data: 0
+    - Name: Hp
+      Entry: 3
+      Data: 10
+    - Name: Mp
+      Entry: 3
+      Data: 10
+    - Name: MaxHp
+      Entry: 3
+      Data: 10
+    - Name: MaxMp
+      Entry: 3
+      Data: 10
+    - Name: Sanity
+      Entry: 3
+      Data: 15
+    - Name: Intiative
+      Entry: 3
+      Data: 0
+    - Name: Speed
+      Entry: 3
+      Data: 0
+    - Name: Fatigue
+      Entry: 3
+      Data: 0
+    - Name: MaxFatigue
+      Entry: 3
+      Data: 0
+    - Name: Sleepiness
+      Entry: 3
+      Data: 750
+    - Name: Life
+      Entry: 3
+      Data: 0
+    - Name: Soul
+      Entry: 3
+      Data: 0
+    - Name: Hunger
+      Entry: 3
+      Data: 10
+    - Name: Thirst
+      Entry: 3
+      Data: 5
+    - Name: Fire
+      Entry: 3
+      Data: 0
+    - Name: Cold
+      Entry: 3
+      Data: 0
+    - Name: Lightning
+      Entry: 3
+      Data: 0
+    - Name: Nature
+      Entry: 3
+      Data: 0
+    - Name: Magic
+      Entry: 3
+      Data: 0
+    - Name: Space
+      Entry: 3
+      Data: 0
+    - Name: Time
+      Entry: 3
+      Data: 0
+    - Name: Sound
+      Entry: 3
+      Data: 0
+    - Name: Chaos
+      Entry: 3
+      Data: 0
+    - Name: Difficulty
+      Entry: 3
+      Data: 0
+    - Name: Luck
+      Entry: 3
+      Data: 5
+    - Name: Karma
+      Entry: 3
+      Data: 0
+    - Name: Favour
+      Entry: 3
+      Data: 0
+    - Name: Fame
+      Entry: 3
+      Data: 0
+    - Name: TalentList
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RacialTraits
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ProficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: SkillDictionary
+      Entry: 6
+      Data: 
+    - Name: SpellDictionary
+      Entry: 6
+      Data: 
+    - Name: Inventory
+      Entry: 6
+      Data: 
+    - Name: Equipment
+      Entry: 6
+      Data: 
+    - Name: StatusEffects
+      Entry: 6
+      Data: 
+    - Name: MainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: MainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: MainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: MainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: MainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: OffHandModifier
+      Entry: 3
+      Data: 0
+    - Name: OffHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: OffHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: OffHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: OffHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: RangedModifier
+      Entry: 3
+      Data: 0
+    - Name: RangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: RangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: RangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: RangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: AmmoModifer
+      Entry: 3
+      Data: 0
+    - Name: DefensiveValue
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValue
+      Entry: 3
+      Data: 0
+    - Name: ReductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: DiceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: ShieldDV
+      Entry: 3
+      Data: 0
+    - Name: EvadeDV
+      Entry: 3
+      Data: 0
+    - Name: ArmorWeight
+      Entry: 4
+      Data: 0
+    - Name: state
+      Entry: 7
+      Data: 2|RLSKTD.Character.CharacterState, Project.Runtime
+    - Name: characterName
+      Entry: 1
+      Data: NPC4
+    - Name: characterAlias
+      Entry: 1
+      Data: 
+    - Name: race
+      Entry: 1
+      Data: 
+    - Name: gender
+      Entry: 1
+      Data: 
+    - Name: classPreset
+      Entry: 1
+      Data: 
+    - Name: religion
+      Entry: 1
+      Data: 
+    - Name: guild
+      Entry: 1
+      Data: 
+    - Name: age
+      Entry: 3
+      Data: 0
+    - Name: height
+      Entry: 3
+      Data: 0
+    - Name: weight
+      Entry: 3
+      Data: 0
+    - Name: level
+      Entry: 3
+      Data: 0
+    - Name: experience
+      Entry: 3
+      Data: 0
+    - Name: requiredExperience
+      Entry: 3
+      Data: 0
+    - Name: gold
+      Entry: 3
+      Data: 0
+    - Name: pp
+      Entry: 3
+      Data: 0
+    - Name: strength
+      Entry: 3
+      Data: 0
+    - Name: constitution
+      Entry: 3
+      Data: 0
+    - Name: dexterity
+      Entry: 3
+      Data: 0
+    - Name: intelligence
+      Entry: 3
+      Data: 0
+    - Name: willpower
+      Entry: 3
+      Data: 0
+    - Name: wisdom
+      Entry: 3
+      Data: 0
+    - Name: charisma
+      Entry: 3
+      Data: 0
+    - Name: hp
+      Entry: 3
+      Data: 10
+    - Name: mp
+      Entry: 3
+      Data: 10
+    - Name: maxHp
+      Entry: 3
+      Data: 10
+    - Name: maxMp
+      Entry: 3
+      Data: 10
+    - Name: sanity
+      Entry: 3
+      Data: 15
+    - Name: intiative
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fatigue
+      Entry: 3
+      Data: 0
+    - Name: maxFatigue
+      Entry: 3
+      Data: 0
+    - Name: sleepiness
+      Entry: 3
+      Data: 750
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: soul
+      Entry: 3
+      Data: 0
+    - Name: hunger
+      Entry: 3
+      Data: 10
+    - Name: thirst
+      Entry: 3
+      Data: 5
+    - Name: fire
+      Entry: 3
+      Data: 0
+    - Name: cold
+      Entry: 3
+      Data: 0
+    - Name: lightning
+      Entry: 3
+      Data: 0
+    - Name: nature
+      Entry: 3
+      Data: 0
+    - Name: magic
+      Entry: 3
+      Data: 0
+    - Name: space
+      Entry: 3
+      Data: 0
+    - Name: time
+      Entry: 3
+      Data: 0
+    - Name: sound
+      Entry: 3
+      Data: 0
+    - Name: chaos
+      Entry: 3
+      Data: 0
+    - Name: difficulty
+      Entry: 3
+      Data: 0
+    - Name: luck
+      Entry: 3
+      Data: 5
+    - Name: karma
+      Entry: 3
+      Data: 0
+    - Name: favour
+      Entry: 3
+      Data: 0
+    - Name: fame
+      Entry: 3
+      Data: 0
+    - Name: talentList
+      Entry: 9
+      Data: 0
+    - Name: racialTraits
+      Entry: 9
+      Data: 1
+    - Name: proficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: skillDictionary
+      Entry: 6
+      Data: 
+    - Name: spellDictionary
+      Entry: 6
+      Data: 
+    - Name: inventory
+      Entry: 6
+      Data: 
+    - Name: equipment
+      Entry: 6
+      Data: 
+    - Name: statusEffects
+      Entry: 6
+      Data: 
+    - Name: mainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: mainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: mainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: mainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: mainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: offHandModifier
+      Entry: 3
+      Data: 0
+    - Name: offHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: offHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: offHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: offHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: rangedModifier
+      Entry: 3
+      Data: 0
+    - Name: rangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: rangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: rangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: rangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: ammoModifer
+      Entry: 3
+      Data: 0
+    - Name: defensiveValue
+      Entry: 3
+      Data: 0
+    - Name: protectionValue
+      Entry: 3
+      Data: 0
+    - Name: reductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: protectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: diceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: shieldDV
+      Entry: 3
+      Data: 0
+    - Name: evadeDV
+      Entry: 3
+      Data: 0
+    - Name: armorWeight
+      Entry: 4
+      Data: 0
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: scene
+      Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isPlayer
+      Entry: 5
+      Data: false
 --- !u!212 &15069825
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2673,7 +3131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 825 (825)
+  m_text: 0/30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3475,17 +3933,10 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  item:
-    name: 
-    description: 
-    itemMaterial: 0
-    itemType: 0
-    itemQuality: 0
-    weightClass: 0
-    itemWeight: 0
-    isIdentified: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
+    SerializationNodes:
+    - Name: item
+      Entry: 6
+      Data: 
 --- !u!1 &490939594
 GameObject:
   m_ObjectHideFlags: 0
@@ -5267,7 +5718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3808 (3244)
+  m_text: 40/40
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5294,7 +5745,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.75
+  m_fontSize: 17.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5429,9 +5880,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1081775578}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3244
+  m_MaxValue: 40
   m_WholeNumbers: 1
-  m_Value: 3244
+  m_Value: 40
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8614,89 +9065,547 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  state:
-    characterName: NPC2
-    characterAlias: 
-    race: 
-    gender: 
-    classPreset: 
-    religion: 
-    guild: 
-    age: 0
-    height: 0
-    weight: 0
-    level: 0
-    experience: 0
-    requiredExperience: 0
-    gold: 0
-    pp: 0
-    strength: 0
-    constitution: 0
-    dexterity: 0
-    intelligence: 0
-    willpower: 0
-    wisdom: 0
-    charisma: 0
-    hp: 0
-    mp: 0
-    maxHp: 0
-    maxMp: 0
-    sanity: 15
-    intiative: 0
-    speed: 0
-    fatigue: 0
-    maxFatigue: 0
-    sleepiness: 750
-    life: 0
-    soul: 0
-    hunger: 10
-    thirst: 5
-    fire: 0
-    cold: 0
-    lightning: 0
-    nature: 0
-    magic: 0
-    space: 0
-    time: 0
-    sound: 0
-    chaos: 0
-    difficulty: 0
-    luck: 5
-    karma: 0
-    favour: 0
-    fame: 0
-    talentList: []
-    racialTraits: []
-    inventory: []
-    equipment: []
-    mainHandModifier: 0
-    mainHandAttackRollDice: 1
-    mainHandAttackRollDiceAmount: 20
-    mainHandDamageRollDice: 0
-    mainHandDamageAmount: 0
-    offHandModifier: 0
-    offHandAttackRollDice: 1
-    offHandAttackRollDiceAmount: 20
-    offHandDamageRollDice: 0
-    offHandDamageAmount: 0
-    rangedModifier: 0
-    rangedAttackRollDice: 1
-    rangedAttackRollDiceAmount: 20
-    rangedDamageRollDice: 0
-    rangedDamageAmount: 0
-    ammoModifer: 0
-    defensiveValue: 0
-    protectionValue: 0
-    reductionPercentage: 0
-    protectionValueDiceRolls: 0
-    diceRollAmount: 0
-    shieldDV: 0
-    evadeDV: 0
-    armorWeight: 0
-    position: {x: 0, y: 0, z: 0}
-    scene: 
-  isPlayer: 0
+    SerializationNodes:
+    - Name: CharacterName
+      Entry: 1
+      Data: NPC2
+    - Name: CharacterAlias
+      Entry: 1
+      Data: 
+    - Name: Race
+      Entry: 1
+      Data: 
+    - Name: Gender
+      Entry: 1
+      Data: 
+    - Name: ClassPreset
+      Entry: 1
+      Data: 
+    - Name: Religion
+      Entry: 1
+      Data: 
+    - Name: Guild
+      Entry: 1
+      Data: 
+    - Name: Age
+      Entry: 3
+      Data: 0
+    - Name: Height
+      Entry: 3
+      Data: 0
+    - Name: Weight
+      Entry: 3
+      Data: 0
+    - Name: Level
+      Entry: 3
+      Data: 0
+    - Name: Experience
+      Entry: 3
+      Data: 0
+    - Name: RequiredExperience
+      Entry: 3
+      Data: 0
+    - Name: Gold
+      Entry: 3
+      Data: 0
+    - Name: PP
+      Entry: 3
+      Data: 0
+    - Name: Scene
+      Entry: 1
+      Data: 
+    - Name: Strength
+      Entry: 3
+      Data: 0
+    - Name: Constitution
+      Entry: 3
+      Data: 0
+    - Name: Dexterity
+      Entry: 3
+      Data: 0
+    - Name: Intelligence
+      Entry: 3
+      Data: 0
+    - Name: Willpower
+      Entry: 3
+      Data: 0
+    - Name: Wisdom
+      Entry: 3
+      Data: 0
+    - Name: Charisma
+      Entry: 3
+      Data: 0
+    - Name: Hp
+      Entry: 3
+      Data: 10
+    - Name: Mp
+      Entry: 3
+      Data: 10
+    - Name: MaxHp
+      Entry: 3
+      Data: 10
+    - Name: MaxMp
+      Entry: 3
+      Data: 10
+    - Name: Sanity
+      Entry: 3
+      Data: 15
+    - Name: Intiative
+      Entry: 3
+      Data: 0
+    - Name: Speed
+      Entry: 3
+      Data: 0
+    - Name: Fatigue
+      Entry: 3
+      Data: 0
+    - Name: MaxFatigue
+      Entry: 3
+      Data: 0
+    - Name: Sleepiness
+      Entry: 3
+      Data: 750
+    - Name: Life
+      Entry: 3
+      Data: 0
+    - Name: Soul
+      Entry: 3
+      Data: 0
+    - Name: Hunger
+      Entry: 3
+      Data: 10
+    - Name: Thirst
+      Entry: 3
+      Data: 5
+    - Name: Fire
+      Entry: 3
+      Data: 0
+    - Name: Cold
+      Entry: 3
+      Data: 0
+    - Name: Lightning
+      Entry: 3
+      Data: 0
+    - Name: Nature
+      Entry: 3
+      Data: 0
+    - Name: Magic
+      Entry: 3
+      Data: 0
+    - Name: Space
+      Entry: 3
+      Data: 0
+    - Name: Time
+      Entry: 3
+      Data: 0
+    - Name: Sound
+      Entry: 3
+      Data: 0
+    - Name: Chaos
+      Entry: 3
+      Data: 0
+    - Name: Difficulty
+      Entry: 3
+      Data: 0
+    - Name: Luck
+      Entry: 3
+      Data: 5
+    - Name: Karma
+      Entry: 3
+      Data: 0
+    - Name: Favour
+      Entry: 3
+      Data: 0
+    - Name: Fame
+      Entry: 3
+      Data: 0
+    - Name: TalentList
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RacialTraits
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ProficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: SkillDictionary
+      Entry: 6
+      Data: 
+    - Name: SpellDictionary
+      Entry: 6
+      Data: 
+    - Name: Inventory
+      Entry: 6
+      Data: 
+    - Name: Equipment
+      Entry: 6
+      Data: 
+    - Name: StatusEffects
+      Entry: 6
+      Data: 
+    - Name: MainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: MainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: MainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: MainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: MainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: OffHandModifier
+      Entry: 3
+      Data: 0
+    - Name: OffHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: OffHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: OffHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: OffHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: RangedModifier
+      Entry: 3
+      Data: 0
+    - Name: RangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: RangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: RangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: RangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: AmmoModifer
+      Entry: 3
+      Data: 0
+    - Name: DefensiveValue
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValue
+      Entry: 3
+      Data: 0
+    - Name: ReductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: DiceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: ShieldDV
+      Entry: 3
+      Data: 0
+    - Name: EvadeDV
+      Entry: 3
+      Data: 0
+    - Name: ArmorWeight
+      Entry: 4
+      Data: 0
+    - Name: state
+      Entry: 7
+      Data: 2|RLSKTD.Character.CharacterState, Project.Runtime
+    - Name: characterName
+      Entry: 1
+      Data: NPC2
+    - Name: characterAlias
+      Entry: 1
+      Data: 
+    - Name: race
+      Entry: 1
+      Data: 
+    - Name: gender
+      Entry: 1
+      Data: 
+    - Name: classPreset
+      Entry: 1
+      Data: 
+    - Name: religion
+      Entry: 1
+      Data: 
+    - Name: guild
+      Entry: 1
+      Data: 
+    - Name: age
+      Entry: 3
+      Data: 0
+    - Name: height
+      Entry: 3
+      Data: 0
+    - Name: weight
+      Entry: 3
+      Data: 0
+    - Name: level
+      Entry: 3
+      Data: 0
+    - Name: experience
+      Entry: 3
+      Data: 0
+    - Name: requiredExperience
+      Entry: 3
+      Data: 0
+    - Name: gold
+      Entry: 3
+      Data: 0
+    - Name: pp
+      Entry: 3
+      Data: 0
+    - Name: strength
+      Entry: 3
+      Data: 0
+    - Name: constitution
+      Entry: 3
+      Data: 0
+    - Name: dexterity
+      Entry: 3
+      Data: 0
+    - Name: intelligence
+      Entry: 3
+      Data: 0
+    - Name: willpower
+      Entry: 3
+      Data: 0
+    - Name: wisdom
+      Entry: 3
+      Data: 0
+    - Name: charisma
+      Entry: 3
+      Data: 0
+    - Name: hp
+      Entry: 3
+      Data: 10
+    - Name: mp
+      Entry: 3
+      Data: 10
+    - Name: maxHp
+      Entry: 3
+      Data: 10
+    - Name: maxMp
+      Entry: 3
+      Data: 10
+    - Name: sanity
+      Entry: 3
+      Data: 15
+    - Name: intiative
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fatigue
+      Entry: 3
+      Data: 0
+    - Name: maxFatigue
+      Entry: 3
+      Data: 0
+    - Name: sleepiness
+      Entry: 3
+      Data: 750
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: soul
+      Entry: 3
+      Data: 0
+    - Name: hunger
+      Entry: 3
+      Data: 10
+    - Name: thirst
+      Entry: 3
+      Data: 5
+    - Name: fire
+      Entry: 3
+      Data: 0
+    - Name: cold
+      Entry: 3
+      Data: 0
+    - Name: lightning
+      Entry: 3
+      Data: 0
+    - Name: nature
+      Entry: 3
+      Data: 0
+    - Name: magic
+      Entry: 3
+      Data: 0
+    - Name: space
+      Entry: 3
+      Data: 0
+    - Name: time
+      Entry: 3
+      Data: 0
+    - Name: sound
+      Entry: 3
+      Data: 0
+    - Name: chaos
+      Entry: 3
+      Data: 0
+    - Name: difficulty
+      Entry: 3
+      Data: 0
+    - Name: luck
+      Entry: 3
+      Data: 5
+    - Name: karma
+      Entry: 3
+      Data: 0
+    - Name: favour
+      Entry: 3
+      Data: 0
+    - Name: fame
+      Entry: 3
+      Data: 0
+    - Name: talentList
+      Entry: 9
+      Data: 0
+    - Name: racialTraits
+      Entry: 9
+      Data: 1
+    - Name: proficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: skillDictionary
+      Entry: 6
+      Data: 
+    - Name: spellDictionary
+      Entry: 6
+      Data: 
+    - Name: inventory
+      Entry: 6
+      Data: 
+    - Name: equipment
+      Entry: 6
+      Data: 
+    - Name: statusEffects
+      Entry: 6
+      Data: 
+    - Name: mainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: mainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: mainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: mainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: mainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: offHandModifier
+      Entry: 3
+      Data: 0
+    - Name: offHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: offHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: offHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: offHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: rangedModifier
+      Entry: 3
+      Data: 0
+    - Name: rangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: rangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: rangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: rangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: ammoModifer
+      Entry: 3
+      Data: 0
+    - Name: defensiveValue
+      Entry: 3
+      Data: 0
+    - Name: protectionValue
+      Entry: 3
+      Data: 0
+    - Name: reductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: protectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: diceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: shieldDV
+      Entry: 3
+      Data: 0
+    - Name: evadeDV
+      Entry: 3
+      Data: 0
+    - Name: armorWeight
+      Entry: 4
+      Data: 0
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: scene
+      Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isPlayer
+      Entry: 5
+      Data: false
 --- !u!212 &973598161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10366,89 +11275,547 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  state:
-    characterName: NPC3
-    characterAlias: 
-    race: 
-    gender: 
-    classPreset: 
-    religion: 
-    guild: 
-    age: 0
-    height: 0
-    weight: 0
-    level: 0
-    experience: 0
-    requiredExperience: 0
-    gold: 0
-    pp: 0
-    strength: 0
-    constitution: 0
-    dexterity: 0
-    intelligence: 0
-    willpower: 0
-    wisdom: 0
-    charisma: 0
-    hp: 0
-    mp: 0
-    maxHp: 0
-    maxMp: 0
-    sanity: 15
-    intiative: 0
-    speed: 0
-    fatigue: 0
-    maxFatigue: 0
-    sleepiness: 750
-    life: 0
-    soul: 0
-    hunger: 10
-    thirst: 5
-    fire: 0
-    cold: 0
-    lightning: 0
-    nature: 0
-    magic: 0
-    space: 0
-    time: 0
-    sound: 0
-    chaos: 0
-    difficulty: 0
-    luck: 5
-    karma: 0
-    favour: 0
-    fame: 0
-    talentList: []
-    racialTraits: []
-    inventory: []
-    equipment: []
-    mainHandModifier: 0
-    mainHandAttackRollDice: 1
-    mainHandAttackRollDiceAmount: 20
-    mainHandDamageRollDice: 0
-    mainHandDamageAmount: 0
-    offHandModifier: 0
-    offHandAttackRollDice: 1
-    offHandAttackRollDiceAmount: 20
-    offHandDamageRollDice: 0
-    offHandDamageAmount: 0
-    rangedModifier: 0
-    rangedAttackRollDice: 1
-    rangedAttackRollDiceAmount: 20
-    rangedDamageRollDice: 0
-    rangedDamageAmount: 0
-    ammoModifer: 0
-    defensiveValue: 0
-    protectionValue: 0
-    reductionPercentage: 0
-    protectionValueDiceRolls: 0
-    diceRollAmount: 0
-    shieldDV: 0
-    evadeDV: 0
-    armorWeight: 0
-    position: {x: 0, y: 0, z: 0}
-    scene: 
-  isPlayer: 0
+    SerializationNodes:
+    - Name: CharacterName
+      Entry: 1
+      Data: NPC3
+    - Name: CharacterAlias
+      Entry: 1
+      Data: 
+    - Name: Race
+      Entry: 1
+      Data: 
+    - Name: Gender
+      Entry: 1
+      Data: 
+    - Name: ClassPreset
+      Entry: 1
+      Data: 
+    - Name: Religion
+      Entry: 1
+      Data: 
+    - Name: Guild
+      Entry: 1
+      Data: 
+    - Name: Age
+      Entry: 3
+      Data: 0
+    - Name: Height
+      Entry: 3
+      Data: 0
+    - Name: Weight
+      Entry: 3
+      Data: 0
+    - Name: Level
+      Entry: 3
+      Data: 0
+    - Name: Experience
+      Entry: 3
+      Data: 0
+    - Name: RequiredExperience
+      Entry: 3
+      Data: 0
+    - Name: Gold
+      Entry: 3
+      Data: 0
+    - Name: PP
+      Entry: 3
+      Data: 0
+    - Name: Scene
+      Entry: 1
+      Data: 
+    - Name: Strength
+      Entry: 3
+      Data: 0
+    - Name: Constitution
+      Entry: 3
+      Data: 0
+    - Name: Dexterity
+      Entry: 3
+      Data: 0
+    - Name: Intelligence
+      Entry: 3
+      Data: 0
+    - Name: Willpower
+      Entry: 3
+      Data: 0
+    - Name: Wisdom
+      Entry: 3
+      Data: 0
+    - Name: Charisma
+      Entry: 3
+      Data: 0
+    - Name: Hp
+      Entry: 3
+      Data: 10
+    - Name: Mp
+      Entry: 3
+      Data: 10
+    - Name: MaxHp
+      Entry: 3
+      Data: 10
+    - Name: MaxMp
+      Entry: 3
+      Data: 10
+    - Name: Sanity
+      Entry: 3
+      Data: 15
+    - Name: Intiative
+      Entry: 3
+      Data: 0
+    - Name: Speed
+      Entry: 3
+      Data: 0
+    - Name: Fatigue
+      Entry: 3
+      Data: 0
+    - Name: MaxFatigue
+      Entry: 3
+      Data: 0
+    - Name: Sleepiness
+      Entry: 3
+      Data: 750
+    - Name: Life
+      Entry: 3
+      Data: 0
+    - Name: Soul
+      Entry: 3
+      Data: 0
+    - Name: Hunger
+      Entry: 3
+      Data: 10
+    - Name: Thirst
+      Entry: 3
+      Data: 5
+    - Name: Fire
+      Entry: 3
+      Data: 0
+    - Name: Cold
+      Entry: 3
+      Data: 0
+    - Name: Lightning
+      Entry: 3
+      Data: 0
+    - Name: Nature
+      Entry: 3
+      Data: 0
+    - Name: Magic
+      Entry: 3
+      Data: 0
+    - Name: Space
+      Entry: 3
+      Data: 0
+    - Name: Time
+      Entry: 3
+      Data: 0
+    - Name: Sound
+      Entry: 3
+      Data: 0
+    - Name: Chaos
+      Entry: 3
+      Data: 0
+    - Name: Difficulty
+      Entry: 3
+      Data: 0
+    - Name: Luck
+      Entry: 3
+      Data: 5
+    - Name: Karma
+      Entry: 3
+      Data: 0
+    - Name: Favour
+      Entry: 3
+      Data: 0
+    - Name: Fame
+      Entry: 3
+      Data: 0
+    - Name: TalentList
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RacialTraits
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ProficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: SkillDictionary
+      Entry: 6
+      Data: 
+    - Name: SpellDictionary
+      Entry: 6
+      Data: 
+    - Name: Inventory
+      Entry: 6
+      Data: 
+    - Name: Equipment
+      Entry: 6
+      Data: 
+    - Name: StatusEffects
+      Entry: 6
+      Data: 
+    - Name: MainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: MainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: MainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: MainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: MainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: OffHandModifier
+      Entry: 3
+      Data: 0
+    - Name: OffHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: OffHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: OffHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: OffHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: RangedModifier
+      Entry: 3
+      Data: 0
+    - Name: RangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: RangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: RangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: RangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: AmmoModifer
+      Entry: 3
+      Data: 0
+    - Name: DefensiveValue
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValue
+      Entry: 3
+      Data: 0
+    - Name: ReductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: DiceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: ShieldDV
+      Entry: 3
+      Data: 0
+    - Name: EvadeDV
+      Entry: 3
+      Data: 0
+    - Name: ArmorWeight
+      Entry: 4
+      Data: 0
+    - Name: state
+      Entry: 7
+      Data: 2|RLSKTD.Character.CharacterState, Project.Runtime
+    - Name: characterName
+      Entry: 1
+      Data: NPC3
+    - Name: characterAlias
+      Entry: 1
+      Data: 
+    - Name: race
+      Entry: 1
+      Data: 
+    - Name: gender
+      Entry: 1
+      Data: 
+    - Name: classPreset
+      Entry: 1
+      Data: 
+    - Name: religion
+      Entry: 1
+      Data: 
+    - Name: guild
+      Entry: 1
+      Data: 
+    - Name: age
+      Entry: 3
+      Data: 0
+    - Name: height
+      Entry: 3
+      Data: 0
+    - Name: weight
+      Entry: 3
+      Data: 0
+    - Name: level
+      Entry: 3
+      Data: 0
+    - Name: experience
+      Entry: 3
+      Data: 0
+    - Name: requiredExperience
+      Entry: 3
+      Data: 0
+    - Name: gold
+      Entry: 3
+      Data: 0
+    - Name: pp
+      Entry: 3
+      Data: 0
+    - Name: strength
+      Entry: 3
+      Data: 0
+    - Name: constitution
+      Entry: 3
+      Data: 0
+    - Name: dexterity
+      Entry: 3
+      Data: 0
+    - Name: intelligence
+      Entry: 3
+      Data: 0
+    - Name: willpower
+      Entry: 3
+      Data: 0
+    - Name: wisdom
+      Entry: 3
+      Data: 0
+    - Name: charisma
+      Entry: 3
+      Data: 0
+    - Name: hp
+      Entry: 3
+      Data: 10
+    - Name: mp
+      Entry: 3
+      Data: 10
+    - Name: maxHp
+      Entry: 3
+      Data: 10
+    - Name: maxMp
+      Entry: 3
+      Data: 10
+    - Name: sanity
+      Entry: 3
+      Data: 15
+    - Name: intiative
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fatigue
+      Entry: 3
+      Data: 0
+    - Name: maxFatigue
+      Entry: 3
+      Data: 0
+    - Name: sleepiness
+      Entry: 3
+      Data: 750
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: soul
+      Entry: 3
+      Data: 0
+    - Name: hunger
+      Entry: 3
+      Data: 10
+    - Name: thirst
+      Entry: 3
+      Data: 5
+    - Name: fire
+      Entry: 3
+      Data: 0
+    - Name: cold
+      Entry: 3
+      Data: 0
+    - Name: lightning
+      Entry: 3
+      Data: 0
+    - Name: nature
+      Entry: 3
+      Data: 0
+    - Name: magic
+      Entry: 3
+      Data: 0
+    - Name: space
+      Entry: 3
+      Data: 0
+    - Name: time
+      Entry: 3
+      Data: 0
+    - Name: sound
+      Entry: 3
+      Data: 0
+    - Name: chaos
+      Entry: 3
+      Data: 0
+    - Name: difficulty
+      Entry: 3
+      Data: 0
+    - Name: luck
+      Entry: 3
+      Data: 5
+    - Name: karma
+      Entry: 3
+      Data: 0
+    - Name: favour
+      Entry: 3
+      Data: 0
+    - Name: fame
+      Entry: 3
+      Data: 0
+    - Name: talentList
+      Entry: 9
+      Data: 0
+    - Name: racialTraits
+      Entry: 9
+      Data: 1
+    - Name: proficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: skillDictionary
+      Entry: 6
+      Data: 
+    - Name: spellDictionary
+      Entry: 6
+      Data: 
+    - Name: inventory
+      Entry: 6
+      Data: 
+    - Name: equipment
+      Entry: 6
+      Data: 
+    - Name: statusEffects
+      Entry: 6
+      Data: 
+    - Name: mainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: mainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: mainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: mainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: mainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: offHandModifier
+      Entry: 3
+      Data: 0
+    - Name: offHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: offHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: offHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: offHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: rangedModifier
+      Entry: 3
+      Data: 0
+    - Name: rangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: rangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: rangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: rangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: ammoModifer
+      Entry: 3
+      Data: 0
+    - Name: defensiveValue
+      Entry: 3
+      Data: 0
+    - Name: protectionValue
+      Entry: 3
+      Data: 0
+    - Name: reductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: protectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: diceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: shieldDV
+      Entry: 3
+      Data: 0
+    - Name: evadeDV
+      Entry: 3
+      Data: 0
+    - Name: armorWeight
+      Entry: 4
+      Data: 0
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: scene
+      Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isPlayer
+      Entry: 5
+      Data: false
 --- !u!212 &1226539681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11681,9 +13048,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1655239042}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 825
+  m_MaxValue: 30
   m_WholeNumbers: 1
-  m_Value: 825
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -20358,17 +21725,10 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  item:
-    name: 
-    description: 
-    itemMaterial: 0
-    itemType: 0
-    itemQuality: 0
-    weightClass: 0
-    itemWeight: 0
-    isIdentified: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
+    SerializationNodes:
+    - Name: item
+      Entry: 6
+      Data: 
 --- !u!1 &1800996380
 GameObject:
   m_ObjectHideFlags: 0
@@ -22118,7 +23478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.00024414062, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 216.92004, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1993459267
@@ -26536,89 +27896,557 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  state:
-    characterName: NPC1
-    characterAlias: 
-    race: 
-    gender: 
-    classPreset: 
-    religion: 
-    guild: 
-    age: 0
-    height: 0
-    weight: 0
-    level: 0
-    experience: 0
-    requiredExperience: 0
-    gold: 0
-    pp: 0
-    strength: 0
-    constitution: 0
-    dexterity: 0
-    intelligence: 0
-    willpower: 0
-    wisdom: 0
-    charisma: 0
-    hp: 0
-    mp: 0
-    maxHp: 0
-    maxMp: 0
-    sanity: 15
-    intiative: 0
-    speed: 0
-    fatigue: 0
-    maxFatigue: 0
-    sleepiness: 750
-    life: 0
-    soul: 0
-    hunger: 10
-    thirst: 5
-    fire: 0
-    cold: 0
-    lightning: 0
-    nature: 0
-    magic: 0
-    space: 0
-    time: 0
-    sound: 0
-    chaos: 0
-    difficulty: 0
-    luck: 5
-    karma: 0
-    favour: 0
-    fame: 0
-    talentList: []
-    racialTraits: []
-    inventory: []
-    equipment: []
-    mainHandModifier: 0
-    mainHandAttackRollDice: 1
-    mainHandAttackRollDiceAmount: 20
-    mainHandDamageRollDice: 0
-    mainHandDamageAmount: 0
-    offHandModifier: 0
-    offHandAttackRollDice: 1
-    offHandAttackRollDiceAmount: 20
-    offHandDamageRollDice: 0
-    offHandDamageAmount: 0
-    rangedModifier: 0
-    rangedAttackRollDice: 1
-    rangedAttackRollDiceAmount: 20
-    rangedDamageRollDice: 0
-    rangedDamageAmount: 0
-    ammoModifer: 0
-    defensiveValue: 0
-    protectionValue: 0
-    reductionPercentage: 0
-    protectionValueDiceRolls: 0
-    diceRollAmount: 0
-    shieldDV: 0
-    evadeDV: 0
-    armorWeight: 0
-    position: {x: 0, y: 0, z: 0}
-    scene: 
-  isPlayer: 0
+    SerializationNodes:
+    - Name: CharacterName
+      Entry: 1
+      Data: NPC1
+    - Name: CharacterAlias
+      Entry: 1
+      Data: 
+    - Name: Race
+      Entry: 1
+      Data: 
+    - Name: Gender
+      Entry: 1
+      Data: 
+    - Name: ClassPreset
+      Entry: 1
+      Data: 
+    - Name: Religion
+      Entry: 1
+      Data: 
+    - Name: Guild
+      Entry: 1
+      Data: 
+    - Name: Age
+      Entry: 3
+      Data: 0
+    - Name: Height
+      Entry: 3
+      Data: 0
+    - Name: Weight
+      Entry: 3
+      Data: 0
+    - Name: Level
+      Entry: 3
+      Data: 0
+    - Name: Experience
+      Entry: 3
+      Data: 0
+    - Name: RequiredExperience
+      Entry: 3
+      Data: 0
+    - Name: Gold
+      Entry: 3
+      Data: 0
+    - Name: PP
+      Entry: 3
+      Data: 0
+    - Name: Scene
+      Entry: 1
+      Data: 
+    - Name: Strength
+      Entry: 3
+      Data: 0
+    - Name: Constitution
+      Entry: 3
+      Data: 0
+    - Name: Dexterity
+      Entry: 3
+      Data: 0
+    - Name: Intelligence
+      Entry: 3
+      Data: 0
+    - Name: Willpower
+      Entry: 3
+      Data: 0
+    - Name: Wisdom
+      Entry: 3
+      Data: 0
+    - Name: Charisma
+      Entry: 3
+      Data: 0
+    - Name: Hp
+      Entry: 3
+      Data: 10
+    - Name: Mp
+      Entry: 3
+      Data: 10
+    - Name: MaxHp
+      Entry: 3
+      Data: 10
+    - Name: MaxMp
+      Entry: 3
+      Data: 10
+    - Name: Sanity
+      Entry: 3
+      Data: 15
+    - Name: Intiative
+      Entry: 3
+      Data: 0
+    - Name: Speed
+      Entry: 3
+      Data: 0
+    - Name: Fatigue
+      Entry: 3
+      Data: 0
+    - Name: MaxFatigue
+      Entry: 3
+      Data: 0
+    - Name: Sleepiness
+      Entry: 3
+      Data: 750
+    - Name: Life
+      Entry: 3
+      Data: 0
+    - Name: Soul
+      Entry: 3
+      Data: 0
+    - Name: Hunger
+      Entry: 3
+      Data: 10
+    - Name: Thirst
+      Entry: 3
+      Data: 5
+    - Name: Fire
+      Entry: 3
+      Data: 0
+    - Name: Cold
+      Entry: 3
+      Data: 0
+    - Name: Lightning
+      Entry: 3
+      Data: 0
+    - Name: Nature
+      Entry: 3
+      Data: 0
+    - Name: Magic
+      Entry: 3
+      Data: 0
+    - Name: Space
+      Entry: 3
+      Data: 0
+    - Name: Time
+      Entry: 3
+      Data: 0
+    - Name: Sound
+      Entry: 3
+      Data: 0
+    - Name: Chaos
+      Entry: 3
+      Data: 0
+    - Name: Difficulty
+      Entry: 3
+      Data: 0
+    - Name: Luck
+      Entry: 3
+      Data: 5
+    - Name: Karma
+      Entry: 3
+      Data: 0
+    - Name: Favour
+      Entry: 3
+      Data: 0
+    - Name: Fame
+      Entry: 3
+      Data: 0
+    - Name: TalentList
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RacialTraits
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ProficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: SkillDictionary
+      Entry: 6
+      Data: 
+    - Name: SpellDictionary
+      Entry: 6
+      Data: 
+    - Name: Inventory
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[RLSKTD.General.Item, Project.Runtime]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Equipment
+      Entry: 6
+      Data: 
+    - Name: StatusEffects
+      Entry: 6
+      Data: 
+    - Name: MainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: MainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: MainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: MainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: MainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: OffHandModifier
+      Entry: 3
+      Data: 0
+    - Name: OffHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: OffHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: OffHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: OffHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: RangedModifier
+      Entry: 3
+      Data: 0
+    - Name: RangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: RangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: RangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: RangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: AmmoModifer
+      Entry: 3
+      Data: 0
+    - Name: DefensiveValue
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValue
+      Entry: 3
+      Data: 0
+    - Name: ReductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: ProtectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: DiceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: ShieldDV
+      Entry: 3
+      Data: 0
+    - Name: EvadeDV
+      Entry: 3
+      Data: 0
+    - Name: ArmorWeight
+      Entry: 4
+      Data: 0
+    - Name: state
+      Entry: 7
+      Data: 3|RLSKTD.Character.CharacterState, Project.Runtime
+    - Name: characterName
+      Entry: 1
+      Data: NPC1
+    - Name: characterAlias
+      Entry: 1
+      Data: 
+    - Name: race
+      Entry: 1
+      Data: 
+    - Name: gender
+      Entry: 1
+      Data: 
+    - Name: classPreset
+      Entry: 1
+      Data: 
+    - Name: religion
+      Entry: 1
+      Data: 
+    - Name: guild
+      Entry: 1
+      Data: 
+    - Name: age
+      Entry: 3
+      Data: 0
+    - Name: height
+      Entry: 3
+      Data: 0
+    - Name: weight
+      Entry: 3
+      Data: 0
+    - Name: level
+      Entry: 3
+      Data: 0
+    - Name: experience
+      Entry: 3
+      Data: 0
+    - Name: requiredExperience
+      Entry: 3
+      Data: 0
+    - Name: gold
+      Entry: 3
+      Data: 0
+    - Name: pp
+      Entry: 3
+      Data: 0
+    - Name: strength
+      Entry: 3
+      Data: 0
+    - Name: constitution
+      Entry: 3
+      Data: 0
+    - Name: dexterity
+      Entry: 3
+      Data: 0
+    - Name: intelligence
+      Entry: 3
+      Data: 0
+    - Name: willpower
+      Entry: 3
+      Data: 0
+    - Name: wisdom
+      Entry: 3
+      Data: 0
+    - Name: charisma
+      Entry: 3
+      Data: 0
+    - Name: hp
+      Entry: 3
+      Data: 10
+    - Name: mp
+      Entry: 3
+      Data: 10
+    - Name: maxHp
+      Entry: 3
+      Data: 10
+    - Name: maxMp
+      Entry: 3
+      Data: 10
+    - Name: sanity
+      Entry: 3
+      Data: 15
+    - Name: intiative
+      Entry: 3
+      Data: 0
+    - Name: speed
+      Entry: 3
+      Data: 0
+    - Name: fatigue
+      Entry: 3
+      Data: 0
+    - Name: maxFatigue
+      Entry: 3
+      Data: 0
+    - Name: sleepiness
+      Entry: 3
+      Data: 750
+    - Name: life
+      Entry: 3
+      Data: 0
+    - Name: soul
+      Entry: 3
+      Data: 0
+    - Name: hunger
+      Entry: 3
+      Data: 10
+    - Name: thirst
+      Entry: 3
+      Data: 5
+    - Name: fire
+      Entry: 3
+      Data: 0
+    - Name: cold
+      Entry: 3
+      Data: 0
+    - Name: lightning
+      Entry: 3
+      Data: 0
+    - Name: nature
+      Entry: 3
+      Data: 0
+    - Name: magic
+      Entry: 3
+      Data: 0
+    - Name: space
+      Entry: 3
+      Data: 0
+    - Name: time
+      Entry: 3
+      Data: 0
+    - Name: sound
+      Entry: 3
+      Data: 0
+    - Name: chaos
+      Entry: 3
+      Data: 0
+    - Name: difficulty
+      Entry: 3
+      Data: 0
+    - Name: luck
+      Entry: 3
+      Data: 5
+    - Name: karma
+      Entry: 3
+      Data: 0
+    - Name: favour
+      Entry: 3
+      Data: 0
+    - Name: fame
+      Entry: 3
+      Data: 0
+    - Name: talentList
+      Entry: 9
+      Data: 0
+    - Name: racialTraits
+      Entry: 9
+      Data: 1
+    - Name: proficiencyDictionary
+      Entry: 6
+      Data: 
+    - Name: skillDictionary
+      Entry: 6
+      Data: 
+    - Name: spellDictionary
+      Entry: 6
+      Data: 
+    - Name: inventory
+      Entry: 9
+      Data: 2
+    - Name: equipment
+      Entry: 6
+      Data: 
+    - Name: statusEffects
+      Entry: 6
+      Data: 
+    - Name: mainHandModifier
+      Entry: 3
+      Data: 0
+    - Name: mainHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: mainHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: mainHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: mainHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: offHandModifier
+      Entry: 3
+      Data: 0
+    - Name: offHandAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: offHandAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: offHandDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: offHandDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: rangedModifier
+      Entry: 3
+      Data: 0
+    - Name: rangedAttackRollDice
+      Entry: 3
+      Data: 1
+    - Name: rangedAttackRollDiceAmount
+      Entry: 3
+      Data: 20
+    - Name: rangedDamageRollDice
+      Entry: 3
+      Data: 0
+    - Name: rangedDamageAmount
+      Entry: 3
+      Data: 0
+    - Name: ammoModifer
+      Entry: 3
+      Data: 0
+    - Name: defensiveValue
+      Entry: 3
+      Data: 0
+    - Name: protectionValue
+      Entry: 3
+      Data: 0
+    - Name: reductionPercentage
+      Entry: 3
+      Data: 0
+    - Name: protectionValueDiceRolls
+      Entry: 3
+      Data: 0
+    - Name: diceRollAmount
+      Entry: 3
+      Data: 0
+    - Name: shieldDV
+      Entry: 3
+      Data: 0
+    - Name: evadeDV
+      Entry: 3
+      Data: 0
+    - Name: armorWeight
+      Entry: 4
+      Data: 0
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: scene
+      Entry: 1
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isPlayer
+      Entry: 5
+      Data: false
 --- !u!212 &2090453701
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26886,19 +28714,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].color.b
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].color.g
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].color.r
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].itemType
@@ -26906,15 +28734,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].itemWeight
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].itemQuality
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].weightClass
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].isIdentified
@@ -26922,7 +28750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].itemMaterial
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].weight.value
@@ -26937,6 +28765,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].weight.weightClass
       value: 0
       objectReference: {fileID: 0}
@@ -26945,8 +28777,90 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"Hp","value":{"$id":0,"$type":"System.Int32, mscorlib",0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"Inventory","value":{"$id":0,"$type":"System.Collections.Generic.List`1[[RLSKTD.General.Item,
+        Project.Runtime]], mscorlib","$rlength":1,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.Item,
+        Project.Runtime","Name":null,"Description":null,"ItemType":0,"ItemQuality":0,"ItemMaterial":0,"WeightClass":0,"ItemWeight":0.1,"Color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.8,0.5,0.2,1},"IsIdentified":false,"name":null,"description":null,"itemMaterial":0,"itemType":0,"itemQuality":0,"weightClass":0,"itemWeight":0.1,"isIdentified":false,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.8,0.5,0.2,1}}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"Inventory.[0]","value":{"$id":0,"$type":"RLSKTD.General.Item,
+        Project.Runtime","Name":null,"Description":null,"ItemType":0,"ItemQuality":0,"ItemMaterial":0,"WeightClass":0,"ItemWeight":0.1,"Color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.8,0.5,0.2,1},"IsIdentified":false,"name":null,"description":null,"itemMaterial":0,"itemType":0,"itemQuality":0,"weightClass":0,"itemWeight":0.1,"isIdentified":false,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.8,0.5,0.2,1}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[3]
+      value: '"path":"Inventory.[0].Color","value":{"$id":0,"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.8,0.5,0.2,1}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[4]
+      value: '"path":"Inventory.[0].Description","value":null'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[5]
+      value: '"path":"Inventory.[0].IsIdentified","value":{"$id":0,"$type":"System.Boolean,
+        mscorlib",false}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[6]
+      value: '"path":"Inventory.[0].ItemMaterial","value":{"$id":0,"$type":"RLSKTD.General.ItemHelper.Material+MaterialEnum,
+        Project.Runtime",0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[7]
+      value: '"path":"Inventory.[0].ItemQuality","value":{"$id":0,"$type":"RLSKTD.General.ItemHelper.Quality+ItemQuality,
+        Project.Runtime",0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[8]
+      value: '"path":"Inventory.[0].ItemType","value":{"$id":0,"$type":"RLSKTD.General.ItemHelper.Type+TypeEnum,
+        Project.Runtime",0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[9]
+      value: '"path":"Inventory.[0].ItemWeight","value":{"$id":0,"$type":"System.Single,
+        mscorlib",0.1}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].material.itemMaterial
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[10]
+      value: '"path":"Inventory.[0].Name","value":null'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[11]
+      value: '"path":"Inventory.[0].WeightClass","value":{"$id":0,"$type":"RLSKTD.General.ItemHelper.Weight+WeightEnum,
+        Project.Runtime",0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[12]
+      value: '"path":"isPlayer","value":{"$id":0,"$type":"System.Boolean, mscorlib",true}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[13]
+      value: '"path":"MaxHp","value":{"$id":0,"$type":"System.Int32, mscorlib",30}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[14]
+      value: '"path":"MaxMp","value":{"$id":0,"$type":"System.Int32, mscorlib",40}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[15]
+      value: '"path":"Mp","value":{"$id":0,"$type":"System.Int32, mscorlib",40}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868589, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: m_RootOrder

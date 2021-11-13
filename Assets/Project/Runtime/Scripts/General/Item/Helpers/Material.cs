@@ -1,10 +1,8 @@
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 namespace RLSKTD.General.ItemHelper
 {
     /// <summary> /// <summary> The material of an item. </summary>
-    [System.Serializable]
     public class Material 
     {
         /// <summary> Enumeration of all materials. </summary>
@@ -103,21 +101,15 @@ namespace RLSKTD.General.ItemHelper
         }
 
         /// <summary> The material of the item. </summary>
-        [SerializeField, HideInInspector]
         private MaterialEnum itemMaterial;
-        
-        [ShowInInspector] 
+
         public MaterialEnum ItemMaterial { get => itemMaterial; set => itemMaterial = value; }
 
-        public Material(MaterialEnum itemMaterial)
-        {
-            this.itemMaterial = itemMaterial;
-            
-        }
+        public Material(MaterialEnum itemMaterial) => this.itemMaterial = itemMaterial;
 
         /// <summary> Get the color of the material. (Incomplete)</summary>
         /// <returns> The color of the material. </returns>
-        public Color GetMaterialColor()
+        public static Color GetMaterialColor(MaterialEnum itemMaterial)
         {
             switch (itemMaterial)
             {
