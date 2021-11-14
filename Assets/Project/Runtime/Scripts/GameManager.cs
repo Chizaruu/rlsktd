@@ -6,6 +6,7 @@ using RLSKTD.AI.Pathfinding;
 using RLSKTD.Map;
 using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
+using RLSKTD.Character;
 
 /// <summary> The GameManager is the main controller of the game. It handles the game state and the game flow. </summary>
 //SerializedMonoBehaviour to check dictionaries, can be changed back to MonoBehaviour
@@ -52,11 +53,19 @@ public class GameManager : SerializedMonoBehaviour
 	public void TurnChange()
 	{
 		//Debug.Log("Turn Change");
-		CharactersWorldPos[characters[0].name] = MapManager.instance.floorMap.WorldToCell(characters[0].transform.position); //Update the player's world position
-		for(int i = 1; i < characters.Count; i++)
+		CharactersWorldPos[Characters[0].name] = MapManager.instance.floorMap.WorldToCell(Characters[0].transform.position); //Update the player's world position
+		for(int i = 1; i < Characters.Count; i++)
 		{
-			characters[i].GetComponent<NPCStateManager>().UpdateCurrentState(); //Update the current state of the character
-			CharactersWorldPos[characters[i].name] = MapManager.instance.floorMap.WorldToCell(characters[i].transform.position); //Update the character's world position
+            Characters[i].GetComponent<NPCStateManager>().UpdateCurrentState(); //Update the current state of the character
+			CharactersWorldPos[Characters[i].name] = MapManager.instance.floorMap.WorldToCell(Characters[i].transform.position); //Update the character's world position
+			if (GameManager.instance.Characters[0].GetComponent<FOV>().VisibleTiles.Contains(CharactersWorldPos[Characters[i].name])) //If the character is visible to the player
+            {
+                Characters[i].gameObject.GetComponent<SpriteRenderer>().enabled = true; //Enable the sprite renderer
+            }
+            else
+            {
+                Characters[i].gameObject.GetComponent<SpriteRenderer>().enabled = false; //Disable the sprite renderer
+            }
 			isPlaying = true; //Set isPlaying to true
 		}
 		StartCoroutine(waiting()); //Start waiting coroutine
