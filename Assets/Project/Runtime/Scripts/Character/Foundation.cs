@@ -4,6 +4,8 @@ using System.IO;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using RLSKTD.General;
+using RLSKTD.Character.NPC;
+using RLSKTD.Character.NPC.State;
 
 /// <summary> Holds all the scripts for a character </summary>
 namespace RLSKTD.Character
@@ -14,6 +16,8 @@ namespace RLSKTD.Character
         [SerializeField, HideInInspector]
 	    private CharacterState state = new CharacterState(); // Character State - GitHub Co-Pilot
         
+        [OdinSerialize, TabGroup("Information")]private bool isPlayer; // Used to determine if the character is the player or not
+
         [ShowInInspector, TabGroup("Information")]public string CharacterName{ get => this.state.characterName; set => this.state.characterName = value; }
         [ShowInInspector, TabGroup("Information")]public string CharacterAlias { get => this.state.characterAlias; set => this.state.characterAlias = value; }
         [ShowInInspector, TabGroup("Information")]public string Race { get => this.state.race; set => this.state.race = value; }
@@ -21,6 +25,7 @@ namespace RLSKTD.Character
         [ShowInInspector, TabGroup("Information")]public string ClassPreset { get => this.state.classPreset; set => this.state.classPreset = value; }
         [ShowInInspector, TabGroup("Information")]public string Religion { get => this.state.religion; set => this.state.religion = value; }
         [ShowInInspector, TabGroup("Information")]public string Guild { get => this.state.guild; set => this.state.guild = value; }
+        [ShowInInspector, TabGroup("Information")]public string Description { get => this.state.description; set => this.state.description = value; }
         
         [ShowInInspector, TabGroup("Information")]public int Age { get => this.state.age; set => this.state.age = value; }
         [ShowInInspector, TabGroup("Information")]public int Height { get => this.state.height; set => this.state.height = value; }
@@ -30,9 +35,11 @@ namespace RLSKTD.Character
         [ShowInInspector, TabGroup("Information")]public int RequiredExperience { get => this.state.requiredExperience; set => this.state.requiredExperience = (10 * Level) * (101 + Level); }
         [ShowInInspector, TabGroup("Information")]public int Gold { get => this.state.gold; set => this.state.gold = value; }
         [ShowInInspector, TabGroup("Information")]public int PP { get => this.state.pp; set => this.state.pp = value; }
+
         [ShowInInspector, TabGroup("Information")]public Vector3 Position { get => this.state.position; set => this.state.position = this.gameObject.transform.position; }
         [ShowInInspector, TabGroup("Information")]public string Scene { get => this.state.scene; set => this.state.scene = value; } 
-        [OdinSerialize, TabGroup("Information")]private bool isPlayer; // Used to determine if the character is the player or not
+        [ShowInInspector, TabGroup("Information")]public bool IsAggressive { get => this.state.isAggressive; set => this.state.isAggressive = value; }
+        [ShowInInspector, TabGroup("Information")]public IState NpcState { get => this.state.npcState; set => this.state.npcState = value; }
 
         [ShowInInspector, TabGroup("Stats")]public int Strength { get => this.state.strength; set => this.state.strength = value; }
         [ShowInInspector, TabGroup("Stats")]public int Constitution { get => this.state.constitution; set => this.state.constitution = value; }
@@ -178,19 +185,10 @@ namespace RLSKTD.Character
         [ShowInInspector, TabGroup("Group 2", "Defense")]public int EvadeDV { get => this.state.evadeDV; set => this.state.evadeDV = value; }
         
         [ShowInInspector, TabGroup("Group 2", "Defense")]public double ArmorWeight { get => this.state.armorWeight; set => this.state.armorWeight = value; }
-        
+        public bool IsPlayer { get => isPlayer;}
+
         /// <summary> Adds the character to the list of characters in the game. </summary>
-        private void Start()
-        {
-            if (isPlayer)
-            {
-                GameManager.instance.AddCharacter(this.gameObject, true);
-            }
-            else
-            {
-                GameManager.instance.AddCharacter(this.gameObject, false);
-            }
-        }   
+        private void Start() => GameManager.instance.AddCharacter(this.gameObject);
 
         /// <summary> Save the character's state to a file </summary>
         public void SaveState(string path)
@@ -199,6 +197,7 @@ namespace RLSKTD.Character
             Position = this.gameObject.transform.position; // Set the position
             
             if(!isPlayer){
+                IsAggressive = GetComponent<NPCStateManager>().IsAggressive;
                 path = Path.Combine(path, GameManager.instance.sceneName);
 
                 if(!Directory.Exists(path)){
@@ -354,5 +353,8 @@ namespace RLSKTD.Character
         public Vector3 position; //The position of the character
 
         public string scene; //The scene the character is in
+        public string description; //The description of the character
+        public bool isAggressive; //If the character is aggressive or not.
+        public IState npcState;
     }
 }

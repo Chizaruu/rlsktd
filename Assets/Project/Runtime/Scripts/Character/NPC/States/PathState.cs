@@ -14,8 +14,6 @@ namespace RLSKTD.Character.NPC.State
 
         private Vector3 destination; // The destination the NPC will move to
 
-        private bool canMove; // If the NPC can move
-
         /// <summary> Called when the Path state is entered </summary>
         public void Enter(NPCStateManager manager)
         {
@@ -25,18 +23,10 @@ namespace RLSKTD.Character.NPC.State
 
             destination = path.Pop() + new Vector3(0.5f, 0.5f, 0); // Get the destination the NPC will move to
 
-            canMove = true; // Set the canMove bool to true
+            Vector3Int destinationWorldPos = MapManager.instance.floorMap.WorldToCell(destination);
 
-            for(int i = 0; i < GameManager.instance.Characters.Count; i++) 
-            {
-                // If the NPC is colliding with another NPC
-                if(GameManager.instance.Characters[i].transform.position.Equals(destination))
-                {
-                    canMove = false; // Set canMove to false
-                }
-            }
-            // If the NPC can move
-            if(canMove)
+            // If the NPC is colliding with another NPC
+            if(!GameManager.instance.Characters.ContainsValue(destinationWorldPos))
             {
                 manager.transform.position = destination; // Move the NPC to the destination
             }
@@ -55,15 +45,14 @@ namespace RLSKTD.Character.NPC.State
             if(path != null) 
             {
                 float distance = Vector2.Distance(manager.Target.position, manager.transform.position); // Get the distance between the NPC and the target
-                manager.TargetWorldPos = MapManager.instance.floorMap.WorldToCell(manager.Target.position); // Get the target's world position
                 
                 // If the NPC is ranged and the distance is less than equal the NPC's range and the target is visible
-                if(distance <= manager.AttackRange && manager.IsRanged && manager.FOV.VisibleTiles.Contains(manager.TargetWorldPos))
+                if(distance <= manager.AttackRange && manager.IsRanged && manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]))
                 {
                     manager.ChangeState(new AttackState()); // Change the state to attack
                 }
                 // If the NPC is melee and the distance is less than equal the NPC's range and the target is visible
-                else if(distance <= manager.AttackRange && !manager.IsRanged && manager.FOV.VisibleTiles.Contains(manager.TargetWorldPos))
+                else if(distance <= manager.AttackRange && !manager.IsRanged && manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]))
                 {
                     manager.ChangeState(new AttackState()); // Change the state to attack
                 }
@@ -73,19 +62,10 @@ namespace RLSKTD.Character.NPC.State
 
                     destination = path.Pop() + new Vector3(0.5f, 0.5f, 0); // Get the destination the NPC will move to
 
-                    canMove = true; // Set the canMove bool to true
+                    Vector3Int destinationWorldPos = MapManager.instance.floorMap.WorldToCell(destination);
 
                     // If the NPC is colliding with another NPC
-                    for(int i = 0; i < GameManager.instance.Characters.Count; i++)
-                    {
-                        // If the NPC is colliding with another NPC
-                        if(GameManager.instance.Characters[i].transform.position.Equals(destination))
-                        {
-                            canMove = false; // Set canMove to false
-                        }
-                    }
-                    // If the NPC can move and the destination isn't the same as the Target
-                    if(destination != manager.Target.position && canMove)
+                    if(!GameManager.instance.Characters.ContainsValue(destinationWorldPos) && destination != manager.Target.position)
                     {
                         manager.transform.position = destination; // Move the NPC to the destination
                     }

@@ -212,7 +212,16 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: Inventory
+      Entry: 6
+      Data: 
+    - Name: Equipment
+      Entry: 6
+      Data: 
+    - Name: isPlayer
+      Entry: 5
+      Data: true
   state:
     characterName: 
     characterAlias: 
@@ -238,8 +247,8 @@ MonoBehaviour:
     charisma: 0
     hp: 0
     mp: 0
-    maxHP: 0
-    maxMP: 0
+    maxHp: 0
+    maxMp: 0
     sanity: 15
     intiative: 0
     speed: 0
@@ -290,8 +299,8 @@ MonoBehaviour:
     shieldDV: 0
     evadeDV: 0
     armorWeight: 0
-    transform: {fileID: 4018929822063868589}
-  isPlayer: 1
+    position: {x: 0, y: 0, z: 0}
+    scene: 
 --- !u!114 &4018929822063868567
 MonoBehaviour:
   m_ObjectHideFlags: 0

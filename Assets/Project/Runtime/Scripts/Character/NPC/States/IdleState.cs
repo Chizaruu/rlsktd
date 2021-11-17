@@ -22,9 +22,9 @@ namespace RLSKTD.Character.NPC.State
         public void Update()
         {
             //If the player is within the NPC's visibletiles and the NPC is Aggressive
-            if(manager.FOV.VisibleTiles.Contains(GameManager.instance.CharactersWorldPos[GameManager.instance.Characters[0].name]) && manager.IsAggressive)
+            if(manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[GameManager.instance.Player]) && manager.IsAggressive)
             {
-                manager.Target = GameManager.instance.Characters[0].transform; // Set the target
+                manager.Target = GameManager.instance.Player.transform; // Set the target
                 manager.ChangeState(new PathState()); // Change to the path state
             }
         }

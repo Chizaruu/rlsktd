@@ -84,7 +84,7 @@ namespace RLSKTD.Character.Player
         private bool CanMove(Vector3 vec)
         {
             Vector3Int gridPosition = MapManager.instance.floorMap.WorldToCell(transform.position + vec); //grid position of player
-            if (!MapManager.instance.floorMap.HasTile(gridPosition) || MapManager.instance.obstacleMap.HasTile(gridPosition) || NPCInNextTile(futurevec))
+            if (!MapManager.instance.floorMap.HasTile(gridPosition) || MapManager.instance.obstacleMap.HasTile(gridPosition) || NPCInNextTile(gridPosition))
                 return false; //if player can't move, return false
             return true;//if player can move, return true
         }
@@ -99,17 +99,16 @@ namespace RLSKTD.Character.Player
         }
         
         /// <summary> Check if NPC is in next tile. </summary>
-        private bool NPCInNextTile(Vector3 futurevec)
+        private bool NPCInNextTile(Vector3Int gridPosition)
         {
-            for(int i = 1; i < GameManager.instance.Characters.Count; i++)
+            if(GameManager.instance.Characters.ContainsValue(gridPosition))
             {
-                //if NPC is in next tile, return true
-                if(GameManager.instance.Characters[i].transform.position.Equals(futurevec))
-                {
-                    return true;
-                }
+                return true;
             }
-            return false;//if NPC is not in next tile, return false
+            else
+            {
+                return false;
+            }
         }
     } 
 }

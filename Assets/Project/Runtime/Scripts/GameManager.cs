@@ -7,6 +7,8 @@ using RLSKTD.Map;
 using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
 using RLSKTD.Character;
+using Sirenix.Serialization;
+using System.Linq;
 
 /// <summary> The GameManager is the main controller of the game. It handles the game state and the game flow. </summary>
 //SerializedMonoBehaviour to check dictionaries, can be changed back to MonoBehaviour
@@ -16,22 +18,24 @@ public class GameManager : SerializedMonoBehaviour
 
 	public string sceneName; //name of the scene
 
-	[SerializeField]private float time = 0.1f;	//Time between each frame
+	[OdinSerialize]private float time = 0.1f;	//Time between each frame
 
-	[SerializeField]private bool isPlaying = false; //Is the game currently playing?
-	[SerializeField]private bool isPaused = false; //Is the game paused?
-	[SerializeField]private bool diagonalMovement = true; //true = diagonal movement, false = no diagonal movement
-	
-	[SerializeField]private List<GameObject> characters; //List of all characters in the scene
-	[SerializeField]private Dictionary<string, Vector3Int> charactersWorldPos = new Dictionary<string, Vector3Int>(); //Key is character name, value is world position
-	[SerializeField]private Dictionary<Vector3Int, Node> allNodes = new Dictionary<Vector3Int, Node>(); //All nodes in the map
+	[OdinSerialize]private bool isPlaying = false; //Is the game currently playing?
+	[OdinSerialize]private bool isPaused = false; //Is the game paused?
+	[OdinSerialize]private bool diagonalMovement = true; //true = diagonal movement, false = no diagonal movement
+
+	[OdinSerialize]private GameObject player; //Player
+
+	[OdinSerialize]private Dictionary<GameObject, Vector3Int> characters = new Dictionary<GameObject, Vector3Int>(); //Dictionary of all characters and their world position
+	[OdinSerialize]private Dictionary<Vector3Int, Node> allNodes = new Dictionary<Vector3Int, Node>(); //All nodes in the map
 
 
     public bool IsPlaying { get => isPlaying; set => isPlaying = value; } //Is the game currently playing?
 	public bool DiagonalMovement { get => diagonalMovement; set => diagonalMovement = value; } //true = diagonal movement, false = no diagonal movement
 
-	public List<GameObject> Characters { get => characters; set => characters = value; } //List of all characters in the scene
-	public Dictionary<string, Vector3Int> CharactersWorldPos { get => charactersWorldPos; set => charactersWorldPos = value; } //Key is character name, value is world position
+	public GameObject Player { get => player; set => player = value; } //Player
+	
+	public Dictionary<GameObject, Vector3Int> Characters { get => characters; set => characters = value; } //Dictionary of all characters and their world position
 	public Dictionary<Vector3Int, Node> AllNodes { get => allNodes; set => allNodes = value; } //All nodes in the map
 
 	/// <summary> Awake is called when the script instance is being loaded. </summary>
@@ -52,22 +56,31 @@ public class GameManager : SerializedMonoBehaviour
 	/// <summary> This function is called when the player ends its turn. </summary>
 	public void TurnChange()
 	{
-		//Debug.Log("Turn Change");
-		CharactersWorldPos[Characters[0].name] = MapManager.instance.floorMap.WorldToCell(Characters[0].transform.position); //Update the player's world position
-		for(int i = 1; i < Characters.Count; i++)
+		foreach(GameObject character in Characters.Keys.ToList()) //For each character
 		{
-            Characters[i].GetComponent<NPCStateManager>().UpdateCurrentState(); //Update the current state of the character
-			CharactersWorldPos[Characters[i].name] = MapManager.instance.floorMap.WorldToCell(Characters[i].transform.position); //Update the character's world position
-			if (GameManager.instance.Characters[0].GetComponent<FOV>().VisibleTiles.Contains(CharactersWorldPos[Characters[i].name])) //If the character is visible to the player
-            {
-                Characters[i].gameObject.GetComponent<SpriteRenderer>().enabled = true; //Enable the sprite renderer
-            }
-            else
-            {
-                Characters[i].gameObject.GetComponent<SpriteRenderer>().enabled = false; //Disable the sprite renderer
-            }
-			isPlaying = true; //Set isPlaying to true
+			switch (character.GetComponent<Foundation>().IsPlayer)
+			{
+				case true: //If it is a player
+					Characters[character] = MapManager.instance.floorMap.WorldToCell(character.transform.position);
+					break;
+				case false: //If it is not a player
+					character.GetComponent<NPCStateManager>().UpdateCurrentState(); //Update the current state of the character
+					Characters[character] = MapManager.instance.floorMap.WorldToCell(character.transform.position);
+
+					if (Player.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
+					{
+						character.gameObject.GetComponent<SpriteRenderer>().enabled = true; //Enable the sprite renderer
+					}
+					else
+					{
+						character.gameObject.GetComponent<SpriteRenderer>().enabled = false; //Disable the sprite renderer
+					}
+					
+					isPlaying = true; //Set isPlaying to true
+					break;
+			}
 		}
+
 		StartCoroutine(waiting()); //Start waiting coroutine
 	}
 
@@ -79,24 +92,33 @@ public class GameManager : SerializedMonoBehaviour
 	}
 	
 	/// <summary> Add a character to the character and world position lists. </summary>
-	public void AddCharacter(GameObject character, bool isPlayer)
+	public void AddCharacter(GameObject character)
 	{
-		if (isPlayer)
+		switch (character.GetComponent<Foundation>().IsPlayer)
 		{
-			characters.Insert(0, character);
+			case true:
+				player = character;
+				Characters.Add(character, MapManager.instance.floorMap.WorldToCell(character.transform.position));
+				break;
+			case false:
+				Characters.Add(character, MapManager.instance.floorMap.WorldToCell(character.transform.position));
+
+				if (character.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
+				{
+					character.gameObject.GetComponent<SpriteRenderer>().enabled = true; //Enable the sprite renderer
+				}
+				else
+				{
+					character.gameObject.GetComponent<SpriteRenderer>().enabled = false; //Disable the sprite renderer
+				}
+				break;
 		}
-		else
-		{
-			characters.Add(character);
-		}
-		charactersWorldPos.Add(character.name, MapManager.instance.floorMap.WorldToCell(character.transform.position));
 	}
 
-	/// <summary> Remove a character from the character and world position lists. </summary>
+	/// <summary> Remove a character from the character dictionary. </summary>
 	public void RemoveCharacter(GameObject character)
 	{
 		characters.Remove(character);
-		charactersWorldPos.Remove(character.name);
 	}
 }
 

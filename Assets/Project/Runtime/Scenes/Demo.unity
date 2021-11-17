@@ -558,8 +558,8 @@ GameObject:
   - component: {fileID: 15069825}
   - component: {fileID: 15069822}
   - component: {fileID: 15069821}
-  - component: {fileID: 15069815}
   - component: {fileID: 15069814}
+  - component: {fileID: 15069815}
   m_Layer: 0
   m_Name: Test NPC (3)
   m_TagString: NPC
@@ -607,13 +607,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b597041396bf3540a3ba359ed604bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetWorldPos: {x: 0, y: 0, z: 0}
-  isAggressive: 1
-  isRanged: 0
-  attackRange: 1.5
-  aStar: {fileID: 15069814}
-  fov: {fileID: 15069821}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 15069814}
+    - {fileID: 15069821}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: currentState
+      Entry: 6
+      Data: 
+    - Name: target
+      Entry: 6
+      Data: 
+    - Name: isAggressive
+      Entry: 5
+      Data: true
+    - Name: isRanged
+      Entry: 5
+      Data: false
+    - Name: attackRange
+      Entry: 4
+      Data: 1.5
+    - Name: aStar
+      Entry: 10
+      Data: 0
+    - Name: fov
+      Entry: 10
+      Data: 1
 --- !u!114 &15069821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,6 +764,8 @@ MonoBehaviour:
     armorWeight: 0
     position: {x: 0, y: 0, z: 0}
     scene: 
+    description: 
+    isAggressive: 0
 --- !u!212 &15069825
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1868,7 +1895,6 @@ GameObject:
   - component: {fileID: 291262240}
   - component: {fileID: 291262239}
   - component: {fileID: 291262238}
-  - component: {fileID: 291262237}
   m_Layer: 5
   m_Name: Load
   m_TagString: Untagged
@@ -1896,18 +1922,6 @@ RectTransform:
   m_AnchoredPosition: {x: 769.99994, y: 307.9309}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &291262237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291262235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &291262238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4239,7 +4253,6 @@ GameObject:
   - component: {fileID: 614282705}
   - component: {fileID: 614282704}
   - component: {fileID: 614282703}
-  - component: {fileID: 614282702}
   m_Layer: 5
   m_Name: Effect (7)
   m_TagString: Untagged
@@ -4267,18 +4280,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &614282702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614282700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &614282703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4727,12 +4728,12 @@ GameObject:
   - component: {fileID: 744098621}
   - component: {fileID: 744098620}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &744098619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4849,6 +4850,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744098618}
   m_CullTransparentMesh: 1
+--- !u!1 &745145790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4018929822063868591, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+  m_PrefabInstance: {fileID: 4018929821437009463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &758939581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,7 +5801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &905907880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6024,7 +6030,6 @@ GameObject:
   - component: {fileID: 918842744}
   - component: {fileID: 918842743}
   - component: {fileID: 918842742}
-  - component: {fileID: 918842741}
   m_Layer: 5
   m_Name: Effect
   m_TagString: Untagged
@@ -6052,18 +6057,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &918842741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918842739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &918842742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8521,8 +8514,8 @@ GameObject:
   - component: {fileID: 973598161}
   - component: {fileID: 973598158}
   - component: {fileID: 973598157}
-  - component: {fileID: 973598151}
   - component: {fileID: 973598150}
+  - component: {fileID: 973598151}
   m_Layer: 0
   m_Name: Test NPC (1)
   m_TagString: NPC
@@ -8570,13 +8563,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b597041396bf3540a3ba359ed604bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetWorldPos: {x: 0, y: 0, z: 0}
-  isAggressive: 1
-  isRanged: 0
-  attackRange: 1.5
-  aStar: {fileID: 973598150}
-  fov: {fileID: 973598157}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 973598150}
+    - {fileID: 973598157}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: currentState
+      Entry: 6
+      Data: 
+    - Name: target
+      Entry: 6
+      Data: 
+    - Name: isAggressive
+      Entry: 5
+      Data: true
+    - Name: isRanged
+      Entry: 5
+      Data: false
+    - Name: attackRange
+      Entry: 4
+      Data: 1.5
+    - Name: aStar
+      Entry: 10
+      Data: 0
+    - Name: fov
+      Entry: 10
+      Data: 1
 --- !u!114 &973598157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8702,6 +8720,8 @@ MonoBehaviour:
     armorWeight: 0
     position: {x: 0, y: 0, z: 0}
     scene: 
+    description: 
+    isAggressive: 0
 --- !u!212 &973598161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9790,7 +9810,6 @@ GameObject:
   - component: {fileID: 1147884422}
   - component: {fileID: 1147884421}
   - component: {fileID: 1147884420}
-  - component: {fileID: 1147884419}
   m_Layer: 5
   m_Name: Effect (4)
   m_TagString: Untagged
@@ -9818,18 +9837,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1147884419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147884417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1147884420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10279,8 +10286,8 @@ GameObject:
   - component: {fileID: 1226539681}
   - component: {fileID: 1226539678}
   - component: {fileID: 1226539677}
-  - component: {fileID: 1226539671}
   - component: {fileID: 1226539670}
+  - component: {fileID: 1226539671}
   m_Layer: 0
   m_Name: Test NPC (2)
   m_TagString: NPC
@@ -10328,13 +10335,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b597041396bf3540a3ba359ed604bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetWorldPos: {x: 0, y: 0, z: 0}
-  isAggressive: 1
-  isRanged: 1
-  attackRange: 5.5
-  aStar: {fileID: 1226539670}
-  fov: {fileID: 1226539677}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1226539670}
+    - {fileID: 1226539677}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: currentState
+      Entry: 6
+      Data: 
+    - Name: target
+      Entry: 6
+      Data: 
+    - Name: isAggressive
+      Entry: 5
+      Data: true
+    - Name: isRanged
+      Entry: 5
+      Data: false
+    - Name: attackRange
+      Entry: 4
+      Data: 1.5
+    - Name: aStar
+      Entry: 10
+      Data: 0
+    - Name: fov
+      Entry: 10
+      Data: 1
 --- !u!114 &1226539677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10460,6 +10492,8 @@ MonoBehaviour:
     armorWeight: 0
     position: {x: 0, y: 0, z: 0}
     scene: 
+    description: 
+    isAggressive: 0
 --- !u!212 &1226539681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10651,7 +10685,6 @@ GameObject:
   - component: {fileID: 1272391419}
   - component: {fileID: 1272391418}
   - component: {fileID: 1272391417}
-  - component: {fileID: 1272391416}
   m_Layer: 5
   m_Name: Effect (2)
   m_TagString: Untagged
@@ -10679,18 +10712,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1272391416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272391414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1272391417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11130,7 +11151,6 @@ GameObject:
   - component: {fileID: 1347459232}
   - component: {fileID: 1347459231}
   - component: {fileID: 1347459230}
-  - component: {fileID: 1347459229}
   m_Layer: 5
   m_Name: Effect (5)
   m_TagString: Untagged
@@ -11158,18 +11178,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1347459229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347459227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1347459230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18003,7 +18011,6 @@ GameObject:
   - component: {fileID: 1439297232}
   - component: {fileID: 1439297231}
   - component: {fileID: 1439297230}
-  - component: {fileID: 1439297229}
   m_Layer: 5
   m_Name: Effect (6)
   m_TagString: Untagged
@@ -18031,18 +18038,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1439297229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439297227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1439297230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18548,7 +18543,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
   m_PrefabInstance: {fileID: 4018929821437009463}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 745145790}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f998baa988570c24b8d7fb4f27bfc957, type: 3}
@@ -18814,20 +18809,36 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 745145790}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: charactersWorldPos
+    - Name: time
+      Entry: 4
+      Data: 0.15
+    - Name: isPlaying
+      Entry: 5
+      Data: false
+    - Name: isPaused
+      Entry: 5
+      Data: false
+    - Name: diagonalMovement
+      Entry: 5
+      Data: true
+    - Name: player
+      Entry: 10
+      Data: 0
+    - Name: characters
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.Vector3Int,
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.GameObject, UnityEngine.CoreModule],[UnityEngine.Vector3Int,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -18861,11 +18872,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneName: Demo
-  time: 0.15
-  isPlaying: 0
-  isPaused: 0
-  diagonalMovement: 1
-  characters: []
 --- !u!4 &1596236438
 Transform:
   m_ObjectHideFlags: 0
@@ -19092,7 +19098,6 @@ GameObject:
   - component: {fileID: 1647571276}
   - component: {fileID: 1647571275}
   - component: {fileID: 1647571274}
-  - component: {fileID: 1647571273}
   m_Layer: 5
   m_Name: Effect (1)
   m_TagString: Untagged
@@ -19120,18 +19125,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1647571273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1647571271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1647571274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26476,8 +26469,8 @@ GameObject:
   - component: {fileID: 2090453701}
   - component: {fileID: 2090453698}
   - component: {fileID: 2090453697}
-  - component: {fileID: 2090453691}
   - component: {fileID: 2090453703}
+  - component: {fileID: 2090453691}
   m_Layer: 0
   m_Name: Test NPC
   m_TagString: NPC
@@ -26497,13 +26490,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b597041396bf3540a3ba359ed604bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetWorldPos: {x: 0, y: 0, z: 0}
-  isAggressive: 1
-  isRanged: 0
-  attackRange: 1.5
-  aStar: {fileID: 2090453703}
-  fov: {fileID: 2090453697}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 2090453703}
+    - {fileID: 2090453697}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: currentState
+      Entry: 6
+      Data: 
+    - Name: target
+      Entry: 6
+      Data: 
+    - Name: isAggressive
+      Entry: 5
+      Data: true
+    - Name: isRanged
+      Entry: 5
+      Data: false
+    - Name: attackRange
+      Entry: 4
+      Data: 1.5
+    - Name: aStar
+      Entry: 10
+      Data: 0
+    - Name: fov
+      Entry: 10
+      Data: 1
 --- !u!114 &2090453697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26629,6 +26647,8 @@ MonoBehaviour:
     armorWeight: 0
     position: {x: 0, y: 0, z: 0}
     scene: 
+    description: 
+    isAggressive: 0
 --- !u!212 &2090453701
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26721,7 +26741,6 @@ GameObject:
   - component: {fileID: 2101893131}
   - component: {fileID: 2101893130}
   - component: {fileID: 2101893129}
-  - component: {fileID: 2101893128}
   m_Layer: 5
   m_Name: Effect (3)
   m_TagString: Untagged
@@ -26749,18 +26768,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2101893128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101893126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15fefe4b034b5a74aa432754c9e4cc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2101893129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26913,7 +26920,7 @@ PrefabInstance:
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.size
       value: 1
