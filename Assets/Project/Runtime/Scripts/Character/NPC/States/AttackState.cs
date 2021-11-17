@@ -14,11 +14,9 @@ namespace RLSKTD.Character.NPC.State
         public void Enter(NPCStateManager manager)
         {
             this.manager = manager; // Set the NPC State Manager.
-
-            manager.TargetWorldPos = MapManager.instance.floorMap.WorldToCell(manager.Target.position); // Set the target world position.
             
             //If the target is visible, then attack.
-            if(manager.FOV.VisibleTiles.Contains(manager.TargetWorldPos))
+            if(manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]))
             {
                 AttackAction.Attack(manager.IsRanged, manager.Target.gameObject); // Attack the target.
             }
@@ -33,10 +31,8 @@ namespace RLSKTD.Character.NPC.State
         /// <summary> Called when the state is updated. </summary>
         public void Update()
         {
-            manager.TargetWorldPos = MapManager.instance.floorMap.WorldToCell(manager.Target.position); // Set the target world position.
-
             //If the target is visible, then attack.
-            if(manager.FOV.VisibleTiles.Contains(manager.TargetWorldPos))
+            if(manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]))
             {
                 AttackAction.Attack(manager.IsRanged, manager.Target.gameObject);
             }
@@ -47,7 +43,7 @@ namespace RLSKTD.Character.NPC.State
                 float distance = Vector2.Distance(manager.Target.position, manager.transform.position); // Get the distance between the target and the NPC.
 
                 //If the distance is greater than equal the attack range, then change to the chase state.
-                if(distance >= manager.AttackRange && manager.IsRanged || !manager.FOV.VisibleTiles.Contains(manager.TargetWorldPos) || distance >= 1.5f && !manager.IsRanged)
+                if(distance >= manager.AttackRange && manager.IsRanged || !manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]) || distance >= 1.5f && !manager.IsRanged)
                 {
                     manager.ChangeState(new PathState()); // Change to the path state.
                 }

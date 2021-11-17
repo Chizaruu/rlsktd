@@ -4,6 +4,7 @@ using RLSKTD.Character;
 using UnityEngine;
 using System.IO;
 using RLSKTD.Map;
+using RLSKTD.Character.NPC;
 
 /// <summary> SaveManager is a class that handles saving and loading of the game. </summary>
 public class SaveManager : MonoBehaviour
@@ -18,7 +19,7 @@ public class SaveManager : MonoBehaviour
             Debug.Log("Created directory: " + path);
         }
 
-        path = Path.Combine(path, GameManager.instance.Characters[0].GetComponent<Foundation>().CharacterName); //path = C:\Users\User\AppData\LocalLow\HumbleRPG\Saves\CharacterName
+        path = Path.Combine(path, GameManager.instance.Player.GetComponent<Foundation>().CharacterName); //path = C:\Users\User\AppData\LocalLow\HumbleRPG\Saves\CharacterName
 
         if(!Directory.Exists(path)){
             Directory.CreateDirectory (path); // Create the directory if it doesn't exist
@@ -31,7 +32,7 @@ public class SaveManager : MonoBehaviour
         MapSerializer.SaveMap(path, MapManager.instance.fogMap, MapManager.instance.fogTiles); //Save fogTiles to file
 
         //Save GameObjects using Foundation method SaveState(playerName)
-        foreach (GameObject unit in GameManager.instance.Characters)
+        foreach (GameObject unit in GameManager.instance.Characters.Keys)
         {
             unit.GetComponent<Foundation>().SaveState(path);  //Save the state of the character
         }
@@ -45,13 +46,12 @@ public class SaveManager : MonoBehaviour
         if(GameManager.instance.Characters.Count > 0)
         {
             //Destroy all Characters
-            foreach (GameObject character in GameManager.instance.Characters)
+            foreach (GameObject character in GameManager.instance.Characters.Keys)
             {
                 Destroy(character); //Destroy the character
             }
             
-            GameManager.instance.Characters = new List<GameObject>(); //Clear the Characters list
-            GameManager.instance.CharactersWorldPos = new Dictionary<string, Vector3Int>(); //Clear the CharactersWorldPos list
+            GameManager.instance.Characters = new Dictionary<GameObject, Vector3Int>(); //Clear the Characters list
         }
 
         string path = Path.Combine(Application.persistentDataPath, "Saves"); //path = C:\Users\User\AppData\LocalLow\HumbleRPG\Saves
@@ -100,6 +100,7 @@ public class SaveManager : MonoBehaviour
             GameObject npcInstance = Instantiate(Resources.Load<GameObject>("Prefabs/NPC"), Vector3.zero, Quaternion.identity); //Instantiate the NPC
             npcInstance.transform.SetParent(GameObject.Find("Characters").transform); //Set the NPC's parent to Characters
             npcInstance.GetComponent<Foundation>().LoadState(npcName, npcPath); //Load the NPC's state
+            npcInstance.GetComponent<NPCStateManager>().IsAggressive = npcInstance.GetComponent<Foundation>().IsAggressive; //Set the NPC's IsAggressive to the save value
             npcInstance.name = npcName; //Set the NPC's name to the npc name
         }  
     }

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8390743997519835302}
   - component: {fileID: 8390743997519835297}
   - component: {fileID: 8390743997519835298}
-  - component: {fileID: 8390743997519835352}
   - component: {fileID: 8390743997519835300}
+  - component: {fileID: 8390743997519835352}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -107,7 +107,16 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: Inventory
+      Entry: 6
+      Data: 
+    - Name: Equipment
+      Entry: 6
+      Data: 
+    - Name: isPlayer
+      Entry: 5
+      Data: false
   state:
     characterName: 
     characterAlias: 
@@ -133,8 +142,8 @@ MonoBehaviour:
     charisma: 0
     hp: 0
     mp: 0
-    maxHP: 0
-    maxMP: 0
+    maxHp: 0
+    maxMp: 0
     sanity: 15
     intiative: 0
     speed: 0
@@ -185,8 +194,8 @@ MonoBehaviour:
     shieldDV: 0
     evadeDV: 0
     armorWeight: 0
-    transform: {fileID: 8390743997519835301}
-  isPlayer: 0
+    position: {x: 0, y: 0, z: 0}
+    scene: 
 --- !u!114 &8390743997519835298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,25 +212,6 @@ MonoBehaviour:
   isSymmetrical: 0
   fovDistance: 7
   visibleTiles: []
---- !u!114 &8390743997519835352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390743997519835353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b597041396bf3540a3ba359ed604bff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetWorldPos: {x: 0, y: 0, z: 0}
-  isAggressive: 0
-  isRanged: 0
-  attackRange: 1.5
-  aStar: {fileID: 8390743997519835300}
-  fov: {fileID: 8390743997519835298}
 --- !u!114 &8390743997519835300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +226,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: 0}
   goalPos: {x: 0, y: 0, z: 0}
+--- !u!114 &8390743997519835352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390743997519835353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b597041396bf3540a3ba359ed604bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8390743997519835300}
+    - {fileID: 8390743997519835298}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: currentState
+      Entry: 7
+      Data: 0|RLSKTD.Character.NPC.State.IdleState, Project.Runtime
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: target
+      Entry: 6
+      Data: 
+    - Name: targetWorldPos
+      Entry: 7
+      Data: UnityEngine.Vector3Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isAggressive
+      Entry: 5
+      Data: false
+    - Name: isRanged
+      Entry: 5
+      Data: false
+    - Name: attackRange
+      Entry: 4
+      Data: 1.5
+    - Name: aStar
+      Entry: 10
+      Data: 0
+    - Name: fov
+      Entry: 10
+      Data: 1
