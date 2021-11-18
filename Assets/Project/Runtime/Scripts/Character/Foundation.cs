@@ -40,6 +40,7 @@ namespace RLSKTD.Character
         [ShowInInspector, TabGroup("Information")]public string Scene { get => this.state.scene; set => this.state.scene = value; } 
         [ShowInInspector, TabGroup("Information")]public bool IsAggressive { get => this.state.isAggressive; set => this.state.isAggressive = value; }
         [ShowInInspector, TabGroup("Information")]public IState NpcState { get => this.state.npcState; set => this.state.npcState = value; }
+        [ShowInInspector, TabGroup("Information")]public bool IsDead { get => this.state.isDead; set => this.state.isDead = value; }
 
         [ShowInInspector, TabGroup("Stats")]public int Strength { get => this.state.strength; set => this.state.strength = value; }
         [ShowInInspector, TabGroup("Stats")]public int Constitution { get => this.state.constitution; set => this.state.constitution = value; }
@@ -57,6 +58,7 @@ namespace RLSKTD.Character
                 {
                     case int n when n <= 0:
                         this.state.hp = 0;
+                        this.state.isDead = true;
                         Debug.Log(CharacterName + " has died.");
                         break;
                     case int n when n > this.state.maxHp:
@@ -355,6 +357,7 @@ namespace RLSKTD.Character
         public string scene; //The scene the character is in
         public string description; //The description of the character
         public bool isAggressive; //If the character is aggressive or not.
-        public IState npcState;
+        public IState npcState; //The state of the npc
+        public bool isDead; //If the character is dead or not.
     }
 }

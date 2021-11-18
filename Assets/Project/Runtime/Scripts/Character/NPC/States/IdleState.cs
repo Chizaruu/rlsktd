@@ -21,11 +21,25 @@ namespace RLSKTD.Character.NPC.State
         /// <summary> Called when the Idle state is updated </summary>
         public void Update()
         {
-            //If the player is within the NPC's visibletiles and the NPC is Aggressive
-            if(manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[GameManager.instance.Player]) && manager.IsAggressive)
+            switch(manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[GameManager.instance.Player]))
             {
-                manager.Target = GameManager.instance.Player.transform; // Set the target
-                manager.ChangeState(new PathState()); // Change to the path state
+                case true:
+                    switch(manager.IsAggressive)
+                    {
+                        case true:
+                            if(GameManager.instance.Player.GetComponent<Foundation>().IsDead) return; // If the player is dead, return.
+                            manager.Target = GameManager.instance.Player.transform; // Set the target
+                            manager.ChangeState(new PathState()); // Change to the path state
+                            break;
+                        case false:
+                            //Do nothing?
+                            //Maybe wave? 
+                            break;
+                    }
+                    break;
+                case false:
+                    //Do nothing?
+                    break;
             }
         }
     }

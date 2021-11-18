@@ -15,11 +15,7 @@ namespace RLSKTD.Character.NPC.State
         {
             this.manager = manager; // Set the NPC State Manager.
             
-            //If the target is visible, then attack.
-            if(manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]))
-            {
-                AttackAction.Attack(manager.IsRanged, manager.Target.gameObject); // Attack the target.
-            }
+            AttackAction.Attack(manager.IsRanged, manager.Target.gameObject); // Attack the target.
         }
 
         /// <summary> Called when the state is exited. </summary>
@@ -31,27 +27,33 @@ namespace RLSKTD.Character.NPC.State
         /// <summary> Called when the state is updated. </summary>
         public void Update()
         {
-            //If the target is visible, then attack.
-            if(manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]))
+            switch (manager.Target)
             {
-                AttackAction.Attack(manager.IsRanged, manager.Target.gameObject);
-            }
+                case null:
+                    manager.ChangeState(new IdleState()); // If the target is null, then change the state to idle.
+                    break;
+                case Transform target:
+                    switch (manager.Target.GetComponent<Foundation>().IsDead)
+                    {
+                        case true:
+                            manager.Target = null; // If the target is dead, then set the target to null.
+                            manager.ChangeState(new IdleState()); // Change to the idle state.
+                            break;
+                        case false:
+                            float distance = Vector2.Distance(manager.Target.position, manager.transform.position); // Get the distance between the target and the NPC.
 
-            //If the target isn't null
-            if(manager.Target != null)
-            {
-                float distance = Vector2.Distance(manager.Target.position, manager.transform.position); // Get the distance between the target and the NPC.
-
-                //If the distance is greater than equal the attack range, then change to the chase state.
-                if(distance >= manager.AttackRange && manager.IsRanged || !manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]) || distance >= 1.5f && !manager.IsRanged)
-                {
-                    manager.ChangeState(new PathState()); // Change to the path state.
-                }
-            }
-            //else the target is null
-            else
-            {
-                manager.ChangeState(new IdleState()); // Change to the idle state.
+                            //If the target is visible and in manager.AttackRange, then attack.
+                            if (manager.FOV.VisibleTiles.Contains(GameManager.instance.Characters[manager.Target.gameObject]) && distance <= manager.AttackRange)
+                            {
+                                AttackAction.Attack(manager.IsRanged, manager.Target.gameObject); // Attack the target.
+                            }
+                            else
+                            {
+                                manager.ChangeState(new PathState()); // If the target is not in range and is not visible, then change to the path state.
+                            }
+                            break;
+                    }              
+                    break;
             }
         }
     }
