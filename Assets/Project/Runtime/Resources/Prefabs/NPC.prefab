@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8390743997519835302}
   - component: {fileID: 8390743997519835297}
   - component: {fileID: 8390743997519835298}
-  - component: {fileID: 8390743997519835300}
   - component: {fileID: 8390743997519835352}
   m_Layer: 0
   m_Name: NPC
@@ -196,6 +195,8 @@ MonoBehaviour:
     armorWeight: 0
     position: {x: 0, y: 0, z: 0}
     scene: 
+    description: 
+    isAggressive: 0
 --- !u!114 &8390743997519835298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,20 +213,6 @@ MonoBehaviour:
   isSymmetrical: 0
   fovDistance: 7
   visibleTiles: []
---- !u!114 &8390743997519835300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390743997519835353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee6dd98d2339e944bd2ea9a9552eef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 0, z: 0}
-  goalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &8390743997519835352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +229,6 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 8390743997519835300}
     - {fileID: 8390743997519835298}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -258,7 +244,16 @@ MonoBehaviour:
     - Name: target
       Entry: 6
       Data: 
-    - Name: targetWorldPos
+    - Name: isAggressive
+      Entry: 5
+      Data: false
+    - Name: isRanged
+      Entry: 5
+      Data: false
+    - Name: attackRange
+      Entry: 4
+      Data: 1.5
+    - Name: startPos
       Entry: 7
       Data: UnityEngine.Vector3Int, UnityEngine.CoreModule
     - Name: 
@@ -273,18 +268,46 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: isAggressive
-      Entry: 5
-      Data: false
-    - Name: isRanged
-      Entry: 5
-      Data: false
-    - Name: attackRange
-      Entry: 4
-      Data: 1.5
-    - Name: aStar
-      Entry: 10
+    - Name: goalPos
+      Entry: 7
+      Data: UnityEngine.Vector3Int, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
       Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: current
+      Entry: 6
+      Data: 
+    - Name: openList
+      Entry: 6
+      Data: 
+    - Name: closedList
+      Entry: 6
+      Data: 
+    - Name: path
+      Entry: 6
+      Data: 
+    - Name: obstacleTiles
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[UnityEngine.Vector3Int, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: fov
       Entry: 10
-      Data: 1
+      Data: 0

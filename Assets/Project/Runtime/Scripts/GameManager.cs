@@ -56,27 +56,29 @@ public class GameManager : SerializedMonoBehaviour
 	/// <summary> This function is called when the player ends its turn. </summary>
 	public void TurnChange()
 	{
-		foreach(GameObject character in Characters.Keys.ToList()) //For each character
+		isPlaying = true; //Set isPlaying to true
+		Characters[Player] = MapManager.instance.floorMap.WorldToCell(Player.transform.position);
+
+		foreach(GameObject character in Characters.Keys.ToList()) //For each non player character
 		{
-			switch (character.GetComponent<Foundation>().IsPlayer)
+			switch(character.Equals(Player))
 			{
-				case true: //If it is a player
-					Characters[character] = MapManager.instance.floorMap.WorldToCell(character.transform.position);
-					break;
-				case false: //If it is not a player
+				case true:
+					continue;
+				case false:
 					character.GetComponent<NPCStateManager>().UpdateCurrentState(); //Update the current state of the character
 					Characters[character] = MapManager.instance.floorMap.WorldToCell(character.transform.position);
 
-					if (Player.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
+
+					switch(Player.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
 					{
-						character.gameObject.GetComponent<SpriteRenderer>().enabled = true; //Enable the sprite renderer
+						case true:
+							character.gameObject.GetComponent<SpriteRenderer>().enabled = true; //Enable the sprite renderer
+							break;
+						case false:
+							character.gameObject.GetComponent<SpriteRenderer>().enabled = false; //Disable the sprite renderer
+							break;
 					}
-					else
-					{
-						character.gameObject.GetComponent<SpriteRenderer>().enabled = false; //Disable the sprite renderer
-					}
-					
-					isPlaying = true; //Set isPlaying to true
 					break;
 			}
 		}
@@ -103,7 +105,7 @@ public class GameManager : SerializedMonoBehaviour
 			case false:
 				Characters.Add(character, MapManager.instance.floorMap.WorldToCell(character.transform.position));
 
-				if (character.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
+				if (Player.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
 				{
 					character.gameObject.GetComponent<SpriteRenderer>().enabled = true; //Enable the sprite renderer
 				}

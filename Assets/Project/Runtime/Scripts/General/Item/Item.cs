@@ -1,6 +1,5 @@
 using UnityEngine;
 using RLSKTD.General.ItemHelper;
-using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
 namespace RLSKTD.General

@@ -5,7 +5,7 @@ using RLSKTD.Map;
 namespace RLSKTD.Character
 {
     /// <summary> Shadow Cast Visibility Algorithm. </summary>
-    sealed class ShadowCastVisibility : MonoBehaviour
+    sealed class ShadowCastVisibility
     {
         //The original code is public domain, and is available at:
         //http://www.adammil.net/blog/v125_Roguelike_Vision_Algorithms.html#shadowcast
