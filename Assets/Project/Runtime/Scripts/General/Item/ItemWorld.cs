@@ -27,6 +27,8 @@ namespace RLSKTD.General
             spawnedItem.GetComponent<ItemWorld>().Item = item; //Set the item of the item
 
             spawnedItem.transform.SetParent(GameObject.Find("Interactables").transform); //Set the parent of the item to the interactables
+
+            GameManager.instance.AddItem(spawnedItem); //Add the item to the GameManager item Dictionary
         }
     }
 }
