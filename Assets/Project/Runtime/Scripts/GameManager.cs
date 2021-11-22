@@ -11,7 +11,6 @@ using Sirenix.Serialization;
 using System.Linq;
 
 /// <summary> The GameManager is the main controller of the game. It handles the game state and the game flow. </summary>
-//SerializedMonoBehaviour to check dictionaries, can be changed back to MonoBehaviour
 public class GameManager : SerializedMonoBehaviour
 {
 	public static GameManager instance; //Singleton
@@ -27,6 +26,7 @@ public class GameManager : SerializedMonoBehaviour
 	[OdinSerialize]private GameObject player; //Player
 
 	[OdinSerialize]private Dictionary<GameObject, Vector3Int> characters = new Dictionary<GameObject, Vector3Int>(); //Dictionary of all characters and their world position
+	[OdinSerialize]private Dictionary<GameObject, Vector3Int> items = new Dictionary<GameObject, Vector3Int>(); //Dictionary of all characters to remove
 	[OdinSerialize]private Dictionary<Vector3Int, Node> allNodes = new Dictionary<Vector3Int, Node>(); //All nodes in the map
 
 
@@ -36,6 +36,7 @@ public class GameManager : SerializedMonoBehaviour
 	public GameObject Player { get => player; set => player = value; } //Player
 	
 	public Dictionary<GameObject, Vector3Int> Characters { get => characters; set => characters = value; } //Dictionary of all characters and their world position
+	public Dictionary<GameObject, Vector3Int> Items { get => items; set => items = value; } //Dictionary of all characters to remove
 	public Dictionary<Vector3Int, Node> AllNodes { get => allNodes; set => allNodes = value; } //All nodes in the map
 
 	/// <summary> Awake is called when the script instance is being loaded. </summary>
@@ -57,18 +58,18 @@ public class GameManager : SerializedMonoBehaviour
 	public void TurnChange()
 	{
 		isPlaying = true; //Set isPlaying to true
-		Characters[Player] = MapManager.instance.floorMap.WorldToCell(Player.transform.position);
+		Characters[Player] = MapManager.instance.grid.WorldToCell(Player.transform.position); //Update the player's position
 
 		foreach(GameObject character in Characters.Keys.ToList()) //For each non player character
 		{
-			switch(character.Equals(Player))
+			//check if the character is the player and skip it
+			switch(character.Equals(Player)) 
 			{
 				case true:
 					continue;
 				case false:
 					character.GetComponent<NPCStateManager>().UpdateCurrentState(); //Update the current state of the character
-					Characters[character] = MapManager.instance.floorMap.WorldToCell(character.transform.position);
-
+					Characters[character] = MapManager.instance.grid.WorldToCell(character.transform.position);
 
 					switch(Player.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
 					{
@@ -93,17 +94,17 @@ public class GameManager : SerializedMonoBehaviour
 		isPlaying = false; //Set isPlaying to false
 	}
 	
-	/// <summary> Add a character to the character and world position lists. </summary>
+	/// <summary> Add a character to the character dictionary. </summary>
 	public void AddCharacter(GameObject character)
 	{
 		switch (character.GetComponent<Foundation>().IsPlayer)
 		{
 			case true:
 				player = character;
-				Characters.Add(character, MapManager.instance.floorMap.WorldToCell(character.transform.position));
+				Characters.Add(character, MapManager.instance.grid.WorldToCell(character.transform.position));
 				break;
 			case false:
-				Characters.Add(character, MapManager.instance.floorMap.WorldToCell(character.transform.position));
+				Characters.Add(character, MapManager.instance.grid.WorldToCell(character.transform.position));
 
 				if (Player.GetComponent<FOV>().VisibleTiles.Contains(Characters[character])) //If the character is visible to the player
 				{
@@ -121,6 +122,18 @@ public class GameManager : SerializedMonoBehaviour
 	public void RemoveCharacter(GameObject character)
 	{
 		characters.Remove(character);
+	}
+
+	/// <summary> Add an item to the item dictionary. </summary>
+	public void AddItem(GameObject item)
+	{
+		Items.Add(item, MapManager.instance.grid.WorldToCell(item.transform.position));
+	}
+
+	/// <summary> Remove an item from the item dictionary. </summary>
+	public void RemoveItem(GameObject item)
+	{
+		Items.Remove(item);
 	}
 }
 

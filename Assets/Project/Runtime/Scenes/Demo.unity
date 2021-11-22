@@ -766,6 +766,7 @@ MonoBehaviour:
     scene: 
     description: 
     isAggressive: 0
+    isDead: 0
 --- !u!212 &15069825
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8722,6 +8723,7 @@ MonoBehaviour:
     scene: 
     description: 
     isAggressive: 0
+    isDead: 0
 --- !u!212 &973598161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10494,6 +10496,7 @@ MonoBehaviour:
     scene: 
     description: 
     isAggressive: 0
+    isDead: 0
 --- !u!212 &1226539681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26649,6 +26652,7 @@ MonoBehaviour:
     scene: 
     description: 
     isAggressive: 0
+    isDead: 0
 --- !u!212 &2090453701
 SpriteRenderer:
   m_ObjectHideFlags: 0

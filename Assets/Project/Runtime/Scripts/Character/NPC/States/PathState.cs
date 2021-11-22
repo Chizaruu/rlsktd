@@ -22,7 +22,7 @@ namespace RLSKTD.Character.NPC.State
             path = manager.AStar.Algorithm(manager.transform.position, manager.Target.position);// Get the path the NPC will follow
 
             destination = path.Pop() + new Vector3(0.5f, 0.5f, 0); // Get the destination the NPC will move to
-            Debug.Log("Enter - Destination: " + MapManager.instance.floorMap.WorldToCell(destination));
+            //Debug.Log("Enter - Destination: " + MapManager.instance.floorMap.WorldToCell(destination));
             // If the NPC is colliding with another character
             if(!GameManager.instance.Characters.ContainsValue(MapManager.instance.floorMap.WorldToCell(destination)))
             {
@@ -58,7 +58,7 @@ namespace RLSKTD.Character.NPC.State
                             path = manager.AStar.Algorithm(manager.transform.position, manager.Target.position); // Get the path the NPC will follow
 
                             destination = path.Pop() + new Vector3(0.5f, 0.5f, 0); // Get the destination the NPC will move to
-                            Debug.Log("Update - Destination: " + MapManager.instance.floorMap.WorldToCell(destination));
+                            //Debug.Log("Update - Destination: " + MapManager.instance.floorMap.WorldToCell(destination));
                             // If the NPC is colliding with another character
                             if(!GameManager.instance.Characters.ContainsValue(MapManager.instance.floorMap.WorldToCell(destination)))
                             {
