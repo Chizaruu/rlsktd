@@ -7,7 +7,7 @@ RLSKTD is a roguelike framework that is designed to be a starting point for rogu
 ## How did you come up with the idea?
 I came up with the idea for RLSKTD after I saw the need for a roguelike framework that would be easy to use and easy to expand upon.
 
-This idea was insprired by talk given by Josh Ge during the 2018 Roguelike Celebration where he described the neccesary steps to create a working roguelike game.
+This idea was insprired by a talk given by Josh Ge during the 2018 Roguelike Celebration where he described the neccesary steps to create a working roguelike game.
 
 <p align="center">
 <img width="560" height="600" src="https://user-images.githubusercontent.com/59434446/141663933-73a48e8e-5d24-4726-9572-d87823ad5ebe.JPG">
