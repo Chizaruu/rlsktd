@@ -1,13 +1,8 @@
-using UnityEngine;
-
-namespace RLSKTD.General.ItemHelper
-{
-    /// <summary> /// <summary> The material of an item. </summary>
-    public class Material 
-    {
-        /// <summary> Enumeration of all materials. </summary>
-        public enum MaterialEnum
-        {
+namespace RLSKTD.General.Item.Helpers {
+  /// <summary> /// <summary> The material of an item. </summary>
+    public class Material {
+        /// <summary> Types of all materials. </summary>
+        public enum MaterialType {
             /// <summary> (Common) The item is made of Copper. </summary>
             Copper,
             /// <summary> (Common) The item is made of Tin. </summary>
@@ -101,38 +96,10 @@ namespace RLSKTD.General.ItemHelper
         }
 
         /// <summary> The material of the item. </summary>
-        private MaterialEnum itemMaterial;
+        private MaterialType materialType;
 
-        public MaterialEnum ItemMaterial { get => itemMaterial; set => itemMaterial = value; }
+        public MaterialType _MaterialType { get => materialType; set => materialType = value; }
 
-        public Material(MaterialEnum itemMaterial) => this.itemMaterial = itemMaterial;
-
-        /// <summary> Get the color of the material. (Incomplete)</summary>
-        /// <returns> The color of the material. </returns>
-        public static Color GetMaterialColor(MaterialEnum itemMaterial)
-        {
-            switch (itemMaterial)
-            {
-                case MaterialEnum.Copper:
-                    return new Color(0.8f, 0.5f, 0.2f);
-                case MaterialEnum.Tin:
-                    return new Color(0.8f, 0.8f, 0.2f);
-                case MaterialEnum.Bronze:
-                    return new Color(0.8f, 0.5f, 0.2f);
-                case MaterialEnum.Iron:
-                    return new Color(0.8f, 0.8f, 0.8f);
-                case MaterialEnum.Gold:
-                    return new Color(1f, 0.8f, 0.2f);
-                case MaterialEnum.Leather:
-                    return new Color(0.5f, 0.5f, 0.5f);
-                case MaterialEnum.Wood:
-                    return new Color(0.5f, 0.5f, 0.5f);
-                case MaterialEnum.Stone:
-                    return new Color(0.5f, 0.5f, 0.5f);
-
-                default:
-                    return Color.white;
-            }
-        }       
+        public Material(MaterialType materialType) => this.materialType = materialType;
     }
 }

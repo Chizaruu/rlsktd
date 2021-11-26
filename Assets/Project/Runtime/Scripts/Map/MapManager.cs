@@ -56,12 +56,12 @@ namespace RLSKTD.Map
                     localPlace = lPos, // Sets the local place.
                     gridLocation = map.CellToWorld(lPos), // Sets the grid location.
                     tileBase = map.GetTile(lPos).name, // Sets the tile base.
-                    isVisible = false, // Sets the visibility.
-                    isExplored = false, // Sets the exploration.
                     color = map.GetColor(lPos), // Sets the color.
                 };
+                
                 tiles.Add(tile.gridLocation, tile); // Adds the tile to the fog tiles.
             }
+            
         }
     }
 }

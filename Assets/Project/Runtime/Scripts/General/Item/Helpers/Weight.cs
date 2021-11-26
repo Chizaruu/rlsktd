@@ -1,11 +1,8 @@
-namespace RLSKTD.General.ItemHelper
-{
+namespace RLSKTD.General.Item.Helpers {
     /// <summary> The weight of an item. </summary>
-    public class Weight
-    {
+    public class Weight {
         /// <summary> Enumeration of all item weight classes. </summary>
-        public enum WeightEnum
-        {
+        public enum WeightEnum {
             /// <summary> The item is very light. </summary>
             VeryLight,
             /// <summary> The item is light. </summary>
@@ -21,21 +18,17 @@ namespace RLSKTD.General.ItemHelper
         /// <summary> The weight class of the item. </summary>
         private WeightEnum weightClass;
 
-        public WeightEnum WeightClass { get => weightClass; set => weightClass = value; }
+        public WeightEnum _WeightClass { get => weightClass; set => weightClass = value; }
 
         /// <summary> Constructor for the weight class. </summary>
         /// <param name="weightClass"> The weight class of the item. </param>
         /// <returns> The weight class of the item. </returns>
-        public Weight(WeightEnum weightClass, float itemWeight)
-        {
-            this.weightClass = weightClass;
-        }
+        public Weight(WeightEnum weightClass, float itemWeight) => this.weightClass = weightClass;
 
         /// <summary> Gets the base weight of an item. </summary>
         /// <param name="item"> The item. </param>
         /// <returns> The base weight of the item. </returns>
-        public static float GetBaseWeight(WeightEnum weightEnum)
-        {
+        public static float GetBaseWeight(WeightEnum weightEnum) {
             switch (weightEnum)
             {
                 case WeightEnum.VeryLight:
@@ -56,8 +49,7 @@ namespace RLSKTD.General.ItemHelper
         /// <summary> Gets the type weight of the item </summary>
         /// <param name="item"> The item. </param>
         /// <returns> The type weight of the item. </returns>
-        public static float GetTypeWeight(Type.TypeEnum typeEnum, float itemWeight)
-        {
+        public static float GetTypeWeight(Type.TypeEnum typeEnum, float itemWeight) {
             switch (typeEnum)
             {
                 case Type.TypeEnum.Weapon:
