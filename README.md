@@ -16,7 +16,7 @@ This idea was insprired by a talk given by Josh Ge during the 2018 Roguelike Cel
 ## What is the current status of RLSKTD?
 Not all of the features have been implemented yet to an acceptable state.
 
-For example, the game is currently missing the following:
+For example, the framework is currently missing the following:
 
 - Items
     - Item generation
