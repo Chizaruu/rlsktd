@@ -1,58 +1,40 @@
-using UnityEngine;
-using RLSKTD.General.ItemHelper;
-using Sirenix.Serialization;
+using RLSKTD.General.Item.Helpers;
 
-namespace RLSKTD.General
-{
+namespace RLSKTD.General.Item{
     /// <summary> Base class for all items. </summary>
     /// <remarks> This class is used to define the base properties of all items. </remarks>
-    public class Item
-    {
+    [System.Serializable]
+    public class Item {
         /// <summary> The name of the item. </summary>
-        [OdinSerialize, HideInInspector]
         private string name;
         /// <summary> The description of the item. </summary>
-        [OdinSerialize, HideInInspector]
         private string description;
         /// <summary> The material of the item. </summary>
-        [OdinSerialize, HideInInspector]
-        private ItemHelper.Material.MaterialEnum itemMaterial;
-        /// <summary> The type of the item. </summary>
-        [OdinSerialize, HideInInspector]
-        private Type.TypeEnum itemType;
+        private Material.MaterialType materialType;
         /// <summary> The quality of the item. </summary>
-        [OdinSerialize, HideInInspector]
-        private Quality.ItemQuality itemQuality;
+        private Quality.QualityEnum quality;
         /// <summary> The weight class of the item. </summary>
-        [OdinSerialize, HideInInspector]
         private Weight.WeightEnum weightClass;
         /// <summary> The weight of the item. </summary>
-        [OdinSerialize, HideInInspector]
-        private float itemWeight;
+        private float weight;
         /// <summary> The identify clarification of the item. </summary>
-        [OdinSerialize, HideInInspector]
         private bool isIdentified;
-        /// <summary> The color of the item. </summary>
-        [OdinSerialize, HideInInspector]
-        private Color color; // Color of the item.
+        /// <summary> The item's value. </summary>
+        /// <remarks> This value is used to determine the item's value in the game. </remarks>
+        private int worth;
+        /// <summary> The item's color. </summary>
+        private UnityEngine.Color color;
 
-        [OdinSerialize]public string Name { get => name; set => name = value; }
-        [OdinSerialize]public string Description { get => description; set => description = value; }
-        [OdinSerialize]public Type.TypeEnum ItemType { get => itemType; set => itemType = value; }
-        [OdinSerialize]public Quality.ItemQuality ItemQuality { get => itemQuality; set => itemQuality = value; }
-        [OdinSerialize]public ItemHelper.Material.MaterialEnum ItemMaterial { get => itemMaterial; set => itemMaterial = value; }
-        [OdinSerialize]public Weight.WeightEnum WeightClass { get => weightClass; set => weightClass = value; }
-        [OdinSerialize]public float ItemWeight
-        {
-            get => itemWeight; set
-            {
-                itemWeight = Weight.GetBaseWeight(WeightClass);
-            }
-        }
+        public string Name { get => name; set => name = value; }
+        public string Description { get => description; set => description = value; }
+        public Quality.QualityEnum _Quality { get => quality; set => quality = value; }
+        public Material.MaterialType _MaterialType { get => materialType; set => materialType = value; }
+        public Weight.WeightEnum _WeightClass { get => weightClass; set => weightClass = value; }
+        public float Weight { get => weight; set => weight = value; }
+        public bool IsIdentified { get => isIdentified; set => isIdentified = value; }
+        public int Worth { get => worth; set => worth = value; }
+        public UnityEngine.Color Color { get => color; set => color = value; }
 
-        [OdinSerialize]public Color Color { get => color; set => color = value; }
-
-        [OdinSerialize]public bool IsIdentified { get => isIdentified; set => isIdentified = value; }
 
         /// <summary> Constructor for the item. </summary>
         /// <param name="name"> The name of the item. </param>
@@ -63,16 +45,16 @@ namespace RLSKTD.General
         /// <param name="weight"> The weight of the item. </param>
         /// <param name="isIdentified"> The identify clarification of the item. </param>
         /// <param name="color"> The color of the item. </param>
-        public Item(string name, string description, Type.TypeEnum type, Quality.ItemQuality quality, ItemHelper.Material.MaterialEnum material, Weight.WeightEnum weightClass, bool isIdentified)
-        {
+        public Item(string name, string description, Material.MaterialType materialType, Quality.QualityEnum quality, Weight.WeightEnum weightClass, float weight, bool isIdentified, int worth, UnityEngine.Color color) {
             Name = name;
             Description = description;
-            ItemType = type;
-            ItemQuality = quality;
-            ItemMaterial = material;
-            WeightClass = weightClass;
+            _Quality = quality;
+            _MaterialType = materialType;
+            _WeightClass = weightClass;
+            Weight = weight;
             IsIdentified = isIdentified;
+            Worth = worth;
+            Color = color;
         }
     }
 }
-

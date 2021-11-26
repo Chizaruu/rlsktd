@@ -2,7 +2,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General
+namespace RLSKTD.General.Item
 {
     /// <summary> ItemWorld provides a way to store items in the world. </summary>
     //SerializedMonoBehaviour to check dictionaries, can be changed back to MonoBehaviour

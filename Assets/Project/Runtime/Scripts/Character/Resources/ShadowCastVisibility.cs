@@ -114,17 +114,17 @@ namespace RLSKTD.Character
         {
             WorldTile tile;
 
-            if (!MapManager.instance.fogTiles.TryGetValue(pos, out tile)) return;
+            if (!MapManager.instance.fogTiles.TryGetValue(pos, out tile)) return; // if the tile is not in the fog map, return
+                
+            if(isPlayer)  
+            {
+                fogMap.SetTileFlags(tile.localPlace, TileFlags.None); // Flag the tile, indicating that it can change colour as by default it's set to "Lock Colour".
+                fogMap.SetColor(tile.localPlace, new Color(1.0f, 1.0f, 1.0f, 0f)); // Set the alpha to 0.
+                tile.isVisible = true; // Set the tile to visible.
+                tile.isExplored = true; // Set the tile to explored.
+            }
 
-                if(isPlayer)
-                {
-                    fogMap.SetTileFlags(tile.localPlace, TileFlags.None);
-                    fogMap.SetColor(tile.localPlace, new Color(1.0f, 1.0f, 1.0f, 0f));
-                    tile.isVisible = true;
-                    tile.isExplored = true;
-                }
-
-                if(!fov.VisibleTiles.Contains(pos)) fov.VisibleTiles.Add(pos);
+            if(!fov.VisibleTiles.Contains(pos)) fov.VisibleTiles.Add(pos); // Add the tile to the list of visible tiles.
         }
     }
 }
