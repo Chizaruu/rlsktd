@@ -13,8 +13,7 @@ namespace RLSKTD.Character
     /// <summary> Foundation for a character </summary>
     public class Foundation : SerializedMonoBehaviour
     {
-        [SerializeField, HideInInspector]
-	    private CharacterState state = new CharacterState(); // Character State - GitHub Co-Pilot
+        [OdinSerialize, HideInInspector]private CharacterState state = new CharacterState(); // Character State - GitHub Co-Pilot
         
         [OdinSerialize, TabGroup("Information")]private bool isPlayer; // Used to determine if the character is the player or not
 
