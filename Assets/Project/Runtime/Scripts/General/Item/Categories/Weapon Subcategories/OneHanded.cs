@@ -17,19 +17,19 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
         
         public SubType _SubType { get => subType; set => subType = value; } 
 
-        public OneHanded(string name, string description, Material.MaterialType materialType, Quality.QualityEnum quality, Weight.WeightEnum weightClass,
-         float weight, bool isIdentified, int worth, UnityEngine.Color color, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, materialType, quality, weightClass, weight, isIdentified, worth, color, damage, weaponType, damageType)
+        public OneHanded(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
+         float weight, bool isIdentified, int worth, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
+         base(name, description, material, quality, weight, isIdentified, worth, color, dice, damage, weaponType, damageType)
         {
             Name = name;
             Description = description;
-            _MaterialType = materialType;
+            _Material = material;
             _Quality = quality;
-            _WeightClass = weightClass;
             Weight = weight;
             IsIdentified = isIdentified;
-            Worth = worth;
+            Value = worth;
             Color = color;
+            Dice = dice;
             Damage = damage;
             _DamageType = damageType;
             _WeaponType = weaponType;

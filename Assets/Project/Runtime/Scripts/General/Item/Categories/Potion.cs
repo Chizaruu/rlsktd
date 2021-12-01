@@ -13,17 +13,16 @@ namespace RLSKTD.General.Item.Categories
         
         public int StackAmount { get => stackAmount; set => stackAmount = value; }
 
-        public Potion(string name, string description, Helpers.Material.MaterialType materialType, Quality.QualityEnum quality, Weight.WeightEnum weightClass, float weight, bool isIdentified, int worth, UnityEngine.Color color, int stackAmount) 
-        : base(name, description, materialType, quality, weightClass, weight, isIdentified, worth, color)
+        public Potion(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality, float weight, bool isIdentified, int worth, UnityEngine.Color color, int stackAmount) 
+        : base(name, description, material, quality, weight, isIdentified, worth, color)
         {
             Name = name;
             Description = description;
-            _MaterialType = materialType;
+            _Material = material;
             _Quality = quality;
-            _WeightClass = weightClass;
             Weight = weight;
             IsIdentified = isIdentified;
-            Worth = worth;
+            Value = worth;
             Color = color;
             StackAmount = stackAmount;
         }

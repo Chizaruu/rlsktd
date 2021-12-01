@@ -1,4 +1,5 @@
-using System;
+using UnityEngine;
+using System.Collections.Generic;
 using RLSKTD.General.Item.Helpers;
 using RLSKTD.General.Item.Categories;
 using RLSKTD.General.Item.Categories.WeaponSubcategories;
@@ -6,75 +7,136 @@ using RLSKTD.General.Item.Categories.WeaponSubcategories;
 namespace RLSKTD.General.Item{
     public class RandomItemGenerator{
 
-        private Item item;
-        private Weapon weapon;
-        private OneHanded oneHanded;
+        public static void GenerateItem(List<Item> items, int requiredItemAmount){
 
-        public void GenerateItem()
-        {
-            item = new Item("", "", Material.MaterialType.Gold, Quality.QualityEnum.Superior, Weight.WeightEnum.VeryLight,
-                0.1f, true, 0, UnityEngine.Color.red);
+            while(requiredItemAmount > 0){
+                int randomType = Random.Range(0, System.Enum.GetNames(typeof(Type.TypeEnum)).Length + 1);
+                Item item = null;
+                switch(GenerateTypeEnum()){
+                    case 0: item = GenerateWeapon(); break;
+                    case 1: item = GenerateArmor(); break;
+                    case 2: item = GenerateJewelry(); break;
+                    case 3: item = GenerateFood(); break;
+                    case 4: item = GeneratePotion(); break;
+                    case 5: item = GenerateScroll(); break;
+                    case 6: item = GenerateRod(); break;
+                    case 7: item = GenerateBook(); break;
+                    case 8: item = GenerateTool(); break;
+                    case 9: item = GenerateFurniture(); break;
+                    case 10: item = GenerateMaterial(); break;
+                    case 11: item = GenerateMisc(); break;
+                    default: Debug.Log("RandomItemGenerator: GenerateItem: RandomType out of range"); break;
+                }
 
-            GenerateWeapon(item);
-        }
-
-
-        public void GenerateWeapon(Item item)
-        {
-            weapon = new Weapon(item.Name, item.Description, item._MaterialType, item._Quality, item._WeightClass, item.Weight, item.IsIdentified, item.Worth, item.Color, 0, 0, 0);
-
-            int randomEquipType = new System.Random().Next(0, Enum.GetNames(typeof(Weapon.WeaponType)).Length + 1); // Generates a number between 0 to EquipType.Length
-            switch (randomEquipType){
-                case (int)Weapon.WeaponType.One_Handed:
-                    weapon._WeaponType = Weapon.WeaponType.One_Handed;
-
-                    int randomOneHanded = new System.Random().Next(0, Enum.GetNames(typeof(Weapon.WeaponType)).Length + 1); // Generates a number between 0 to EquipType.Length
-                    switch (randomOneHanded){
-                        case (int)OneHanded.SubType.Shortsword:
-                            oneHanded = new OneHanded(weapon.Name, weapon.Description, weapon._MaterialType, weapon._Quality, weapon._WeightClass, weapon.Weight, weapon.IsIdentified, weapon.Worth, weapon.Color, 
-                            weapon.Damage, Weapon.DamageType.Slashing, weapon._WeaponType, OneHanded.SubType.Shortsword);
-                            break;
-                        case (int)OneHanded.SubType.Longsword:
-                            break;
-                        case (int)OneHanded.SubType.Dagger:
-                            break;
-                        case (int)OneHanded.SubType.Scimitar:
-                            break;
-                        case (int)OneHanded.SubType.Cutlass:
-                            break;
-                        case (int)OneHanded.SubType.Rapier:
-                            break;
-                        case (int)OneHanded.SubType.Kris:
-                            break;
-                        case (int)OneHanded.SubType.Saber:
-                            break;
-                        case (int)OneHanded.SubType.Club:
-                            break;
-                        case (int)OneHanded.SubType.Mace:
-                            break;
-                        case (int)OneHanded.SubType.Shortspear:
-                            break;
-                        case (int)OneHanded.SubType.Sickle:
-                            break;
-                        case (int)OneHanded.SubType.Morningstar:
-                            break;
-                        case (int)OneHanded.SubType.Whip:
-                            break;
-                        case (int)OneHanded.SubType.Flail:
-                            break;
-                        case (int)OneHanded.SubType.Handaxe:
-                            break;
-                    }
-                    break;
-                case (int)Weapon.WeaponType.Two_Handed:
-                    break;   
-                case (int)Weapon.WeaponType.Shield:
-                    break; 
-                case (int)Weapon.WeaponType.Ranged:
-                    break;  
-                case (int)Weapon.WeaponType.Ammo:
-                    break;
+                if(item != null){
+                    items.Add(item);
+                    requiredItemAmount--;
+                } else {
+                    Debug.Log("RandomItemGenerator: GenerateItem: item is null");
+                }
             }
         }
+
+        private static Item GenerateWeapon()
+        {
+            switch (GenerateWeaponTypeEnum()){
+                case (int)Weapon.WeaponType.OneHanded:
+                    OneHanded oneHanded = new OneHanded(
+                        "", "", GenerateMaterialEnum(), GenerateQualityEnum(), 1f,
+                        false, 0, Color.white, 1, 5, Weapon.DamageType.Bludgeoning,
+                        Weapon.WeaponType.OneHanded, (OneHanded.SubType)Random.Range(0, System.Enum.GetNames(typeof(OneHanded.SubType)).Length + 1)
+                        );
+                    return oneHanded;
+                case (int)Weapon.WeaponType.TwoHanded:
+                    TwoHanded twoHanded = new TwoHanded(
+                        "", "", GenerateMaterialEnum(), GenerateQualityEnum(), 1f,
+                        false, 0, Color.white, 1, 5, Weapon.DamageType.Bludgeoning,
+                        Weapon.WeaponType.TwoHanded, (TwoHanded.SubType)Random.Range(0, System.Enum.GetNames(typeof(TwoHanded.SubType)).Length + 1)
+                        );
+                    return twoHanded;;   
+                case (int)Weapon.WeaponType.Shield:
+                    Shield shield = new Shield(
+                        "", "", GenerateMaterialEnum(), GenerateQualityEnum(), 1f,
+                        false, 0, Color.white, 1, 5, Weapon.DamageType.Bludgeoning,
+                        Weapon.WeaponType.Shield, (Shield.SubType)Random.Range(0, System.Enum.GetNames(typeof(Shield.SubType)).Length + 1)
+                        );
+                    return shield;; 
+                case (int)Weapon.WeaponType.Ranged:
+                    Ranged ranged = new Ranged(
+                        "", "", GenerateMaterialEnum(), GenerateQualityEnum(), 1f,
+                        false, 0, Color.white, 1, 5, Weapon.DamageType.Bludgeoning,
+                        Weapon.WeaponType.Ranged, (Ranged.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ranged.SubType)).Length + 1)
+                        );
+                    return ranged;;  
+                case (int)Weapon.WeaponType.Ammo:
+                    Ammo ammo = new Ammo(
+                        "", "", GenerateMaterialEnum(), GenerateQualityEnum(), 1f,
+                        false, 0, Color.white, 1, 5, Weapon.DamageType.Bludgeoning,
+                        Weapon.WeaponType.Ammo, (Ammo.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ammo.SubType)).Length + 1)
+                        );
+                    return ammo;
+                default: Debug.Log("RandomItemGenerator: GenerateWeapon: RandomEquipType out of range"); return null;
+            }
+        }
+
+        private static Item GenerateArmor()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateJewelry()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateFood()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GeneratePotion()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateScroll()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateRod()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateBook()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateTool()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateFurniture()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateMaterial()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private static Item GenerateMisc()
+        {
+            throw new System.NotImplementedException();
+        }
+    
+        private static int GenerateTypeEnum() => Random.Range(0, System.Enum.GetNames(typeof(Helpers.Type.TypeEnum)).Length + 1);
+        private static Helpers.Material.MaterialEnum GenerateMaterialEnum() => (Helpers.Material.MaterialEnum)Random.Range(0, System.Enum.GetNames(typeof(Helpers.Material.MaterialEnum)).Length + 1);
+        private static Helpers.Quality.QualityEnum GenerateQualityEnum() => (Helpers.Quality.QualityEnum)Random.Range(0, System.Enum.GetNames(typeof(Helpers.Quality.QualityEnum)).Length + 1);   
+        private static int GenerateWeaponTypeEnum() => Random.Range(0, System.Enum.GetNames(typeof(Weapon.WeaponType)).Length + 1);
     }
 }

@@ -2,7 +2,7 @@ namespace RLSKTD.General.Item.Helpers {
   /// <summary> /// <summary> The material of an item. </summary>
     public class Material {
         /// <summary> Types of all materials. </summary>
-        public enum MaterialType {
+        public enum MaterialEnum {
             /// <summary> (Common) The item is made of Copper. </summary>
             Copper,
             /// <summary> (Common) The item is made of Tin. </summary>
@@ -96,10 +96,10 @@ namespace RLSKTD.General.Item.Helpers {
         }
 
         /// <summary> The material of the item. </summary>
-        private MaterialType materialType;
+        private MaterialEnum materialEnum;
 
-        public MaterialType _MaterialType { get => materialType; set => materialType = value; }
+        public MaterialEnum _MaterialEnum { get => materialEnum; set => materialEnum = value; }
 
-        public Material(MaterialType materialType) => this.materialType = materialType;
+        public Material(MaterialEnum materialEnum) => this.materialEnum = materialEnum;
     }
 }

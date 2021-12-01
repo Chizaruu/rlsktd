@@ -19,14 +19,12 @@ namespace RLSKTD.General.Item.Helpers {
             Rod,
             /// <summary> The item is a book type. </summary>
             Book,
-            /// <summary> The item is a key type. </summary>
-            Key,
-            /// <summary> The item is a gem type. </summary>
-            Gem,
             /// <summary> The item is a tool type. </summary>
             Tool,
             /// <summary> The item is a furniture type. </summary>
             Furniture,
+            /// <summary> The item is a material type. </summary>
+            Material,
             /// <summary> The item is misc type. </summary>
             Misc,
         }
