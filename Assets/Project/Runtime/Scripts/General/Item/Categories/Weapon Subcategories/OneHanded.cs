@@ -13,27 +13,89 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
             Sickle , Morningstar , Whip, Flail, Handaxe,
         }
 
-        [OdinSerialize]private SubType subType;
+        [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
         
-        public SubType _SubType { get => subType; set => subType = value; } 
+        [OdinSerialize]public SubType _SubType
+        {
+            get
+            {
+                return subType;
+            }
+
+            set
+            {
+                subType = value;
+
+                switch (subType)
+                {
+                    case SubType.Shortsword:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                    case SubType.Longsword:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                    case SubType.Dagger:
+                        _DamageType = DamageType.Piercing;
+                        break;
+                    case SubType.Scimitar:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                    case SubType.Cutlass:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                    case SubType.Rapier:
+                        _DamageType = DamageType.Piercing;
+                        break;
+                    case SubType.Kris:
+                        _DamageType = DamageType.Piercing;
+                        break;
+                    case SubType.Saber:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                    case SubType.Club:
+                        _DamageType = DamageType.Bludgeoning;
+                        break;
+                    case SubType.Mace:
+                        _DamageType = DamageType.Bludgeoning;
+                        break;
+                    case SubType.Shortspear:
+                        _DamageType = DamageType.Piercing;
+                        break;
+                    case SubType.Sickle:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                    case SubType.Morningstar:
+                        _DamageType = DamageType.Bludgeoning;
+                        break;
+                    case SubType.Whip:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                    case SubType.Flail:
+                        _DamageType = DamageType.Bludgeoning;
+                        break;
+                    case SubType.Handaxe:
+                        _DamageType = DamageType.Slashing;
+                        break;
+                }
+            }
+        }
 
         public OneHanded(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
-         float weight, bool isIdentified, int worth, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, material, quality, weight, isIdentified, worth, color, dice, damage, weaponType, damageType)
+         float weight, bool isIdentified, int value, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
+         base(name, description, material, quality, weight, isIdentified, value, color, dice, damage, weaponType, damageType)
         {
-            Name = name;
-            Description = description;
+            _WeaponType = WeaponType.OneHanded;
             _Material = material;
-            _Quality = quality;
-            Weight = weight;
-            IsIdentified = isIdentified;
-            Value = worth;
             Color = color;
-            Dice = dice;
-            Damage = damage;
-            _DamageType = damageType;
-            _WeaponType = weaponType;
             _SubType = subType;
+            Weight = weight;
+            _Quality = quality;
+            Dice = dice;
+            Damage = damage;  
+            Value = value;    
+            Description = description;
+            Name = name;
+            IsIdentified = isIdentified;
         }
     }
 }

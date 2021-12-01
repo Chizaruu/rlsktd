@@ -16,22 +16,21 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
         public SubType _SubType { get => subType; set => subType = value; } 
 
         public Shield(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
-         float weight, bool isIdentified, int worth, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, material, quality, weight, isIdentified, worth, color, dice, damage, weaponType, damageType)
+         float weight, bool isIdentified, int value, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
+         base(name, description, material, quality, weight, isIdentified, value, color, dice, damage, weaponType, damageType)
         {
-            Name = name;
-            Description = description;
+            _WeaponType = WeaponType.OneHanded;
             _Material = material;
-            _Quality = quality;
-            Weight = weight;
-            IsIdentified = isIdentified;
-            Value = worth;
             Color = color;
-            Dice = dice;
-            Damage = damage;
-            _DamageType = damageType;
-            _WeaponType = weaponType;
             _SubType = subType;
+            Weight = weight;
+            _Quality = quality;
+            Dice = dice;
+            Damage = damage;  
+            Value = value;    
+            Description = description;
+            Name = name;
+            IsIdentified = isIdentified;
         }
     }
 }
