@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RLSKTD.General.Item.Helpers;
 using RLSKTD.General.Item.Categories;
 using RLSKTD.General.Item.Categories.WeaponSubcategories;
+using RLSKTD.General.Item.Categories.ArmorSubcategories;
 
 namespace RLSKTD.General.Item{
     public class RandomItemGenerator{
@@ -33,7 +34,7 @@ namespace RLSKTD.General.Item{
                         items.Add(GenerateMaterial()); break;
                     case Type.TypeEnum.Misc: 
                         items.Add(GenerateMisc()); break;
-                    default: Debug.Log("RandomItemGenerator: GenerateItem: RandomType out of range"); break;
+                    default: Debug.Log("RandomItemGenerator: GenerateItem: Type not found"); continue;
                 }
                 requiredItemAmount--;
             }
@@ -103,13 +104,123 @@ namespace RLSKTD.General.Item{
                     ammo.Description = GenerateDescription();
                     ammo.Name = GenerateName();
                     return ammo;
-                default: Debug.Log("RandomItemGenerator: GenerateWeapon: RandomEquipType out of range"); return null;
+                default: Debug.Log("RandomItemGenerator: GenerateWeapon: Weapon type not found"); return null;
             }
         }
 
         private static Item GenerateArmor()
         {
-            throw new System.NotImplementedException();
+            switch (GenerateArmorTypeEnum()){
+                case Armor.ArmorType.Head:
+                    Head head = new Head();
+                    head._ArmorType = Armor.ArmorType.Head;
+                    head._Material = GetRandomMaterialEnum();
+                    head._SubType = (Head.SubType)Random.Range(0, System.Enum.GetNames(typeof(Head.SubType)).Length + 1);
+                    head._Quality = GenerateQualityEnum();
+                    head.ProtectionValue = Random.Range(1, 6); //TODO: Add protection value generation from material and subtype
+                    head.DefensiveValue = Random.Range(1, 6); //TODO: Add defensive value generation from material and subtype
+                    head.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    head.Description = GenerateDescription();
+                    head.Name = GenerateName();
+                    return head;
+                case Armor.ArmorType.Back:
+                    Back back = new Back();
+                    back._ArmorType = Armor.ArmorType.Back;
+                    back._Material = GetRandomMaterialEnum();
+                    back._SubType = (Back.SubType)Random.Range(0, System.Enum.GetNames(typeof(Back.SubType)).Length + 1);
+                    back._Quality = GenerateQualityEnum();
+                    back.ProtectionValue = Random.Range(1, 7); //TODO: Add protection value generation from material and subtype
+                    back.DefensiveValue = Random.Range(1, 7); //TODO: Add defensive value generation from material and subtype
+                    back.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    back.Description = GenerateDescription();
+                    back.Name = GenerateName();
+                    return back;
+                case Armor.ArmorType.Body:
+                    Body body = new Body();
+                    body._ArmorType = Armor.ArmorType.Body;
+                    body._Material = GetRandomMaterialEnum();
+                    body._SubType = (Body.SubType)Random.Range(0, System.Enum.GetNames(typeof(Body.SubType)).Length + 1);
+                    body._Quality = GenerateQualityEnum();
+                    body.ProtectionValue = Random.Range(1, 20); //TODO: Add protection value generation from material and subtype
+                    body.DefensiveValue = Random.Range(1, 20); //TODO: Add defensive value generation from material and subtype
+                    body.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    body.Description = GenerateDescription();
+                    body.Name = GenerateName();
+                    return body;
+                case Armor.ArmorType.Hand: 
+                    Hand hand = new Hand();
+                    hand._ArmorType = Armor.ArmorType.Hand;
+                    hand._Material = GetRandomMaterialEnum();
+                    hand._SubType = (Hand.SubType)Random.Range(0, System.Enum.GetNames(typeof(Hand.SubType)).Length + 1);
+                    hand._Quality = GenerateQualityEnum();
+                    hand.ProtectionValue = Random.Range(1, 7); //TODO: Add protection value generation from material and subtype
+                    hand.DefensiveValue = Random.Range(1, 7); //TODO: Add defensive value generation from material and subtype
+                    hand.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    hand.Description = GenerateDescription();
+                    hand.Name = GenerateName();
+                    return hand;
+                case Armor.ArmorType.Waist:
+                    Waist waist = new Waist();
+                    waist._ArmorType = Armor.ArmorType.Waist;
+                    waist._Material = GetRandomMaterialEnum();
+                    waist._SubType = (Waist.SubType)Random.Range(0, System.Enum.GetNames(typeof(Waist.SubType)).Length + 1);
+                    waist._Quality = GenerateQualityEnum();
+                    waist.ProtectionValue = Random.Range(1, 5); //TODO: Add protection value generation from material and subtype
+                    waist.DefensiveValue = Random.Range(1, 5); //TODO: Add defensive value generation from material and subtype
+                    waist.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    waist.Description = GenerateDescription();
+                    waist.Name = GenerateName();
+                    return waist;
+                case Armor.ArmorType.Foot:
+                    Foot foot = new Foot();
+                    foot._ArmorType = Armor.ArmorType.Foot;
+                    foot._Material = GetRandomMaterialEnum();
+                    foot._SubType = (Foot.SubType)Random.Range(0, System.Enum.GetNames(typeof(Foot.SubType)).Length + 1);
+                    foot._Quality = GenerateQualityEnum();
+                    foot.ProtectionValue = Random.Range(1, 7); //TODO: Add protection value generation from material and subtype
+                    foot.DefensiveValue = Random.Range(1, 7); //TODO: Add defensive value generation from material and subtype
+                    foot.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    foot.Description = GenerateDescription();
+                    foot.Name = GenerateName();
+                    return foot;
+                case Armor.ArmorType.Neck:
+                    Neck neck = new Neck();
+                    neck._ArmorType = Armor.ArmorType.Neck;
+                    neck._Material = GetRandomMaterialEnum();
+                    neck._SubType = (Neck.SubType)Random.Range(0, System.Enum.GetNames(typeof(Neck.SubType)).Length + 1);
+                    neck._Quality = GenerateQualityEnum();
+                    neck.ProtectionValue = Random.Range(1, 3); //TODO: Add protection value generation from material and subtype
+                    neck.DefensiveValue = Random.Range(1, 3); //TODO: Add defensive value generation from material and subtype
+                    neck.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    neck.Description = GenerateDescription();
+                    neck.Name = GenerateName();
+                    return neck;
+                case Armor.ArmorType.Finger:
+                    Finger finger = new Finger();
+                    finger._ArmorType = Armor.ArmorType.Finger;
+                    finger._Material = GetRandomMaterialEnum();
+                    finger._SubType = (Finger.SubType)Random.Range(0, System.Enum.GetNames(typeof(Finger.SubType)).Length + 1);
+                    finger._Quality = GenerateQualityEnum();
+                    finger.ProtectionValue = Random.Range(1, 3); //TODO: Add protection value generation from material and subtype
+                    finger.DefensiveValue = Random.Range(1, 3); //TODO: Add defensive value generation from material and subtype
+                    finger.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    finger.Description = GenerateDescription();
+                    finger.Name = GenerateName();
+                    return finger;
+                case Armor.ArmorType.Ear:
+                    Ear ear = new Ear();
+                    ear._ArmorType = Armor.ArmorType.Ear;
+                    ear._Material = GetRandomMaterialEnum();
+                    ear._SubType = (Ear.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ear.SubType)).Length + 1);
+                    ear._Quality = GenerateQualityEnum();
+                    ear.ProtectionValue = Random.Range(1, 3); //TODO: Add protection value generation from material and subtype
+                    ear.DefensiveValue = Random.Range(1, 3); //TODO: Add defensive value generation from material and subtype
+                    ear.Value = Random.Range(1, 100); //TODO: Add value generation from material and subtype
+                    ear.Description = GenerateDescription();
+                    ear.Name = GenerateName();
+                    return ear;
+                default: Debug.Log("RandomItemGenerator: GenerateArmor: Armor type not found"); return null;
+            }
         }
 
         private static Item GenerateFood()
@@ -165,10 +276,11 @@ namespace RLSKTD.General.Item{
         {
             return ""; //TODO: Generate description
         }
+
         private static Type.TypeEnum GenerateTypeEnum() => (Type.TypeEnum)Random.Range(0, System.Enum.GetNames(typeof(Type.TypeEnum)).Length + 1);
         private static Helpers.Material.MaterialEnum GetRandomMaterialEnum() => (Helpers.Material.MaterialEnum)Random.Range(0, System.Enum.GetNames(typeof(Helpers.Material.MaterialEnum)).Length + 1);
         private static Quality.QualityEnum GenerateQualityEnum() => (Quality.QualityEnum)Random.Range(0, System.Enum.GetNames(typeof(Quality.QualityEnum)).Length + 1);   
         private static Weapon.WeaponType GenerateWeaponTypeEnum() => (Weapon.WeaponType)Random.Range(0, System.Enum.GetNames(typeof(Weapon.WeaponType)).Length + 1);
-
+        private static Armor.ArmorType GenerateArmorTypeEnum() => (Armor.ArmorType)Random.Range(0, System.Enum.GetNames(typeof(Armor.ArmorType)).Length + 1);
     }
 }

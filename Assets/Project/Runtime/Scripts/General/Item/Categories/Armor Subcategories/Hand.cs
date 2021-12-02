@@ -4,9 +4,9 @@ using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
 namespace RLSKTD.General.Item.Categories.ArmorSubcategories{
-    /// <summary> This is the Arm class </summary>
+    /// <summary> This is the Hand class </summary>
     [System.Serializable]
-    public class Arm : Armor
+    public class Hand : Armor
     {
         public enum SubType
         {

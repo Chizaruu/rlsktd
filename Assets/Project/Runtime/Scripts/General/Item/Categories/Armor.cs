@@ -4,7 +4,7 @@ using Sirenix.Serialization;
 namespace RLSKTD.General.Item.Categories{
     public class Armor : Item{
         public enum ArmorType{
-            Head, Back, Body, Leg, Arm, Waist, Foot, Neck, Finger, Ear
+            Head, Back, Body, Hand, Waist, Foot, Neck, Finger, Ear
         }
 
         public enum WeightClass{
