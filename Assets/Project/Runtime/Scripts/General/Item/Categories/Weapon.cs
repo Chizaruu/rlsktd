@@ -1,4 +1,3 @@
-using RLSKTD.General.Item.Helpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
@@ -17,31 +16,14 @@ namespace RLSKTD.General.Item.Categories{
             Bludgeoning, Piercing, Slashing,
         }
 
-        [OdinSerialize]private int dice;
-        [OdinSerialize]private int damage;
+        [OdinSerialize, UnityEngine.HideInInspector]private int dice;
+        [OdinSerialize, UnityEngine.HideInInspector]private int damage;
         [OdinSerialize, UnityEngine.HideInInspector]private WeaponType weaponType;
         [OdinSerialize, UnityEngine.HideInInspector]private DamageType damageType;
 
-        public int Dice { get => dice; set => dice = value; }
-        public int Damage { get => damage; set => damage = value; }
-        [OdinSerialize, ReadOnly]public WeaponType _WeaponType { get => weaponType; set => weaponType = value; } 
-        [OdinSerialize, ReadOnly]public DamageType _DamageType { get => damageType; set => damageType = value; }
-
-        public Weapon(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality, float weight, bool isIdentified, int value, UnityEngine.Color color, 
-        int dice, int damage, WeaponType weaponType, DamageType damageType) : base(name, description, material, quality, weight, isIdentified, value, color)
-        {
-            Name = name;
-            Description = description;
-            _Material = material;
-            _Quality = quality;
-            Weight = weight;
-            IsIdentified = isIdentified;
-            Value = value;
-            Color = color;
-            Dice = dice;
-            Damage = damage;
-            _WeaponType = weaponType;
-            _DamageType = damageType;
-        }
+        [ShowInInspector, ReadOnly]public int Dice { get => dice; set => dice = value; }
+        [ShowInInspector, ReadOnly]public int Damage { get => damage; set => damage = value; }
+        [ShowInInspector, ReadOnly]public WeaponType _WeaponType { get => weaponType; set => weaponType = value; } 
+        [ShowInInspector, ReadOnly]public DamageType _DamageType { get => damageType; set => damageType = value; }
     }
 }

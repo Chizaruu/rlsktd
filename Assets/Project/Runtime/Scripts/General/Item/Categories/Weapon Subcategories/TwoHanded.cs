@@ -1,4 +1,6 @@
+using System;
 using RLSKTD.General.Item.Helpers;
+using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
 namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
@@ -10,29 +12,69 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
         {
             Halberd, Greatsword, Claymore, Greatclub, Quarterstaff,
             Longspear, Battleaxe, Lance, Trident, Warhammer,
-            Maul, Spear,
+            Maul,
         }
 
-        [OdinSerialize]private SubType subType;
+        [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        public SubType _SubType { get => subType; set => subType = value; } 
-
-        public TwoHanded(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
-         float weight, bool isIdentified, int value, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, material, quality, weight, isIdentified, value, color, dice, damage, weaponType, damageType)
+        [ShowInInspector]public SubType _SubType
         {
-            _WeaponType = WeaponType.OneHanded;
-            _Material = material;
-            Color = color;
-            _SubType = subType;
-            Weight = weight;
-            _Quality = quality;
-            Dice = dice;
-            Damage = damage;  
-            Value = value;    
-            Description = description;
-            Name = name;
-            IsIdentified = isIdentified;
+            get => subType; set
+            {
+                subType = value;
+                switch (subType)
+                {
+                    case SubType.Halberd:
+                        _DamageType = DamageType.Slashing;
+                        Weight = 2.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Greatsword:
+                        _DamageType = DamageType.Slashing;
+                        Weight = 2.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Claymore:
+                        _DamageType = DamageType.Slashing;
+                        Weight = 2.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Greatclub:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Quarterstaff:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 2.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Longspear:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Battleaxe:
+                        _DamageType = DamageType.Slashing;
+                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Lance:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Trident:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 2.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Warhammer:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Maul:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 2.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    default: 
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 1000f;
+                        break;
+                }                 
+            }
         }
+
     }
 }

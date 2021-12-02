@@ -1,4 +1,5 @@
 using RLSKTD.General.Item.Helpers;
+using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
 namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
@@ -9,29 +10,28 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
         public enum SubType
         {
             Arrow, Bullet , Bolt , Energycell, Stone,
-            Needle
+            Needle, Dart
         }
 
-        [OdinSerialize]private SubType subType;
+        [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        public SubType _SubType { get => subType; set => subType = value; } 
-
-        public Ammo(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
-         float weight, bool isIdentified, int value, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, material, quality, weight, isIdentified, value, color, dice, damage, weaponType, damageType)
+        [ShowInInspector]public SubType _SubType
         {
-            _WeaponType = WeaponType.OneHanded;
-            _Material = material;
-            Color = color;
-            _SubType = subType;
-            Weight = weight;
-            _Quality = quality;
-            Dice = dice;
-            Damage = damage;  
-            Value = value;    
-            Description = description;
-            Name = name;
-            IsIdentified = isIdentified;
+            get => subType; set
+            {
+                subType = value;
+                Weight = 0.1f;
+                switch (subType)
+                {
+                    case SubType.Stone:
+                        _DamageType = Weapon.DamageType.Bludgeoning;
+                        break;
+                    default:
+                        _DamageType = Weapon.DamageType.Piercing;
+                        break;
+                }
+            }
         }
+
     }
 }

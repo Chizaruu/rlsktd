@@ -1,4 +1,7 @@
+using System;
 using RLSKTD.General.Item.Helpers;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
 namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
     /// <summary> This is the Ranged class </summary>
@@ -8,29 +11,57 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
         public enum SubType
         {
             Crossbow, Bow , Pistol , Rifle, Shotgun,
-            Lasergun, Dart , Sling , Blowgun
+            Lasergun, Sling , Blowgun
         }
 
-        private SubType subType;
+        [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        public SubType _SubType { get => subType; set => subType = value; } 
-
-        public Ranged(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
-         float weight, bool isIdentified, int value, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, material, quality, weight, isIdentified, value, color, dice, damage, weaponType, damageType)
+        [ShowInInspector]public SubType _SubType
         {
-            _WeaponType = WeaponType.OneHanded;
-            _Material = material;
-            Color = color;
-            _SubType = subType;
-            Weight = weight;
-            _Quality = quality;
-            Dice = dice;
-            Damage = damage;  
-            Value = value;    
-            Description = description;
-            Name = name;
-            IsIdentified = isIdentified;
+            get => subType; set
+            {
+                subType = value;
+                switch (subType)
+                {
+                    case SubType.Crossbow:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Bow:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 1.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Pistol:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Rifle:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Shotgun:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Lasergun:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Sling:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 0.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    case SubType.Blowgun:
+                        _DamageType = DamageType.Piercing;
+                        Weight = 0.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                        break;
+                    default: 
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 1000f;
+                        break;
+                }
+            }
         }
+
     }
 }

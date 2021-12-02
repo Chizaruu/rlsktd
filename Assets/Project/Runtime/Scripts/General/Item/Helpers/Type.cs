@@ -7,8 +7,6 @@ namespace RLSKTD.General.Item.Helpers {
             Weapon,
             /// <summary> The item is a armor type. </summary>
             Armor,
-            /// <summary> The item is a jewelry type. </summary>
-            Jewelry,
             /// <summary> The item is a food type. </summary>
             Food,
             /// <summary> The item is a potion type. </summary>

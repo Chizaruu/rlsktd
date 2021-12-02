@@ -1,5 +1,7 @@
 using RLSKTD.General.Item.Helpers;
+using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using System;
 
 namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
     /// <summary> This is the OneHanded class </summary>
@@ -15,7 +17,7 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
         
-        [OdinSerialize]public SubType _SubType
+        [ShowInInspector]public SubType _SubType
         {
             get
             {
@@ -30,72 +32,70 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
                 {
                     case SubType.Shortsword:
                         _DamageType = DamageType.Slashing;
+                        Weight = 1.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Longsword:
                         _DamageType = DamageType.Slashing;
+                        Weight = 1.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Dagger:
                         _DamageType = DamageType.Piercing;
+                        Weight = 0.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Scimitar:
                         _DamageType = DamageType.Slashing;
+                        Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Cutlass:
                         _DamageType = DamageType.Slashing;
+                        Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Rapier:
                         _DamageType = DamageType.Piercing;
+                        Weight = 1.0f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Kris:
                         _DamageType = DamageType.Piercing;
+                        Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Saber:
                         _DamageType = DamageType.Slashing;
+                        Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Club:
                         _DamageType = DamageType.Bludgeoning;
+                        Weight = 1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Mace:
                         _DamageType = DamageType.Bludgeoning;
+                        Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Shortspear:
                         _DamageType = DamageType.Piercing;
+                        Weight = 1.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Sickle:
                         _DamageType = DamageType.Slashing;
+                        Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Morningstar:
                         _DamageType = DamageType.Bludgeoning;
+                        Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Whip:
                         _DamageType = DamageType.Slashing;
+                        Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Flail:
                         _DamageType = DamageType.Bludgeoning;
+                        Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                     case SubType.Handaxe:
                         _DamageType = DamageType.Slashing;
+                        Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
                         break;
                 }
             }
-        }
-
-        public OneHanded(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
-         float weight, bool isIdentified, int value, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, material, quality, weight, isIdentified, value, color, dice, damage, weaponType, damageType)
-        {
-            _WeaponType = WeaponType.OneHanded;
-            _Material = material;
-            Color = color;
-            _SubType = subType;
-            Weight = weight;
-            _Quality = quality;
-            Dice = dice;
-            Damage = damage;  
-            Value = value;    
-            Description = description;
-            Name = name;
-            IsIdentified = isIdentified;
         }
     }
 }

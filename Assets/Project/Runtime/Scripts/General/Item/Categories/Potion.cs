@@ -12,19 +12,5 @@ namespace RLSKTD.General.Item.Categories
         [OdinSerialize]private int stackAmount = 1;
         
         public int StackAmount { get => stackAmount; set => stackAmount = value; }
-
-        public Potion(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality, float weight, bool isIdentified, int worth, UnityEngine.Color color, int stackAmount) 
-        : base(name, description, material, quality, weight, isIdentified, worth, color)
-        {
-            Name = name;
-            Description = description;
-            _Material = material;
-            _Quality = quality;
-            Weight = weight;
-            IsIdentified = isIdentified;
-            Value = worth;
-            Color = color;
-            StackAmount = stackAmount;
-        }
     }
 }

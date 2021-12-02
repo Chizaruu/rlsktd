@@ -1,4 +1,6 @@
+using System;
 using RLSKTD.General.Item.Helpers;
+using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
 namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
@@ -11,26 +13,34 @@ namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
             Buckler, Shield, Towershield,
         }
 
-        [OdinSerialize]private SubType subType;
+        [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        public SubType _SubType { get => subType; set => subType = value; } 
-
-        public Shield(string name, string description, Material.MaterialEnum material, Quality.QualityEnum quality,
-         float weight, bool isIdentified, int value, UnityEngine.Color color, int dice, int damage, DamageType damageType, WeaponType weaponType, SubType subType) : 
-         base(name, description, material, quality, weight, isIdentified, value, color, dice, damage, weaponType, damageType)
+        [ShowInInspector]public SubType _SubType
         {
-            _WeaponType = WeaponType.OneHanded;
-            _Material = material;
-            Color = color;
-            _SubType = subType;
-            Weight = weight;
-            _Quality = quality;
-            Dice = dice;
-            Damage = damage;  
-            Value = value;    
-            Description = description;
-            Name = name;
-            IsIdentified = isIdentified;
+            get => subType; set
+            {
+                subType = value;
+                switch (subType)
+                {
+                    case SubType.Buckler:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        break;
+                    case SubType.Shield:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        break;
+                    case SubType.Towershield:
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        break;
+                    default: 
+                        _DamageType = DamageType.Bludgeoning;
+                        Weight = 1000f;
+                        break;
+                }
+            }
         }
+
     }
 }
