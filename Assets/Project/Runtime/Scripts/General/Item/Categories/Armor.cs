@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item.Categories{
+namespace RLSKTD.General.ItemCategories{
     public class Armor : Item{
         public enum ArmorType{
             Head, Back, Body, Hand, Waist, Foot, Neck, Finger, Ear

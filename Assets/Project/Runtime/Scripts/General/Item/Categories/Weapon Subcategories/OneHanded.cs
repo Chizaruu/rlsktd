@@ -1,9 +1,9 @@
-using RLSKTD.General.Item.Helpers;
+using RLSKTD.General.ItemHelpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using System;
 
-namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
+namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
     /// <summary> This is the OneHanded class </summary>
     [System.Serializable]
     public class OneHanded : Weapon

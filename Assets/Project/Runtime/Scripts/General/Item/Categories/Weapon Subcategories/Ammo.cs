@@ -1,8 +1,8 @@
-using RLSKTD.General.Item.Helpers;
+using RLSKTD.General.ItemHelpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item.Categories.WeaponSubcategories{
+namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
     /// <summary> This is the Ammo class </summary>
     [System.Serializable]
     public class Ammo : Weapon

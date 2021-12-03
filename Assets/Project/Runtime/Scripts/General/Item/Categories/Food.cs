@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item.Categories{
+namespace RLSKTD.General.ItemCategories{
     /// <summary> This is the Food class </summary>
     [System.Serializable]
     public class Food : Item

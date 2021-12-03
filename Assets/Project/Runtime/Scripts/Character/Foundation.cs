@@ -3,7 +3,7 @@ using UnityEngine;
 using System.IO;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
-using RLSKTD.General.Item;
+using RLSKTD.General;
 using RLSKTD.Character.NPC;
 using RLSKTD.Character.NPC.State;
 

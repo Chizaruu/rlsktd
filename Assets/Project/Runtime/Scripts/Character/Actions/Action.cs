@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary> Actions are the basic building blocks of the character. </summary>
-namespace RLSKTD.Character.Actions
+namespace RLSKTD.Character
 {
     /// <summary> Action is the base class for all actions. </summary>
     public class Action : MonoBehaviour {

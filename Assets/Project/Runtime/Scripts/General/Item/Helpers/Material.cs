@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RLSKTD.General.Item.Helpers {
+namespace RLSKTD.General.ItemHelpers {
   /// <summary> /// <summary> The material of an item. </summary>
     public class Material {
         /// <summary> Types of all materials. </summary>

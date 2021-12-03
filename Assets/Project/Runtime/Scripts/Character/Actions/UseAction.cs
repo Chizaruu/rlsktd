@@ -1,5 +1,5 @@
 using UnityEngine;
-using RLSKTD.General.Item;
+using RLSKTD.General;
 
 /// <summary> Actions are the basic building blocks of the character. </summary>
 namespace RLSKTD.Character.Actions

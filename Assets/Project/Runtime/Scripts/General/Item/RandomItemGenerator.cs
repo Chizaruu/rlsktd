@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
-using RLSKTD.General.Item.Helpers;
-using RLSKTD.General.Item.Categories;
-using RLSKTD.General.Item.Categories.WeaponSubcategories;
-using RLSKTD.General.Item.Categories.ArmorSubcategories;
-using RLSKTD.General.Item.Categories.FoodSubcategories;
+using RLSKTD.General.ItemHelpers;
+using RLSKTD.General.ItemCategories;
+using RLSKTD.General.ItemCategories.WeaponSubcategories;
+using RLSKTD.General.ItemCategories.ArmorSubcategories;
+using RLSKTD.General.ItemCategories.FoodSubcategories;
 
-namespace RLSKTD.General.Item{
+namespace RLSKTD.General{
     public class RandomItemGenerator{
 
         public static List<Item> GenerateItem(int requiredItemAmount){
@@ -320,8 +320,6 @@ namespace RLSKTD.General.Item{
             }
         }
 
-        
-
         private static Item GeneratePotion()
         {
             throw new System.NotImplementedException();
@@ -374,7 +372,7 @@ namespace RLSKTD.General.Item{
         /// <summary> Generates a random quality enum </summary>
         private static Type.TypeEnum GenerateTypeEnum() => (Type.TypeEnum)Random.Range(0, System.Enum.GetNames(typeof(Type.TypeEnum)).Length + 1);
         /// <summary> Generates a random material enum </summary>
-        private static Helpers.Material.MaterialEnum GetRandomMaterialEnum() => (Helpers.Material.MaterialEnum)Random.Range(0, System.Enum.GetNames(typeof(Helpers.Material.MaterialEnum)).Length + 1);
+        private static ItemHelpers.Material.MaterialEnum GetRandomMaterialEnum() => (ItemHelpers.Material.MaterialEnum)Random.Range(0, System.Enum.GetNames(typeof(ItemHelpers.Material.MaterialEnum)).Length + 1);
         /// <summary> Generates a random quality enum </summary>
         private static Quality.QualityEnum GenerateQualityEnum() => (Quality.QualityEnum)Random.Range(0, System.Enum.GetNames(typeof(Quality.QualityEnum)).Length + 1);   
         /// <summary> Generates a random weapon type enum </summary>

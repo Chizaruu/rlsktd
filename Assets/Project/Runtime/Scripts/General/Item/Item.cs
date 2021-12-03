@@ -1,8 +1,8 @@
-using RLSKTD.General.Item.Helpers;
+using RLSKTD.General.ItemHelpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item{
+namespace RLSKTD.General{
     /// <summary> Base class for all items. </summary>
     /// <remarks> This class is used to define the base properties of all items. </remarks>
     [System.Serializable]

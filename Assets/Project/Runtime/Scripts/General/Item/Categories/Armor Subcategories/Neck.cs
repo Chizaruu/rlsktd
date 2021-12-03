@@ -1,9 +1,9 @@
 using System;
-using RLSKTD.General.Item.Helpers;
+using RLSKTD.General.ItemHelpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item.Categories.ArmorSubcategories{
+namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
     /// <summary> This is the Neck class </summary>
     [System.Serializable]
     public class Neck : Armor

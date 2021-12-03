@@ -1,4 +1,4 @@
-namespace RLSKTD.General.Item.Helpers {
+namespace RLSKTD.General.ItemHelpers {
     /// <summary> The quality of an item. </summary>
     /// <remarks> 
     /// Quality will affect the performance of the item.

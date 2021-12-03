@@ -1,4 +1,4 @@
-namespace RLSKTD.General.Item.Helpers {
+namespace RLSKTD.General.ItemHelpers {
     /// <summary> The type of an item. </summary>
     public class Type {
         /// <summary> Enums of all item types. </summary>

@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item.Categories{
+namespace RLSKTD.General.ItemCategories{
     /// <summary> This is the weapon class </summary>
     [System.Serializable]
     public class Weapon : Item

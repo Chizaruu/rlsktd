@@ -1,8 +1,8 @@
-using RLSKTD.General.Item.Helpers;
+using RLSKTD.General.ItemHelpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item.Categories.FoodSubcategories{
+namespace RLSKTD.General.ItemCategories.FoodSubcategories{
     /// <summary> This is the Vegetable class </summary>
     [System.Serializable]
     public class Vegetable : Food{
@@ -21,7 +21,7 @@ namespace RLSKTD.General.Item.Categories.FoodSubcategories{
             get => subType; set
             {
                 subType = value;
-                _Material = Helpers.Material.MaterialEnum.Organic;
+                _Material = ItemHelpers.Material.MaterialEnum.Organic;
                 IsIdentified = true;
                 switch (subType)
                 {

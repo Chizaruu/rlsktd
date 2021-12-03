@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace RLSKTD.General.Item.Categories.FoodSubcategories{
+namespace RLSKTD.General.ItemCategories.FoodSubcategories{
     [System.Serializable]
     public class Processed : Food{
         public enum SubType
@@ -16,7 +16,7 @@ namespace RLSKTD.General.Item.Categories.FoodSubcategories{
             get => subType; set
             {
                 subType = value;
-                _Material = Helpers.Material.MaterialEnum.Organic;
+                _Material = ItemHelpers.Material.MaterialEnum.Organic;
                 IsIdentified = true;
                 switch (subType)
                 {
