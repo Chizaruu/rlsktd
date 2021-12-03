@@ -223,40 +223,99 @@ namespace RLSKTD.General.Item{
                 default: Debug.Log("RandomItemGenerator: GenerateArmor: Armor type not found"); return null;
             }
         }
-
+        //Need to develop a value system for food
         private static Item GenerateFood()
         {
             switch (GenerateFoodTypeEnum())
             {
-                case Food.FoodType.Vegetable:
-                    Vegetable vegetable = new Vegetable();
-                    vegetable._FoodType = Food.FoodType.Vegetable;
-                    vegetable._Material = Helpers.Material.MaterialEnum.Organic;
-                    vegetable._SubType = (Vegetable.SubType)Random.Range(0, System.Enum.GetNames(typeof(Vegetable.SubType)).Length + 1);
-                    vegetable._Quality = GenerateQualityEnum();
-                    vegetable.Weight = 0.1f; //TODO: Add weight generation from quality
-                    vegetable.IsCooked = Random.Range(0, 2) == 0;
-                    vegetable.Wellness = Random.Range(1, 30); //TODO: Add wellness value generation from quality
-                    vegetable.ShelfLife = Random.Range(0, 100); //TODO: Add shelf life generation from wellness and quality
-                    vegetable.Value = Random.Range(1, 100); //TODO: Add value generation from wellness, quality and subtype
-                    vegetable.IsIdentified = true;
-                    if (vegetable.IsCooked)
-                    {
-                        vegetable.Name = "A Cooked " + vegetable.Name;
-                    }
-                    return vegetable;
+                case Food.FoodType.Dairy:
+                    Dairy dairy = new Dairy();
+                    dairy._FoodType = Food.FoodType.Dairy;
+                    dairy._SubType = (Dairy.SubType)Random.Range(0, System.Enum.GetNames(typeof(Dairy.SubType)).Length + 1);
+                    dairy._Quality = GenerateQualityEnum();
+                    dairy.ShelfLife = Random.Range((int)dairy.Satiety * (int)dairy._Quality, 100);
+                    dairy.Value = Random.Range((int)dairy.Satiety * (int)dairy._Quality, 100);
+                    return dairy;
                 case Food.FoodType.Fruit:
                     Fruit fruit = new Fruit();
                     fruit._FoodType = Food.FoodType.Fruit;
-                    fruit._Material = Helpers.Material.MaterialEnum.Organic;
                     fruit._SubType = (Fruit.SubType)Random.Range(0, System.Enum.GetNames(typeof(Fruit.SubType)).Length + 1);
                     fruit._Quality = GenerateQualityEnum();
-                    fruit.Weight = 0.1f; //TODO: Add weight generation from quality
-                    fruit.Wellness = Random.Range(1, 30); //TODO: Add wellness value generation from quality
-                    fruit.ShelfLife = Random.Range(0, 100); //TODO: Add shelf life generation from wellness and quality
-                    fruit.Value = Random.Range(1, 100); //TODO: Add value generation from wellness, quality and subtype
-                    fruit.IsIdentified = true;
+                    fruit.Weight = fruit.GetSubTypeWeight();
+                    fruit.ShelfLife = Random.Range((int)fruit.Satiety * (int)fruit._Quality, 100);
+                    fruit.Value = Random.Range((int)fruit.Satiety * (int)fruit._Quality, 100); 
                     return fruit;
+                case Food.FoodType.Meat:
+                    Meat meat = new Meat();
+                    meat._FoodType = Food.FoodType.Meat;
+                    meat._SubType = (Meat.SubType)Random.Range(0, System.Enum.GetNames(typeof(Meat.SubType)).Length + 1);
+                    meat._Quality = GenerateQualityEnum();
+                    meat.Weight = meat.GetSubTypeWeight();
+                    meat.IsCooked = Random.Range(0, 2) == 0;
+                    meat.ShelfLife = Random.Range((int)meat.Satiety * (int)meat._Quality, 100);
+                    meat.Value = Random.Range((int)meat.Satiety * (int)meat._Quality, 100);
+                    if (meat.IsCooked){
+                        meat.Name = meat._Quality + " Cooked " + meat.Name;
+                    } else {
+                        meat.Name = meat._Quality + " Raw " + meat.Name;
+                    }
+                    return meat;
+                case Food.FoodType.Plant:
+                    Plant plant = new Plant();
+                    plant._FoodType = Food.FoodType.Plant;
+                    plant._SubType = (Plant.SubType)Random.Range(0, System.Enum.GetNames(typeof(Plant.SubType)).Length + 1);
+                    plant._Quality = GenerateQualityEnum();
+                    plant.Weight = plant.GetSubTypeWeight();
+                    plant.ShelfLife = Random.Range((int)plant.Satiety * (int)plant._Quality, 100);
+                    plant.Value = Random.Range((int)plant.Satiety * (int)plant._Quality, 100);
+                    return plant;
+                case Food.FoodType.Processed:
+                    Processed processed = new Processed();
+                    processed._FoodType = Food.FoodType.Processed;
+                    processed._SubType = (Processed.SubType)Random.Range(0, System.Enum.GetNames(typeof(Processed.SubType)).Length + 1);
+                    processed._Quality = GenerateQualityEnum();
+                    processed.Weight = processed.GetSubTypeWeight();
+                    processed.ShelfLife = Random.Range((int)processed.Satiety * (int)processed._Quality, 100);
+                    processed.Value = Random.Range((int)processed.Satiety * (int)processed._Quality, 100);
+                    return processed;
+                case Food.FoodType.Seafood:
+                    Seafood seafood = new Seafood();
+                    seafood._FoodType = Food.FoodType.Seafood;
+                    seafood._SubType = (Seafood.SubType)Random.Range(0, System.Enum.GetNames(typeof(Seafood.SubType)).Length + 1);
+                    seafood._Quality = GenerateQualityEnum();
+                    seafood.Weight = seafood.GetSubTypeWeight();
+                    seafood.ShelfLife = Random.Range((int)seafood.Satiety * (int)seafood._Quality, 100);
+                    seafood.Value = Random.Range((int)seafood.Satiety * (int)seafood._Quality, 100);
+                    if (seafood.IsCooked){
+                        seafood.Name = seafood._Quality + " Cooked " + seafood.Name;
+                    } else {
+                        seafood.Name = seafood._Quality + " Raw " + seafood.Name;
+                    }
+                    return seafood;
+                case Food.FoodType.Seed:
+                    Seed seed = new Seed();
+                    seed._FoodType = Food.FoodType.Seed;
+                    seed._SubType = (Seed.SubType)Random.Range(0, System.Enum.GetNames(typeof(Seed.SubType)).Length + 1);
+                    seed._Quality = GenerateQualityEnum();
+                    seed.Weight = seed.GetSubTypeWeight();
+                    seed.ShelfLife = Random.Range((int)seed.Satiety * (int)seed._Quality, 100);
+                    seed.Value = Random.Range((int)seed.Satiety * (int)seed._Quality, 100);
+                    return seed;
+                case Food.FoodType.Vegetable:
+                    Vegetable vegetable = new Vegetable();
+                    vegetable._FoodType = Food.FoodType.Vegetable;
+                    vegetable._SubType = (Vegetable.SubType)Random.Range(0, System.Enum.GetNames(typeof(Vegetable.SubType)).Length + 1);
+                    vegetable._Quality = GenerateQualityEnum();
+                    vegetable.Weight = vegetable.GetSubTypeWeight();
+                    vegetable.IsCooked = Random.Range(0, 2) == 0;
+                    vegetable.ShelfLife = Random.Range((int)vegetable.Satiety * (int)vegetable._Quality, 100);
+                    vegetable.Value = Random.Range((int)vegetable.Satiety * (int)vegetable._Quality, 100);
+                    if (vegetable.IsCooked){
+                        vegetable.Name = vegetable._Quality + " Cooked " + vegetable.Name;
+                    } else {
+                        vegetable.Name = vegetable._Quality + vegetable.Name;
+                    }
+                    return vegetable;
                 default: Debug.Log("RandomItemGenerator: GenerateFood: Food type not found"); return null;
             }
         }

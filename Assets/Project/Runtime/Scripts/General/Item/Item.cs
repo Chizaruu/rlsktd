@@ -27,7 +27,7 @@ namespace RLSKTD.General.Item{
         [ShowInInspector]public string Name { get => name; set => name = value; }
         [ShowInInspector]public string Description { get => description; set => description = value; }
         [ShowInInspector]public bool IsIdentified { get => isIdentified; set => isIdentified = value; }
-        [ShowInInspector]public Material.MaterialEnum _Material
+        [ShowInInspector, ReadOnly]public Material.MaterialEnum _Material
         {
             get => material; set
             {
