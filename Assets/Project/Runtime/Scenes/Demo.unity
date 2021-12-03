@@ -28503,7 +28503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.size
-      value: 16
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].weight.weightClass
@@ -28516,86 +28516,23 @@ PrefabInstance:
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"Inventory","value":{"$id":0,"$type":"System.Collections.Generic.List`1[[RLSKTD.General.Item.Item,
-        Project.Runtime]], mscorlib","$rlength":1,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.Item.Categories.WeaponSubcategories.OneHanded,
+        Project.Runtime]], mscorlib","$rlength":1,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.Item.Categories.FoodSubcategories.Fruit,
         Project.Runtime","name":null,"description":null,"material":0,"quality":0,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0,0,0,0},"_WeaponType":0,"_DamageType":2,"dice":0,"damage":0,"weaponType":0,"damageType":2,"_SubType":11,"subType":11}]}'
+        UnityEngine.CoreModule",0,0,0,0},"foodType":0,"isCooked":false,"isStackable":true,"wellness":15,"shelfLife":30,"stackamount":1,"subType":0}]}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
-      value: '"path":"Inventory.[0]","value":{"$id":0,"$type":"RLSKTD.General.Item.Categories.WeaponSubcategories.OneHanded,
+      value: '"path":"Inventory.[0]","value":{"$id":0,"$type":"RLSKTD.General.Item.Categories.FoodSubcategories.Fruit,
         Project.Runtime","name":null,"description":null,"material":0,"quality":0,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0,0,0,0},"_WeaponType":0,"_DamageType":2,"dice":0,"damage":0,"weaponType":0,"damageType":2,"_SubType":11,"subType":11}'
+        UnityEngine.CoreModule",0,0,0,0},"foodType":0,"isCooked":false,"isStackable":true,"wellness":15,"shelfLife":30,"stackamount":1,"subType":0}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[2]
-      value: '"path":"Inventory.[0]._DamageType","value":{"$id":0,"$type":"RLSKTD.General.Item.Categories.Weapon+DamageType,
-        Project.Runtime",2}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[3]
-      value: '"path":"Inventory.[0]._SubType","value":{"$id":0,"$type":"RLSKTD.General.Item.Categories.WeaponSubcategories.OneHanded+SubType,
-        Project.Runtime",11}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[4]
-      value: '"path":"Inventory.[0]._WeaponType","value":{"$id":0,"$type":"RLSKTD.General.Item.Categories.Weapon+WeaponType,
-        Project.Runtime",0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[5]
-      value: '"path":"Inventory.[0].color","value":{"$id":0,"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0,0,0,0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[6]
-      value: '"path":"Inventory.[0].damage","value":{"$id":0,"$type":"System.Int32,
-        mscorlib",0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[7]
-      value: '"path":"Inventory.[0].description","value":null'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[8]
-      value: '"path":"Inventory.[0].dice","value":{"$id":0,"$type":"System.Int32,
-        mscorlib",0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[9]
-      value: '"path":"Inventory.[0].isIdentified","value":{"$id":0,"$type":"System.Boolean,
-        mscorlib",false}'
+      value: '"path":"isPlayer","value":{"$id":0,"$type":"System.Boolean, mscorlib",true}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].material.itemMaterial
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[10]
-      value: '"path":"Inventory.[0].material","value":{"$id":0,"$type":"RLSKTD.General.Item.Helpers.Material+MaterialEnum,
-        Project.Runtime",0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[11]
-      value: '"path":"Inventory.[0].name","value":null'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[12]
-      value: '"path":"Inventory.[0].quality","value":{"$id":0,"$type":"RLSKTD.General.Item.Helpers.Quality+QualityEnum,
-        Project.Runtime",0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[13]
-      value: '"path":"Inventory.[0].value","value":{"$id":0,"$type":"System.Int32,
-        mscorlib",0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[14]
-      value: '"path":"Inventory.[0].weight","value":{"$id":0,"$type":"System.Single,
-        mscorlib",0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[15]
-      value: '"path":"isPlayer","value":{"$id":0,"$type":"System.Boolean, mscorlib",true}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size

@@ -25,9 +25,5 @@ namespace RLSKTD.General.ItemHelper
             "Sink", "Chair", "Table", "Cushion", "Lamp",
             "Bookshelf", "Bed", "Stove"
         };
-
-        public List<string> Equipment { get => equipment; }  // Getter for Equipment Types
-        public List<string> Usable { get => usable; } // Getter for Usable Types
-        public List<string> Decorative { get => decorative; } // Getter for Decorative Types
     }
 }

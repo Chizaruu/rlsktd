@@ -4,6 +4,7 @@ using RLSKTD.General.Item.Helpers;
 using RLSKTD.General.Item.Categories;
 using RLSKTD.General.Item.Categories.WeaponSubcategories;
 using RLSKTD.General.Item.Categories.ArmorSubcategories;
+using RLSKTD.General.Item.Categories.FoodSubcategories;
 
 namespace RLSKTD.General.Item{
     public class RandomItemGenerator{
@@ -225,8 +226,42 @@ namespace RLSKTD.General.Item{
 
         private static Item GenerateFood()
         {
-            throw new System.NotImplementedException();
+            switch (GenerateFoodTypeEnum())
+            {
+                case Food.FoodType.Vegetable:
+                    Vegetable vegetable = new Vegetable();
+                    vegetable._FoodType = Food.FoodType.Vegetable;
+                    vegetable._Material = Helpers.Material.MaterialEnum.Organic;
+                    vegetable._SubType = (Vegetable.SubType)Random.Range(0, System.Enum.GetNames(typeof(Vegetable.SubType)).Length + 1);
+                    vegetable._Quality = GenerateQualityEnum();
+                    vegetable.Weight = 0.1f; //TODO: Add weight generation from quality
+                    vegetable.IsCooked = Random.Range(0, 2) == 0;
+                    vegetable.Wellness = Random.Range(1, 30); //TODO: Add wellness value generation from quality
+                    vegetable.ShelfLife = Random.Range(0, 100); //TODO: Add shelf life generation from wellness and quality
+                    vegetable.Value = Random.Range(1, 100); //TODO: Add value generation from wellness, quality and subtype
+                    vegetable.IsIdentified = true;
+                    if (vegetable.IsCooked)
+                    {
+                        vegetable.Name = "A Cooked " + vegetable.Name;
+                    }
+                    return vegetable;
+                case Food.FoodType.Fruit:
+                    Fruit fruit = new Fruit();
+                    fruit._FoodType = Food.FoodType.Fruit;
+                    fruit._Material = Helpers.Material.MaterialEnum.Organic;
+                    fruit._SubType = (Fruit.SubType)Random.Range(0, System.Enum.GetNames(typeof(Fruit.SubType)).Length + 1);
+                    fruit._Quality = GenerateQualityEnum();
+                    fruit.Weight = 0.1f; //TODO: Add weight generation from quality
+                    fruit.Wellness = Random.Range(1, 30); //TODO: Add wellness value generation from quality
+                    fruit.ShelfLife = Random.Range(0, 100); //TODO: Add shelf life generation from wellness and quality
+                    fruit.Value = Random.Range(1, 100); //TODO: Add value generation from wellness, quality and subtype
+                    fruit.IsIdentified = true;
+                    return fruit;
+                default: Debug.Log("RandomItemGenerator: GenerateFood: Food type not found"); return null;
+            }
         }
+
+        
 
         private static Item GeneratePotion()
         {
@@ -277,10 +312,17 @@ namespace RLSKTD.General.Item{
             return ""; //TODO: Generate description
         }
 
+        /// <summary> Generates a random quality enum </summary>
         private static Type.TypeEnum GenerateTypeEnum() => (Type.TypeEnum)Random.Range(0, System.Enum.GetNames(typeof(Type.TypeEnum)).Length + 1);
+        /// <summary> Generates a random material enum </summary>
         private static Helpers.Material.MaterialEnum GetRandomMaterialEnum() => (Helpers.Material.MaterialEnum)Random.Range(0, System.Enum.GetNames(typeof(Helpers.Material.MaterialEnum)).Length + 1);
+        /// <summary> Generates a random quality enum </summary>
         private static Quality.QualityEnum GenerateQualityEnum() => (Quality.QualityEnum)Random.Range(0, System.Enum.GetNames(typeof(Quality.QualityEnum)).Length + 1);   
+        /// <summary> Generates a random weapon type enum </summary>
         private static Weapon.WeaponType GenerateWeaponTypeEnum() => (Weapon.WeaponType)Random.Range(0, System.Enum.GetNames(typeof(Weapon.WeaponType)).Length + 1);
+        /// <summary> Generates a random armor type enum </summary>
         private static Armor.ArmorType GenerateArmorTypeEnum() => (Armor.ArmorType)Random.Range(0, System.Enum.GetNames(typeof(Armor.ArmorType)).Length + 1);
+        /// <summary> Generates a random food type enum </summary>
+        private static Food.FoodType GenerateFoodTypeEnum() => (Food.FoodType)Random.Range(0, System.Enum.GetNames(typeof(Food.FoodType)).Length + 1);
     }
 }

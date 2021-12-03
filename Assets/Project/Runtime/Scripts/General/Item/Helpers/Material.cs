@@ -5,95 +5,95 @@ namespace RLSKTD.General.Item.Helpers {
     public class Material {
         /// <summary> Types of all materials. </summary>
         public enum MaterialEnum {
-            /// <summary> (Common) The item is made of Copper. </summary>
+            /// <summary> (Common) The material is Organic. </summary>
+            Organic,
+            /// <summary> (Common) The material is Copper. </summary>
             Copper,
-            /// <summary> (Common) The item is made of Tin. </summary>
+            /// <summary> (Common) The material is Tin. </summary>
             Tin,
-            /// <summary> (Common) The item is made of Bronze. </summary>
+            /// <summary> (Common) The material is Bronze. </summary>
             Bronze,
-            /// <summary> (Common) The item is made of Iron. </summary>
+            /// <summary> (Common) The material is Iron. </summary>
             Iron,
-            /// <summary> (Common) The item is made of Gold. </summary>
+            /// <summary> (Common) The material is Gold. </summary>
             Gold,
-            /// <summary> (Common) The item is made of Bone. </summary>
+            /// <summary> (Common) The material is Bone. </summary>
             Bone,
-            /// <summary> (Common) The item is made of Cloth. </summary>
+            /// <summary> (Common) The material is Cloth. </summary>
             Cloth,
-            /// <summary> (Common) The item is made of Silk. </summary>
+            /// <summary> (Common) The material is Silk. </summary>
             Silk,
-            /// <summary> (Common) The item is made of Leather. </summary>
+            /// <summary> (Common) The material is Leather. </summary>
             Leather,
-            /// <summary> (Common) The item is made of Wood. </summary>
+            /// <summary> (Common) The material is Wood. </summary>
             Wood,
-            /// <summary> (Common) The item is made of Stone. </summary>
+            /// <summary> (Common) The material is Stone. </summary>
             Stone,
-            /// <summary> (Common) The item is made of Flesh. </summary>
+            /// <summary> (Common) The material is Flesh. </summary>
             Flesh,
-            /// <summary> (Common) The item is made of Paper. </summary>
+            /// <summary> (Common) The material is Paper. </summary>
             Paper,
-            /// <summary> (Common) The item is made of Mica. </summary>
+            /// <summary> (Common) The material is Mica. </summary>
             Mica,
-            /// <summary> (Common) The item is made of Coral. </summary>
+            /// <summary> (Common) The material is Coral. </summary>
             Coral,
-            /// <summary> (Common) The item is made of Sand. </summary>
+            /// <summary> (Common) The material is Sand. </summary>
             Sand,
-            /// <summary> (Uncommon) The item is made of Lunarite. </summary>
+            /// <summary> (Uncommon) The material is Lunarite. </summary>
             Lunarite,
-            /// <summary> (Uncommon) The item is made of Silver. </summary>
+            /// <summary> (Uncommon) The material is Silver. </summary>
             Silver,
-            /// <summary> (Uncommon) The item is made of Chain. </summary>
-            Chain,
-            /// <summary> (Uncommon) The item is made of Steel. </summary>
+            /// <summary> (Uncommon) The material is Steel. </summary>
             Steel,
-            /// <summary> (Uncommon) The item is made of Obsidian. </summary>
+            /// <summary> (Uncommon) The material is Obsidian. </summary>
             Obsidian,
-            /// <summary> (Uncommon) The item is made of Glass. </summary>
+            /// <summary> (Uncommon) The material is Glass. </summary>
             Glass,
-            /// <summary> (Uncommon) The item is made of Scale. </summary>
+            /// <summary> (Uncommon) The material is Scale. </summary>
             Scale,
-            /// <summary> (Uncommon) The item is made of Magic Cloth. </summary>
+            /// <summary> (Uncommon) The material is Magic Cloth. </summary>
             MagicCloth,
-            /// <summary> (Uncommon) The item is made of Magic Leather. </summary>
+            /// <summary> (Uncommon) The material is Magic Leather. </summary>
             MagicLeather,
-            /// <summary> (Uncommon) The item is made of Magic Wood. </summary>
+            /// <summary> (Uncommon) The material is Magic Wood. </summary>
             MagicWood,
-            /// <summary> (Uncommon) The item is made of Magic Stone. </summary>
+            /// <summary> (Uncommon) The material is Magic Stone. </summary>
             MagicStone,
-            /// <summary> (Uncommon) The item is made of Emerald. </summary>
+            /// <summary> (Uncommon) The material is Emerald. </summary>
             Emerald,
-            /// <summary> (Uncommon) The item is made of Ruby. </summary>
+            /// <summary> (Uncommon) The material is Ruby. </summary>
             Ruby,
-            /// <summary> (Uncommon) The item is made of Sapphire. </summary>
+            /// <summary> (Uncommon) The material is Sapphire. </summary>
             Sapphire,
-            /// <summary> (Uncommon) The item is made of Topaz. </summary>
+            /// <summary> (Uncommon) The material is Topaz. </summary>
             Topaz,
-            /// <summary> (Rare) The item is made of Mithril. </summary>
+            /// <summary> (Rare) The material is Mithril. </summary>
             Mithril,
-            /// <summary> (Rare) The item is made of Adamantium. </summary>
+            /// <summary> (Rare) The material is Adamantium. </summary>
             Adamantium,
-            /// <summary> (Rare) The item is made of Dense Coral. </summary>
+            /// <summary> (Rare) The material is Dense Coral. </summary>
             DenseCoral,
-            /// <summary> (Rare) The item is made of Diamond. </summary>
+            /// <summary> (Rare) The material is Diamond. </summary>
             Diamond,
-            /// <summary> (Rare) The item is made of Opal. </summary>
+            /// <summary> (Rare) The material is Opal. </summary>
             Opal,
-            /// <summary> (Rare) The item is made of Amethyst. </summary>
+            /// <summary> (Rare) The material is Amethyst. </summary>
             Amethyst,
-            /// <summary> (Rare) The item is made of Jade. </summary>
+            /// <summary> (Rare) The material is Jade. </summary>
             Jade,
-            /// <summary> (Epic) The item is made of Orichalcum. </summary>
+            /// <summary> (Epic) The material is Orichalcum. </summary>
             Orichalcum,
-            /// <summary> (Epic) The item is made of Runite. </summary>
+            /// <summary> (Epic) The material is Runite. </summary>
             Runite,
-            /// <summary> (Epic) The item is made of Dragonite. </summary>
+            /// <summary> (Epic) The material is Dragonite. </summary>
             Dragonite,
-            /// <summary> (Epic) The item is made of Moonstone. </summary>
+            /// <summary> (Epic) The material is Moonstone. </summary>
             Moonstone,
-            /// <summary> (Epic) The item is made of Sunstone. </summary>
+            /// <summary> (Epic) The material is Sunstone. </summary>
             Sunstone,
-            /// <summary> (Epic) The item is made of Onyx. </summary>
+            /// <summary> (Epic) The material is Onyx. </summary>
             Onyx,
-            /// <summary> (Epic) The item is made of Zylon. </summary>
+            /// <summary> (Epic) The material is Zylon. </summary>
             Zylon,
         }
 
@@ -107,103 +107,77 @@ namespace RLSKTD.General.Item.Helpers {
         public static float GetMaterialWeight(MaterialEnum materialEnum) {
             switch (materialEnum) {
                 case MaterialEnum.Copper:
-                    return 0.1f;
+                    return 1f;
                 case MaterialEnum.Tin:
-                    return 0.1f;
+                    return 1f;
                 case MaterialEnum.Bronze:
-                    return 0.2f;
+                    return 1.2f;
                 case MaterialEnum.Iron:
-                    return 0.3f;
+                    return 1f;
                 case MaterialEnum.Gold:
-                    return 0.4f;
+                    return 1f;
                 case MaterialEnum.Bone:
-                    return 0.5f;
+                    return 0.2f;
                 case MaterialEnum.Cloth:
-                    return 0.6f;
+                    return 0.25f;
                 case MaterialEnum.Silk:
-                    return 0.7f;
+                    return 0.25f;
                 case MaterialEnum.Leather:
                     return 0.8f;
                 case MaterialEnum.Wood:
-                    return 0.9f;
-                case MaterialEnum.Stone:
-                    return 1.0f;
-                case MaterialEnum.Flesh:
-                    return 1.1f;
-                case MaterialEnum.Paper:
                     return 1.2f;
+                case MaterialEnum.Stone:
+                    return 1f;
+                case MaterialEnum.Flesh:
+                    return 0.55f;
                 case MaterialEnum.Mica:
-                    return 1.3f;
+                    return 0.6f;
                 case MaterialEnum.Coral:
-                    return 1.4f;
+                    return 0.3f;
                 case MaterialEnum.Sand:
-                    return 1.5f;
+                    return 0.5f;
                 case MaterialEnum.Lunarite:
-                    return 1.6f;
+                    return 1f;
                 case MaterialEnum.Silver:
-                    return 1.7f;
-                case MaterialEnum.Chain:
-                    return 1.8f;
+                    return 0.5f;
                 case MaterialEnum.Steel:
-                    return 1.9f;
+                    return 1.5f;
                 case MaterialEnum.Zylon:
-                    return 2.0f;
+                    return 0.5f;
                 case MaterialEnum.Obsidian:
-                    return 2.1f;
-                case MaterialEnum.Glass:
-                    return 2.2f;
+                    return 2f;
                 case MaterialEnum.Scale:
-                    return 2.3f;
-                case MaterialEnum.MagicCloth:
-                    return 2.4f;
+                    return 0.3f;
                 case MaterialEnum.MagicLeather:
-                    return 2.5f;
+                    return 0.7f;
                 case MaterialEnum.MagicWood:
-                    return 2.6f;
+                    return 0.8f;
                 case MaterialEnum.MagicStone:
-                    return 2.7f;
-                case MaterialEnum.Emerald:
-                    return 2.8f;
-                case MaterialEnum.Ruby:
-                    return 2.9f;
-                case MaterialEnum.Sapphire:
-                    return 3.0f;
-                case MaterialEnum.Topaz:
-                    return 3.1f;
-                case MaterialEnum.Mithril:
-                    return 3.2f;
+                    return 1.5f;
                 case MaterialEnum.Adamantium:
-                    return 3.3f;
+                    return 1.7f;
                 case MaterialEnum.DenseCoral:
-                    return 3.4f;
-                case MaterialEnum.Diamond:
-                    return 3.5f;
-                case MaterialEnum.Opal:
-                    return 3.6f;
-                case MaterialEnum.Amethyst:
-                    return 3.7f;
-                case MaterialEnum.Jade:
-                    return 3.8f;
+                    return 0.9f;
                 case MaterialEnum.Orichalcum:
-                    return 3.9f;
+                    return 1.9f;
                 case MaterialEnum.Runite:
-                    return 4.0f;
+                    return 1.9f;
                 case MaterialEnum.Dragonite:
-                    return 4.1f;
+                    return 2f;
                 case MaterialEnum.Moonstone:
-                    return 4.2f;
+                    return 1.5f;
                 case MaterialEnum.Sunstone:
-                    return 4.3f;
-                case MaterialEnum.Onyx:
-                    return 4.4f;
+                    return 1.5f;
                 default:
-                    return 0.0f;
+                    return 0.1f;
             }
         }
     
         public static UnityEngine.Color GetMaterialColor(MaterialEnum materialEnum){
             switch (materialEnum)
             {
+                case MaterialEnum.Organic:
+                    return UnityEngine.Color.white;
                 case MaterialEnum.Copper:
                     return GetColourFromHex("#B87333");
                 case MaterialEnum.Tin:
@@ -239,8 +213,6 @@ namespace RLSKTD.General.Item.Helpers {
                 case MaterialEnum.Lunarite:
                     return GetColourFromHex("#ADD8E6");
                 case MaterialEnum.Silver:
-                    return GetColourFromHex("#c8cece");
-                case MaterialEnum.Chain:
                     return GetColourFromHex("#c8cece");
                 case MaterialEnum.Steel:
                     return GetColourFromHex("#c8cece");
