@@ -19,97 +19,97 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             {
                 subType = value;
                 _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                IsIdentified = true;
+                _IsIdentified = true;
                 switch (subType)
                 {
                     case SubType.Carp:
-                        Name = "Carp";
-                        Description = "A small fish that is found in the ocean.";
+                        _Name = "Carp";
+                        _Description = "A small fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Cod:
-                        Name = "Cod";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Cod";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Crab:
-                        Name = "Crab";
-                        Description = "A small fish that is found in the ocean.";
+                        _Name = "Crab";
+                        _Description = "A small fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Crayfish:
-                        Name = "Crayfish";
-                        Description = "A small fish that is found in the ocean.";
+                        _Name = "Crayfish";
+                        _Description = "A small fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Eel:
-                        Name = "Eel";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Eel";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Lobster:
-                        Name = "Lobster";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Lobster";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Mussel:
-                        Name = "Mussel";
-                        Description = "A small fish that is found in the ocean.";
+                        _Name = "Mussel";
+                        _Description = "A small fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Octopus:   
-                        Name = "Octopus";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Octopus";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Winkle:
-                        Name = "Winkle";
-                        Description = "A small fish that is found in the ocean.";
+                        _Name = "Winkle";
+                        _Description = "A small fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Prawn:
-                        Name = "Prawn";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Prawn";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Salmon:
-                        Name = "Salmon";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Salmon";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Scallop:
-                        Name = "Scallop";
-                        Description = "A small fish that is found in the ocean.";
+                        _Name = "Scallop";
+                        _Description = "A small fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Shrimp:    
-                        Name = "Shrimp";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Shrimp";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Snapper:
-                        Name = "Snapper";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Snapper";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Squid:
-                        Name = "Squid";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Squid";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Turtle:
-                        Name = "Turtle";
-                        Description = "A Whole Turtle";
+                        _Name = "Turtle";
+                        _Description = "A Whole Turtle";
                         Satiety = 10;
                         break; 
                     case SubType.Trout:
-                        Name = "Trout";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Trout";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 10;
                         break;
                     case SubType.Tuna:
-                        Name = "Tuna";
-                        Description = "A fish that is found in the ocean.";
+                        _Name = "Tuna";
+                        _Description = "A fish that is found in the ocean.";
                         Satiety = 100;
                         break;                
                     default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;

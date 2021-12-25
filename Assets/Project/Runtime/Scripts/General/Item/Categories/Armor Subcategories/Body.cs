@@ -24,23 +24,23 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
                 switch (subType)
                 {
                     case SubType.Robe:
-                        Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        _Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Light;
                         break;
                     case SubType.Kimono:
-                        Weight = 0.6f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        _Weight = 0.6f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Light;
                         break;
                     case SubType.Leatherarmor:
-                        Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                        _Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
                         _WeightClass = WeightClass.Medium;
                         break;
                     case SubType.Scalemail:
-                        Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                        _Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
                         _WeightClass = WeightClass.Medium;
                         break;
                     default:
-                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        _Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                         _WeightClass = WeightClass.Heavy;
                         break;
                 }

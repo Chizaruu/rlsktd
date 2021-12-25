@@ -20,122 +20,122 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             {
                 subType = value;
                 _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                IsIdentified = true;
+                _IsIdentified = true;
                 switch (subType)
                 {
                     case SubType.Apple:
-                        Name = "Apple";
-                        Description = "A red fruit";
+                        _Name = "Apple";
+                        _Description = "A red fruit";
                         Satiety = 10;
                         break;
                     case SubType.Banana:
-                        Name = "Banana";
-                        Description = "A yellow fruit";
+                        _Name = "Banana";
+                        _Description = "A yellow fruit";
                         Satiety = 10;
                         break;
                     case SubType.Blackberry:
-                        Name = "Blackberry";
-                        Description = "A red fruit";
+                        _Name = "Blackberry";
+                        _Description = "A red fruit";
                         Satiety = 10;
                         break;
                     case SubType.Cantaloupe:
-                        Name = "Cantaloupe";
-                        Description = "A yellow fruit";
+                        _Name = "Cantaloupe";
+                        _Description = "A yellow fruit";
                         Satiety = 15;
                         break;
                     case SubType.Cherry:
-                        Name = "Cherry";
-                        Description = "A red fruit";
+                        _Name = "Cherry";
+                        _Description = "A red fruit";
                         Satiety = 10;
                         break;
                     case SubType.Fig:
-                        Name = "Fig";
-                        Description = "A green fruit";
+                        _Name = "Fig";
+                        _Description = "A green fruit";
                         Satiety = 10;
                         break;
                     case SubType.Grape:
-                        Name = "Grape";
-                        Description = "A green fruit";
+                        _Name = "Grape";
+                        _Description = "A green fruit";
                         Satiety = 10;
                         break;
                     case SubType.Olive:
-                        Name = "Olive";
-                        Description = "A green fruit";
+                        _Name = "Olive";
+                        _Description = "A green fruit";
                         Satiety = 10;
                         break;
                     case SubType.Grapefruit:
-                        Name = "Grapefruit";
-                        Description = "A orange fruit";
+                        _Name = "Grapefruit";
+                        _Description = "A orange fruit";
                         Satiety = 10;
                         break;
                     case SubType.Kiwi:
-                        Name = "Kiwi";
-                        Description = "A brown fruit";
+                        _Name = "Kiwi";
+                        _Description = "A brown fruit";
                         Satiety = 10;
                         break;
                     case SubType.Lemon:
-                        Name = "Lemon";
-                        Description = "A yellow fruit";
+                        _Name = "Lemon";
+                        _Description = "A yellow fruit";
                         Satiety = 10;
                         break;
                     case SubType.Lime:
-                        Name = "Lime";
-                        Description = "A green fruit";
+                        _Name = "Lime";
+                        _Description = "A green fruit";
                         Satiety = 10;
                         break;
                     case SubType.Mango:
-                        Name = "Mango";
-                        Description = "A yellow fruit";
+                        _Name = "Mango";
+                        _Description = "A yellow fruit";
                         Satiety = 10;
                         break;
                     case SubType.Mangosteen:
-                        Name = "Mangosteen";
-                        Description = "A purple fruit";
+                        _Name = "Mangosteen";
+                        _Description = "A purple fruit";
                         Satiety = 10;
                         break;
                     case SubType.Orange:
-                        Name = "Orange";
-                        Description = "A orange fruit";
+                        _Name = "Orange";
+                        _Description = "A orange fruit";
                         Satiety = 10;
                         break;
                     case SubType.Papaya:
-                        Name = "Papaya";
-                        Description = "A yellow fruit";
+                        _Name = "Papaya";
+                        _Description = "A yellow fruit";
                         Satiety = 15;
                         break;
                     case SubType.Peach:
-                        Name = "Peach";
-                        Description = "A orange fruit";
+                        _Name = "Peach";
+                        _Description = "A orange fruit";
                         Satiety = 10;
                         break;
                     case SubType.Pear:
-                        Name = "Pear";
-                        Description = "A green fruit";
+                        _Name = "Pear";
+                        _Description = "A green fruit";
                         Satiety = 10;
                         break;
                     case SubType.Pineapple:
-                        Name = "Pineapple";
-                        Description = "A yellow fruit";
+                        _Name = "Pineapple";
+                        _Description = "A yellow fruit";
                         Satiety = 15;
                         break;
                     case SubType.Plum:
-                        Name = "Plum";
-                        Description = "A purple fruit";
+                        _Name = "Plum";
+                        _Description = "A purple fruit";
                         Satiety = 10;
                         break;
                     case SubType.Strawberry:
-                        Name = "Strawberry";
-                        Description = "A red fruit";
+                        _Name = "Strawberry";
+                        _Description = "A red fruit";
                         Satiety = 10;
                         break;
                     case SubType.Tomato:
-                        Name = "Tomato";
-                        Description = "A red fruit";
+                        _Name = "Tomato";
+                        _Description = "A red fruit";
                         Satiety = 10;
                         break;
                     case SubType.Watermelon:
-                        Name = "Watermelon";
-                        Description = "A green fruit";
+                        _Name = "Watermelon";
+                        _Description = "A green fruit";
                         Satiety = 15;
                         break;
                     default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;

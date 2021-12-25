@@ -23,19 +23,19 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
                 switch (subType)
                 {
                     case SubType.Girdle:
-                        Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        _Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                         _WeightClass = WeightClass.Heavy;
                         break;
                     case SubType.Belt:
-                        Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                        _Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
                         _WeightClass = WeightClass.Medium;
                         break;
                     case SubType.Sash:
-                        Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        _Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Light;
                         break;
                     default:
-                        Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        _Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Light;
                         break;
                 }

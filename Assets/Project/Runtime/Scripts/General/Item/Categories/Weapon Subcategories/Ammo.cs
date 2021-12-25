@@ -20,7 +20,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             get => subType; set
             {
                 subType = value;
-                Weight = 0.1f;
+                _Weight = 0.1f;
                 switch (subType)
                 {
                     case SubType.Stone:

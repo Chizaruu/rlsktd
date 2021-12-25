@@ -17,17 +17,17 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             {
                 subType = value;
                 _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                IsIdentified = true;
+                _IsIdentified = true;
                 switch (subType)
                 {
                     case SubType.SugarCane:
-                        Name = "SugarCane";
-                        Description = "A sweet, sweet sugar cane.";
+                        _Name = "SugarCane";
+                        _Description = "A sweet, sweet sugar cane.";
                         Satiety = 5;
                         break;
                     case SubType.Rose:
-                        Name = "Rose";
-                        Description = "A beautiful flower";
+                        _Name = "Rose";
+                        _Description = "A beautiful flower";
                         Satiety = 5;
                         break;
                     default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;

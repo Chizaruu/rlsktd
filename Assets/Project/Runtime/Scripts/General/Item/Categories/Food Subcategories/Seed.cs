@@ -19,97 +19,97 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             {
                 subType = value;
                 _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                IsIdentified = true;
+                _IsIdentified = true;
                 switch (subType)
                 {
                     case SubType.Almond:
-                        Name = "Almond";
-                        Description = "A seed of the Almond tree.";
+                        _Name = "Almond";
+                        _Description = "A seed of the Almond tree.";
                         Satiety = 3;
                         break;
                     case SubType.Barley:
-                        Name = "Barley";
-                        Description = "A seed of the Barley tree.";
+                        _Name = "Barley";
+                        _Description = "A seed of the Barley tree.";
                         Satiety = 3;
                         break;
                     case SubType.Cashew:
-                        Name = "Cashew";
-                        Description = "A seed of the Cashew tree.";
+                        _Name = "Cashew";
+                        _Description = "A seed of the Cashew tree.";
                         Satiety = 3;
                         break;
                     case SubType.Chestnut:
-                        Name = "Chestnut";
-                        Description = "A seed of the Chestnut tree.";
+                        _Name = "Chestnut";
+                        _Description = "A seed of the Chestnut tree.";
                         Satiety = 3;
                         break;
                     case SubType.Chickpea:
-                        Name = "Chickpea";
-                        Description = "A seed of the Chickpea tree.";
+                        _Name = "Chickpea";
+                        _Description = "A seed of the Chickpea tree.";
                         Satiety = 3;
                         break;
                     case SubType.CocoaBean:
-                        Name = "Cocoa Bean";
-                        Description = "A seed of the Cocoa Bean tree.";
+                        _Name = "Cocoa Bean";
+                        _Description = "A seed of the Cocoa Bean tree.";
                         Satiety = 3;
                         break;
                     case SubType.Coconut:
-                        Name = "Coconut";
-                        Description = "A seed of the Coconut tree.";
+                        _Name = "Coconut";
+                        _Description = "A seed of the Coconut tree.";
                         Satiety = 3;
                         break;
                     case SubType.CoffeeBean:    
-                        Name = "Coffee Bean";
-                        Description = "A seed of the Coffee Bean tree.";
+                        _Name = "Coffee Bean";
+                        _Description = "A seed of the Coffee Bean tree.";
                         Satiety = 3;
                         break;
                     case SubType.Corn:
-                        Name = "Corn";
-                        Description = "A seed of the Corn tree.";
+                        _Name = "Corn";
+                        _Description = "A seed of the Corn tree.";
                         Satiety = 3;
                         break;
                     case SubType.Lentil:
-                        Name = "Lentil";
-                        Description = "A seed of the Lentil tree.";
+                        _Name = "Lentil";
+                        _Description = "A seed of the Lentil tree.";
                         Satiety = 3;
                         break;
                     case SubType.LimaBean:
-                        Name = "Lima Bean";
-                        Description = "A seed of the Lima Bean tree.";
+                        _Name = "Lima Bean";
+                        _Description = "A seed of the Lima Bean tree.";
                         Satiety = 3;
                         break;
                     case SubType.Legume:
-                        Name = "Legume";
-                        Description = "A good source of vitamins C and E, zinc, and other antioxidants that strengthen your immune system.";
+                        _Name = "Legume";
+                        _Description = "A good source of vitamins C and E, zinc, and other antioxidants that strengthen your immune system.";
                         Satiety = 3;
                         break;
                     case SubType.Peanut:
-                        Name = "Peanut";
-                        Description = "A seed of the Peanut tree.";
+                        _Name = "Peanut";
+                        _Description = "A seed of the Peanut tree.";
                         Satiety = 3;
                         break;
                     case SubType.PintoBean:
-                        Name = "Pinto Bean";
-                        Description = "A seed of the Pinto Bean tree.";
+                        _Name = "Pinto Bean";
+                        _Description = "A seed of the Pinto Bean tree.";
                         Satiety = 3;
                         break;
                     case SubType.Pistachio:
-                        Name = "Pistachio";
-                        Description = "A seed of the Pistachio tree.";
+                        _Name = "Pistachio";
+                        _Description = "A seed of the Pistachio tree.";
                         Satiety = 3;
                         break;
                     case SubType.Rice:
-                        Name = "Rice";
-                        Description = "A seed of the Rice tree.";
+                        _Name = "Rice";
+                        _Description = "A seed of the Rice tree.";
                         Satiety = 3;
                         break;
                     case SubType.Walnut:
-                        Name = "Walnut";
-                        Description = "A seed of the Walnut tree.";
+                        _Name = "Walnut";
+                        _Description = "A seed of the Walnut tree.";
                         Satiety = 3;
                         break;
                     case SubType.Wheat:
-                        Name = "Wheat";
-                        Description = "A seed of the Wheat tree.";
+                        _Name = "Wheat";
+                        _Description = "A seed of the Wheat tree.";
                         Satiety = 3;
                         break;
                     default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;

@@ -25,5 +25,22 @@ namespace RLSKTD.General.ItemCategories{
         [ShowInInspector, ReadOnly]public int Damage { get => damage; set => damage = value; }
         [ShowInInspector, ReadOnly]public WeaponType _WeaponType { get => weaponType; set => weaponType = value; } 
         [ShowInInspector, ReadOnly]public DamageType _DamageType { get => damageType; set => damageType = value; }
+
+        /// <summary> Constructor for the Weapon class. </summary>
+        public Weapon(){}
+
+        /// <summary> Constructor for the Weapon class. </summary>
+
+        public Weapon(string name, string description, int weight, int value, int dice, int damage, WeaponType weaponType, DamageType damageType)
+        {
+            _Name = name;
+            _Description = description;
+            _Weight = weight;
+            _Value = value;
+            this.dice = dice;
+            this.damage = damage;
+            this._WeaponType = weaponType;
+            this._DamageType = damageType;
+        }
     }
 }

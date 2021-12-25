@@ -17,17 +17,17 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             {
                 subType = value;
                 _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                IsIdentified = true;
+                _IsIdentified = true;
                 switch (subType)
                 {
                     case SubType.Dough:
-                        Name = "Dough";
-                        Description = "A dough is a flat, dry, round, or spherical mass of flour or doughy substance, used in cooking.";
+                        _Name = "Dough";
+                        _Description = "A dough is a flat, dry, round, or spherical mass of flour or doughy substance, used in cooking.";
                         Satiety = 1;
                         break;
                     case SubType.Flour:
-                        Name = "Flour";
-                        Description = "A flour is a type of food made by grinding or mixing whole grains, such as wheat, oats, barley, rye, or rice, into a paste or dough.";
+                        _Name = "Flour";
+                        _Description = "A flour is a type of food made by grinding or mixing whole grains, such as wheat, oats, barley, rye, or rice, into a paste or dough.";
                         Satiety = 1;
                         break;
                 

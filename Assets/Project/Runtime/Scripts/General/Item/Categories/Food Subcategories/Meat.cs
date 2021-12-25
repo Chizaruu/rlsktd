@@ -18,52 +18,52 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             {
                 subType = value;
                 _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                IsIdentified = true;
+                _IsIdentified = true;
                 switch (subType)
                 {
                     case SubType.Beef:
-                        Name = "Beef";
-                        Description = "A Whole Beef";
+                        _Name = "Beef";
+                        _Description = "A Whole Beef";
                         Satiety = 100;
                         break;
                     case SubType.Chicken:
-                        Name = "Chicken";
-                        Description = "A Whole Chicken";
+                        _Name = "Chicken";
+                        _Description = "A Whole Chicken";
                         Satiety = 20;
                         break;
                     case SubType.Duck:
-                        Name = "Duck";
-                        Description = "A Whole Duck";
+                        _Name = "Duck";
+                        _Description = "A Whole Duck";
                         Satiety = 25;
                         break;
                     case SubType.Goat:
-                        Name = "Goat";
-                        Description = "A Whole Goat";
+                        _Name = "Goat";
+                        _Description = "A Whole Goat";
                         Satiety = 60;
                         break;
                     case SubType.Lamb:
-                        Name = "Lamb";
-                        Description = "A Whole Lamb";
+                        _Name = "Lamb";
+                        _Description = "A Whole Lamb";
                         Satiety = 80;
                         break;
                     case SubType.Mutton:
-                        Name = "Mutton";
-                        Description = "A Whole Mutton";
+                        _Name = "Mutton";
+                        _Description = "A Whole Mutton";
                         Satiety = 80;
                         break;
                     case SubType.Ox:    
-                        Name = "Ox";
-                        Description = "A Whole Ox";
+                        _Name = "Ox";
+                        _Description = "A Whole Ox";
                         Satiety = 100;
                         break;
                     case SubType.Rabbit:
-                        Name = "Rabbit";
-                        Description = "A Whole Rabbit";
+                        _Name = "Rabbit";
+                        _Description = "A Whole Rabbit";
                         Satiety = 15;
                         break; 
                     case SubType.Turkey:
-                        Name = "Turkey";
-                        Description = "A Whole Turkey";
+                        _Name = "Turkey";
+                        _Description = "A Whole Turkey";
                         Satiety = 30;
                         break;  
                     default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;

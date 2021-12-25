@@ -17,43 +17,45 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             {
                 subType = value;
                 _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                IsIdentified = true;
+                _IsIdentified = true;
                 switch (subType)
                 {
                     case SubType.Butter:
-                        Name = "Butter";
-                        Description = "A buttery substance";
+                        _Name = "Butter";
+                        _Description = "A buttery substance";
                         Satiety = 5;
                         break;
                     case SubType.Cheese:
-                        Name = "Cheese";
-                        Description = "A cheesey substance";
+                        _Name = "Cheese";
+                        _Description = "A cheesey substance";
                         Satiety = 5;
                         break;
                     case SubType.Cream: 
-                        Name = "Cream";
-                        Description = "A creamy substance";
+                        _Name = "Cream";
+                        _Description = "A creamy substance";
                         Satiety = 5;
                         break;
                     case SubType.IceCream:
-                        Name = "Ice Cream";
-                        Description = "A creamy substance";
+                        _Name = "Ice Cream";
+                        _Description = "A creamy substance";
                         Satiety = 5;
                         break;
                     case SubType.Milk:
-                        Name = "Milk";
-                        Description = "A milky substance";
+                        _Name = "Milk";
+                        _Description = "A milky substance";
                         Satiety = 5;
                         break;
                     case SubType.Yogurt:
-                        Name = "Yogurt";
-                        Description = "A milky substance";
+                        _Name = "Yogurt";
+                        _Description = "A milky substance";
                         Satiety = 5;
                         break;
                     default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;
                 }
             }
         }
+
+        public Dairy(){}
 
         public float GetSubTypeWeight()
         {
