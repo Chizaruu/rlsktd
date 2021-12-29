@@ -24,19 +24,19 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
                 {
                     case SubType.Buckler:
                         _DamageType = DamageType.Bludgeoning;
-                        _Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                         break;
                     case SubType.Shield:
                         _DamageType = DamageType.Bludgeoning;
-                        _Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                         break;
                     case SubType.Towershield:
                         _DamageType = DamageType.Bludgeoning;
-                        _Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                         break;
                     default: 
                         _DamageType = DamageType.Bludgeoning;
-                        _Weight = 1000f;
+                        Weight = 1000f;
                         break;
                 }
             }

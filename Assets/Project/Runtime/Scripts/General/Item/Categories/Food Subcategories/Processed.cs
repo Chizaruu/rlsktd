@@ -16,33 +16,56 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             get => subType; set
             {
                 subType = value;
-                _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                _IsIdentified = true;
-                switch (subType)
-                {
-                    case SubType.Dough:
-                        _Name = "Dough";
-                        _Description = "A dough is a flat, dry, round, or spherical mass of flour or doughy substance, used in cooking.";
-                        Satiety = 1;
-                        break;
-                    case SubType.Flour:
-                        _Name = "Flour";
-                        _Description = "A flour is a type of food made by grinding or mixing whole grains, such as wheat, oats, barley, rye, or rice, into a paste or dough.";
-                        Satiety = 1;
-                        break;
-                
-                    default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;
-                }
+
+                SetNameAndDescription();
+                SetSatiety();
+                SetWeight();
             }
         }
 
-        public float GetSubTypeWeight()
-        {
+        public Processed(SubType subType){
+            _SubType = subType;
+            _FoodType = FoodType.Processed;
+            _Material = ItemHelpers.Material.MaterialEnum.Organic;
+            IsIdentified = true;
+        }
+
+        private void SetNameAndDescription(){
+            Name = _SubType.ToString();
+
+            switch (_SubType)
+            {
+                case SubType.Dough:
+                    Description = "A dough is a flat, dry, round, or spherical mass of flour or doughy substance, used in cooking.";
+                    break;
+                case SubType.Flour:
+                    Description = "A flour is a type of food made by grinding or mixing whole grains, such as wheat, oats, barley, rye, or rice, into a paste or dough.";
+                    break;
+            
+                default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;
+            }
+        }
+
+        private void SetSatiety(){
             switch (subType)
             {
-                case SubType.Dough: return 0.3f;
-                case SubType.Flour: return 0.2f;
-                default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); return 0f;
+                case SubType.Dough:
+                    Satiety = 5;
+                    break;
+                case SubType.Flour:
+                    Satiety = 3;
+                    break;
+                default: Satiety = 1; break;
+            }
+        }
+
+        private void SetWeight(){
+            switch (subType)
+            {
+                case SubType.Dough:
+                    Weight = 0.3f;
+                    break;
+                default: Weight = 0.2f; break;
             }
         }
     }

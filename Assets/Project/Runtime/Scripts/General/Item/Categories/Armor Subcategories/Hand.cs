@@ -24,19 +24,19 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
                 switch (subType)
                 {
                     case SubType.Gauntlets:
-                        _Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                         _WeightClass = WeightClass.Heavy;
                         break;
                     case SubType.Vambraces:
-                        _Weight = 0.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                        Weight = 0.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
                         _WeightClass = WeightClass.Medium;
                         break;
                     case SubType.Gloves:
-                        _Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                        Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
                         _WeightClass = WeightClass.Medium;
                         break;
                     default:
-                        _Weight = 0.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        Weight = 0.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Light;
                         break;
                 }

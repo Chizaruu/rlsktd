@@ -23,15 +23,15 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
                 switch (subType)
                 {
                     case SubType.Greaves:
-                        _Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                        Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                         _WeightClass = WeightClass.Heavy;
                         break;
                     case SubType.Boots:
-                        _Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                        Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
                         _WeightClass = WeightClass.Medium;
                         break;
                     default:
-                        _Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Light;
                         break;
                 }

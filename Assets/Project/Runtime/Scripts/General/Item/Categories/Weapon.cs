@@ -33,10 +33,10 @@ namespace RLSKTD.General.ItemCategories{
 
         public Weapon(string name, string description, int weight, int value, int dice, int damage, WeaponType weaponType, DamageType damageType)
         {
-            _Name = name;
-            _Description = description;
-            _Weight = weight;
-            _Value = value;
+            Name = name;
+            Description = description;
+            Weight = weight;
+            Value = value;
             this.dice = dice;
             this.damage = damage;
             this._WeaponType = weaponType;

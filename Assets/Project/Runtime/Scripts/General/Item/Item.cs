@@ -13,9 +13,8 @@ namespace RLSKTD.General{
         /// Example: 
         ///     Food = increased satiety, mood, etc 
         ///     Weapon = increased damage, durability, etc
-        ///     Armor = increased defense, duarability, etc
+        ///     Armor = increased defense, durability, etc
         ///</remarks>
-        /// <summary> Enums of all item qualities. </summary>
         public enum Quality {
             /// <summary> The item is of inferior quality. </summary>
             Inferior,
@@ -74,21 +73,21 @@ namespace RLSKTD.General{
         /// <summary> The item's color. </summary>
         [OdinSerialize, UnityEngine.HideInInspector]private UnityEngine.Color color;
 
-        [ShowInInspector]public string _Name { get => name; set => name = value; }
-        [ShowInInspector]public string _Description { get => description; set => description = value; }
-        [ShowInInspector]public bool _IsIdentified { get => isIdentified; set => isIdentified = value; }
+        [ShowInInspector]public string Name { get => name; set => name = value; }
+        [ShowInInspector]public string Description { get => description; set => description = value; }
+        [ShowInInspector]public bool IsIdentified { get => isIdentified; set => isIdentified = value; }
         [ShowInInspector, ReadOnly]public Material.MaterialEnum _Material
         {
             get => material; set
             {
                 material = value;
-                _Color = Material.GetMaterialColor(material);
+                Color = Material.GetMaterialColor(material);
             }
         }
-        [ShowInInspector]public Quality _Quality { get => quality; set => quality = value; }
-        [ShowInInspector, ReadOnly]public float _Weight { get => weight; set => weight = value; }
-        [ShowInInspector, ReadOnly]public int _Value { get => value; set => this.value = value; }
-        [ShowInInspector, ReadOnly]public UnityEngine.Color _Color { get => color; set => color = value; }
+        [ShowInInspector, ReadOnly]public Quality _Quality { get => quality; set => quality = value; }
+        [ShowInInspector, ReadOnly]public float Weight { get => weight; set => weight = value; }
+        [ShowInInspector, ReadOnly]public int Value { get => value; set => this.value = value; }
+        [ShowInInspector, ReadOnly]public UnityEngine.Color Color { get => color; set => color = value; }
 
         /// <summary> Blank constructor for the Item class. </summary>
         public Item(){}
@@ -96,14 +95,14 @@ namespace RLSKTD.General{
         /// <summary> Constructor for the Item class. </summary>
         public Item(string name, string description, Material.MaterialEnum material, Quality quality, float weight, bool isIdentified, int value, UnityEngine.Color color)
         {
-            _Name = name;
-            _Description = description;
+            Name = name;
+            Description = description;
             _Material = material;
             _Quality = quality;
-            _Weight = weight;
-            _IsIdentified = isIdentified;
-            _Value = value;
-            _Color = color;
+            Weight = weight;
+            IsIdentified = isIdentified;
+            Value = value;
+            Color = color;
         }
     }
 }

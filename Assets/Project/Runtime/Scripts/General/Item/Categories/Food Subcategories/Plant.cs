@@ -16,32 +16,53 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             get => subType; set
             {
                 subType = value;
-                _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                _IsIdentified = true;
-                switch (subType)
-                {
-                    case SubType.SugarCane:
-                        _Name = "SugarCane";
-                        _Description = "A sweet, sweet sugar cane.";
-                        Satiety = 5;
-                        break;
-                    case SubType.Rose:
-                        _Name = "Rose";
-                        _Description = "A beautiful flower";
-                        Satiety = 5;
-                        break;
-                    default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;
-                }
+                
+                SetNameAndDescription();
+                SetSatiety();
+                SetWeight();
             }
         }
 
-        public float GetSubTypeWeight()
+        public Plant(SubType subType){
+            _SubType = subType;
+            _FoodType = FoodType.Plant;
+            _Material = ItemHelpers.Material.MaterialEnum.Organic;
+            IsIdentified = true;
+        }
+
+        private void SetNameAndDescription()
         {
+            Name = subType.ToString();
+
             switch (subType)
             {
-                case SubType.SugarCane: return 2f;
-                case SubType.Rose: return 0.1f;
-                default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); return 0f;
+                case SubType.SugarCane:
+                    Description = "A sweet, sweet sugar cane.";
+                    break;
+                case SubType.Rose:
+                    Description = "A beautiful flower";
+                    break;
+                default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;
+            }
+        }
+
+        private void SetSatiety(){
+            switch (subType)
+            {
+                case SubType.SugarCane:
+                    Satiety = 5;
+                    break;
+                default: Satiety = 1; break;
+            }
+        }
+
+        private void SetWeight(){
+            switch (subType)
+            {
+                case SubType.SugarCane:
+                    Weight = 2f;
+                    break;
+                default: Weight = 0.1f; break;
             }
         }
     }

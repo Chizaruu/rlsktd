@@ -16,59 +16,78 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             get => subType; set
             {
                 subType = value;
-                _Material = ItemHelpers.Material.MaterialEnum.Organic;
-                _IsIdentified = true;
-                switch (subType)
-                {
-                    case SubType.Butter:
-                        _Name = "Butter";
-                        _Description = "A buttery substance";
-                        Satiety = 5;
-                        break;
-                    case SubType.Cheese:
-                        _Name = "Cheese";
-                        _Description = "A cheesey substance";
-                        Satiety = 5;
-                        break;
-                    case SubType.Cream: 
-                        _Name = "Cream";
-                        _Description = "A creamy substance";
-                        Satiety = 5;
-                        break;
-                    case SubType.IceCream:
-                        _Name = "Ice Cream";
-                        _Description = "A creamy substance";
-                        Satiety = 5;
-                        break;
-                    case SubType.Milk:
-                        _Name = "Milk";
-                        _Description = "A milky substance";
-                        Satiety = 5;
-                        break;
-                    case SubType.Yogurt:
-                        _Name = "Yogurt";
-                        _Description = "A milky substance";
-                        Satiety = 5;
-                        break;
-                    default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;
-                }
+                
+                SetNameAndDescription();
+                SetSatiety();
+                SetWeight();
             }
         }
 
-        public Dairy(){}
+        public Dairy(SubType subType){
+            _SubType = subType;
+            _FoodType = FoodType.Dairy;
+            _Material = ItemHelpers.Material.MaterialEnum.Organic;
+            IsIdentified = true;
+        }
 
-        public float GetSubTypeWeight()
+        private void SetNameAndDescription()
         {
+            Name = subType.ToString();
+
             switch (subType)
             {
-                case SubType.Butter: return 0.2f;
-                case SubType.Cheese: return 0.3f;
-                case SubType.Cream: return 0.2f;
-                case SubType.IceCream: return 0.2f;
-                case SubType.Milk: return 0.5f;
-                case SubType.Yogurt: return 0.4f;
-                default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); return 0f;
+                case SubType.Butter:
+                    Description = "A buttery substance";
+                    break;
+                case SubType.Cheese:
+                    Description = "A cheesy substance";
+                    break;
+                case SubType.Cream: 
+                    Description = "A creamy substance";
+                    break;
+                case SubType.IceCream:
+                    Description = "A creamy substance";
+                    break;
+                case SubType.Milk:
+                    Description = "A milky substance";
+                    break;
+                case SubType.Yogurt:
+                    Description = "A creamy substance";
+                    break;
+                default: UnityEngine.Debug.LogError("Unhandled subtype: " + subType); break;
             }
         }
+
+        private void SetSatiety(){
+            switch (subType)
+            {
+                default: Satiety = 5; break;
+            }
+        }
+
+        private void SetWeight(){
+            switch (subType)
+            {
+                case SubType.Butter:
+                    Weight = 0.2f;
+                    break;
+                case SubType.Cheese:
+                    Weight = 0.3f;
+                    break;
+                case SubType.Cream:
+                    Weight = 0.2f;
+                    break;
+                case SubType.IceCream:
+                    Weight = 0.2f;
+                    break;
+                case SubType.Milk:
+                    Weight = 0.5f;
+                    break;
+                case SubType.Yogurt:
+                    Weight = 0.4f;
+                    break;
+                default: Weight = 0.1f; break;
+            }
+        }       
     }
 }

@@ -20,7 +20,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             get => subType; set
             {
                 subType = value;
-                _Weight = 0.03f;
+                Weight = 0.03f;
                 _WeightClass = WeightClass.Light;
             }
         }

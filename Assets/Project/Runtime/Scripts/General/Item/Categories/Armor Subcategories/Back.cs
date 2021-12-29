@@ -24,15 +24,15 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
                 switch (subType)
                 {
                     case SubType.Cloak:
-                        _Weight = 0.8f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        Weight = 0.8f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Heavy;
                         break;
                     case SubType.Cape:
-                        _Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Medium;
                         break;
                     default:
-                        _Weight = 0.6f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                        Weight = 0.6f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
                         _WeightClass = WeightClass.Light;
                         break;
                 }
