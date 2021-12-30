@@ -25,6 +25,7 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
         public Plant(SubType subType){
             _SubType = subType;
+            _Type = Type.Food;
             _FoodType = FoodType.Plant;
             _Material = ItemHelpers.Material.MaterialEnum.Organic;
             IsIdentified = true;

@@ -2,6 +2,11 @@ using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
 namespace RLSKTD.General.ItemCategories.FoodSubcategories{
+    /*
+        Currently unsupported for the following reasons:
+        - This will take quite a while to implement, as it requires a lot of work.
+        - Cooking system is not implemented yet.
+    */
     [System.Serializable]
     public class Processed : Food{
         public enum SubType
@@ -25,6 +30,7 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
         public Processed(SubType subType){
             _SubType = subType;
+            _Type = Type.Food;
             _FoodType = FoodType.Processed;
             _Material = ItemHelpers.Material.MaterialEnum.Organic;
             IsIdentified = true;

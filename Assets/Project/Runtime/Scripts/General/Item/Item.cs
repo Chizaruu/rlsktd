@@ -32,6 +32,8 @@ namespace RLSKTD.General{
 
         /// <summary> Enums of all item types. </summary>
         public enum Type {
+            /// <summary> The item is misc. </summary>
+            Misc,
             /// <summary> The item is a weapon. </summary>
             Weapon,
             /// <summary> The item is an armor piece. </summary>
@@ -52,8 +54,6 @@ namespace RLSKTD.General{
             Furniture,
             /// <summary> The item is a material. </summary>
             Material,
-            /// <summary> The item is misc. </summary>
-            Misc,
         }
 
         /// <summary> The name of the item. </summary>
@@ -64,6 +64,8 @@ namespace RLSKTD.General{
         [OdinSerialize, UnityEngine.HideInInspector]private Material.MaterialEnum material;
         /// <summary> The quality of the item. </summary>
         [OdinSerialize, UnityEngine.HideInInspector]private Quality quality;
+        /// <summary> The type of the item. </summary>
+        [OdinSerialize, UnityEngine.HideInInspector]private Type type;
         /// <summary> The weight of the item. </summary>
         [OdinSerialize, UnityEngine.HideInInspector]private float weight;
         /// <summary> The identify clarification of the item. </summary>
@@ -85,6 +87,7 @@ namespace RLSKTD.General{
             }
         }
         [ShowInInspector, ReadOnly]public Quality _Quality { get => quality; set => quality = value; }
+        [ShowInInspector, ReadOnly]public Type _Type { get => type; set => type = value; }
         [ShowInInspector, ReadOnly]public float Weight { get => weight; set => weight = value; }
         [ShowInInspector, ReadOnly]public int Value { get => value; set => this.value = value; }
         [ShowInInspector, ReadOnly]public UnityEngine.Color Color { get => color; set => color = value; }
@@ -92,17 +95,47 @@ namespace RLSKTD.General{
         /// <summary> Blank constructor for the Item class. </summary>
         public Item(){}
 
+        /// <summary> Constructor for the Item class with material parameter. </summary>
+        public Item(Material.MaterialEnum material){
+            _Material = material;
+            _Type = Type.Material;
+            _Quality = Quality.Normal;
+            Weight = Material.GetMaterialWeight(material);
+            IsIdentified = true; //Set to true by default
+            Name = material.ToString();
+            Description = "It's " + material.ToString() + ".";
+        }
+
         /// <summary> Constructor for the Item class. </summary>
-        public Item(string name, string description, Material.MaterialEnum material, Quality quality, float weight, bool isIdentified, int value, UnityEngine.Color color)
-        {
+        public Item(string name, string description, Material.MaterialEnum material, Quality quality, Type type, float weight, bool isIdentified, int value, UnityEngine.Color color){
             Name = name;
             Description = description;
             _Material = material;
             _Quality = quality;
+            _Type = type;
             Weight = weight;
             IsIdentified = isIdentified;
             Value = value;
             Color = color;
+        }
+
+        public void GenerateName(string item){
+            //Generate name using the quality, material and item parameter
+            Name = _Quality.ToString() + " " + _Material.ToString() + " " + item;
+
+            //TODO: Add more name generation options
+        }
+
+        public void GenerateDescription(){
+            //TODO: Generate description
+        }
+
+        public void GenerateQuality(){
+            _Quality = (Quality)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(Quality)).Length + 1); //TODO: Generate quality based on meaningful rules
+        }
+
+        public void GenerateValue(){
+            Value = UnityEngine.Random.Range(0, 100); //TODO: Generate value based on meaningful rules
         }
     }
 }

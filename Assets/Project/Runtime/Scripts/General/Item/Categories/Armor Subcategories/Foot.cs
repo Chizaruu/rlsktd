@@ -15,26 +15,38 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        [ShowInInspector]public SubType _SubType
-        {
-            get => subType; set
+        [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
+
+        public Foot(){}
+
+        public Foot(SubType subType, Material.MaterialEnum material){
+            _SubType = subType;
+            _Material = material;
+            _Type = Type.Armor;
+            _ArmorType = ArmorType.Foot;
+            GenerateQuality();
+            GenerateProtectionValue();
+            GenerateDefensiveValue();
+            SetWeightAndArmorClass();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
+        }
+
+        private void SetWeightAndArmorClass(){
+            switch (subType)
             {
-                subType = value;
-                switch (subType)
-                {
-                    case SubType.Greaves:
-                        Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
-                        _WeightClass = WeightClass.Heavy;
-                        break;
-                    case SubType.Boots:
-                        Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
-                        _WeightClass = WeightClass.Medium;
-                        break;
-                    default:
-                        Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
-                        _WeightClass = WeightClass.Light;
-                        break;
-                }
+                case SubType.Greaves:
+                    Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    _WeightClass = WeightClass.Heavy;
+                    break;
+                case SubType.Boots:
+                    Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                    _WeightClass = WeightClass.Medium;
+                    break;
+                default:
+                    Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    _WeightClass = WeightClass.Light;
+                    break;
             }
         }
     }

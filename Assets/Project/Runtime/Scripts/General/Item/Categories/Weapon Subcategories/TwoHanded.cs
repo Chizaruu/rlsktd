@@ -17,63 +17,78 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        [ShowInInspector]public SubType _SubType
-        {
-            get => subType; set
+        [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
+
+        public TwoHanded(){}
+
+        public TwoHanded(SubType subType, Material.MaterialEnum material){
+            _SubType = subType;
+            _Material = material;
+            _Type = Type.Weapon;
+            _WeaponType = WeaponType.TwoHanded;
+            SetDamageType();
+            GenerateQuality();
+            GenerateDice();
+            GenerateDamage();
+            SetWeight();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
+        }
+
+        private void SetWeight(){
+            switch (subType)
             {
-                subType = value;
-                switch (subType)
-                {
-                    case SubType.Halberd:
-                        _DamageType = DamageType.Slashing;
-                        Weight = 2.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Greatsword:
-                        _DamageType = DamageType.Slashing;
-                        Weight = 2.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Claymore:
-                        _DamageType = DamageType.Slashing;
-                        Weight = 2.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Greatclub:
-                        _DamageType = DamageType.Bludgeoning;
-                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Quarterstaff:
-                        _DamageType = DamageType.Bludgeoning;
-                        Weight = 2.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Longspear:
-                        _DamageType = DamageType.Piercing;
-                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Battleaxe:
-                        _DamageType = DamageType.Slashing;
-                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Lance:
-                        _DamageType = DamageType.Piercing;
-                        Weight = 3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Trident:
-                        _DamageType = DamageType.Piercing;
-                        Weight = 2.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Warhammer:
-                        _DamageType = DamageType.Bludgeoning;
-                        Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    case SubType.Maul:
-                        _DamageType = DamageType.Bludgeoning;
-                        Weight = 2.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
-                        break;
-                    default: 
-                        _DamageType = DamageType.Bludgeoning;
-                        Weight = 1000f;
-                        break;
-                }                 
+                case SubType.Halberd:
+                    Weight = 2.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                case SubType.Greatsword:
+                    Weight = 2.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                case SubType.Claymore:
+                    Weight = 2.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                case SubType.Greatclub:
+                case SubType.Warhammer:
+                case SubType.Longspear:
+                case SubType.Battleaxe:
+                    Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                case SubType.Quarterstaff:
+                    Weight = 2.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                case SubType.Lance:
+                    Weight = 3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                case SubType.Trident:
+                    Weight = 2.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                case SubType.Maul:
+                    Weight = 2.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
+                default: 
+                    Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    break;
             }
+        }
+
+        private void SetDamageType(){
+            switch (subType)
+            {
+                case SubType.Halberd:
+                case SubType.Greatsword:
+                case SubType.Claymore:
+                case SubType.Battleaxe:
+                    _DamageType = DamageType.Slashing;
+                    break;
+                case SubType.Longspear:
+                case SubType.Lance:
+                case SubType.Trident:
+                    _DamageType = DamageType.Piercing;
+                    break;
+                default: 
+                    _DamageType = DamageType.Bludgeoning;
+                    break;
+            }                 
         }
 
     }

@@ -16,31 +16,46 @@ namespace RLSKTD.General.ItemCategories{
             Bludgeoning, Piercing, Slashing,
         }
 
-        [OdinSerialize, UnityEngine.HideInInspector]private int dice;
-        [OdinSerialize, UnityEngine.HideInInspector]private int damage;
         [OdinSerialize, UnityEngine.HideInInspector]private WeaponType weaponType;
         [OdinSerialize, UnityEngine.HideInInspector]private DamageType damageType;
+        [OdinSerialize, UnityEngine.HideInInspector]private int dice;
+        [OdinSerialize, UnityEngine.HideInInspector]private int damage;
 
-        [ShowInInspector, ReadOnly]public int Dice { get => dice; set => dice = value; }
-        [ShowInInspector, ReadOnly]public int Damage { get => damage; set => damage = value; }
         [ShowInInspector, ReadOnly]public WeaponType _WeaponType { get => weaponType; set => weaponType = value; } 
         [ShowInInspector, ReadOnly]public DamageType _DamageType { get => damageType; set => damageType = value; }
+        [ShowInInspector, ReadOnly]public int Dice { get => dice; set => dice = value; }
+        [ShowInInspector, ReadOnly]public int Damage { get => damage; set => damage = value; }
 
-        /// <summary> Constructor for the Weapon class. </summary>
-        public Weapon(){}
+        
+        public void GenerateDice(){
+            //Generate dice based on the quality, and type of weapon using switch case
+            switch (weaponType){
+                case WeaponType.Ammo:
+                case WeaponType.Shield:
+                    Dice = 1;
+                    break;
+                default: 
+                    switch (_Quality)
+                    {
+                        case Quality.Normal:
+                        case Quality.Superior:
+                        case Quality.Exceptional:
+                            Dice = 2;
+                            break;
+                        case Quality.Unique:
+                        case Quality.Legendary:
+                            Dice = 3;
+                            break;
+                        default:
+                            Dice = 1;
+                            break;
+                    }
+                    break;
+            }
+        }
 
-        /// <summary> Constructor for the Weapon class. </summary>
-
-        public Weapon(string name, string description, int weight, int value, int dice, int damage, WeaponType weaponType, DamageType damageType)
-        {
-            Name = name;
-            Description = description;
-            Weight = weight;
-            Value = value;
-            this.dice = dice;
-            this.damage = damage;
-            this._WeaponType = weaponType;
-            this._DamageType = damageType;
+        public void GenerateDamage(){
+            Damage = 1; //TODO: Change this to be based on the weapontype, subtype, material and quality
         }
     }
 }

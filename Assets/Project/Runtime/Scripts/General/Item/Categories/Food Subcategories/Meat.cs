@@ -26,6 +26,7 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
         public Meat(SubType subType, bool isCooked){
             _SubType = subType;
             IsCooked = isCooked;
+            _Type = Type.Food;
             _FoodType = FoodType.Meat;
             _Material = ItemHelpers.Material.MaterialEnum.Organic;
             IsIdentified = true;

@@ -20,5 +20,13 @@ namespace RLSKTD.General.ItemCategories{
         [ShowInInspector, ReadOnly]public int DefensiveValue { get => defensiveValue; set => defensiveValue = value; }
         [ShowInInspector, ReadOnly]public ArmorType _ArmorType { get => armorType; set => armorType = value; } 
         [ShowInInspector, ReadOnly]public WeightClass _WeightClass { get => weightClass; set => weightClass = value; }
+
+        public void GenerateProtectionValue(){
+            ProtectionValue = UnityEngine.Random.Range(1, 6); //TODO: Add protection value generation from material and subtype
+        }
+
+        public void GenerateDefensiveValue(){
+            DefensiveValue = UnityEngine.Random.Range(1, 6); //TODO: Add defensive value generation from material and subtype
+        }
     }
 }

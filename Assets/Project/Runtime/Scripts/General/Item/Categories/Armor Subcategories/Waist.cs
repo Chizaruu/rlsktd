@@ -15,30 +15,38 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        [ShowInInspector]public SubType _SubType
-        {
-            get => subType; set
+        [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
+
+        public Waist(){}
+
+        public Waist(SubType subType, Material.MaterialEnum material){
+            _SubType = subType;
+            _Material = material;
+            _Type = Type.Armor;
+            _ArmorType = ArmorType.Waist;
+            GenerateQuality();
+            GenerateProtectionValue();
+            GenerateDefensiveValue();
+            SetWeightAndArmorClass();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
+        }
+
+        private void SetWeightAndArmorClass(){
+            switch (subType)
             {
-                subType = value;
-                switch (subType)
-                {
-                    case SubType.Girdle:
-                        Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
-                        _WeightClass = WeightClass.Heavy;
-                        break;
-                    case SubType.Belt:
-                        Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
-                        _WeightClass = WeightClass.Medium;
-                        break;
-                    case SubType.Sash:
-                        Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
-                        _WeightClass = WeightClass.Light;
-                        break;
-                    default:
-                        Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
-                        _WeightClass = WeightClass.Light;
-                        break;
-                }
+                case SubType.Girdle:
+                    Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    _WeightClass = WeightClass.Heavy;
+                    break;
+                case SubType.Belt:
+                    Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                    _WeightClass = WeightClass.Medium;
+                    break;
+                default:
+                    Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    _WeightClass = WeightClass.Light;
+                    break;
             }
         }
     }

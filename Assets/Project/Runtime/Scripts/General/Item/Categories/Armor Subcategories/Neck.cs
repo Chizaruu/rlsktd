@@ -15,14 +15,22 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        [ShowInInspector]public SubType _SubType
-        {
-            get => subType; set
-            {
-                subType = value;
-                Weight = 0.05f;
-                _WeightClass = WeightClass.Light;
-            }
+        [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
+
+        public Neck(){}
+
+        public Neck(SubType subType, Material.MaterialEnum material){
+            _SubType = subType;
+            _Material = material;
+            _Type = Type.Armor;
+            _ArmorType = ArmorType.Neck;
+            GenerateQuality();
+            GenerateProtectionValue();
+            GenerateDefensiveValue();
+            Weight = 0.05f;
+            _WeightClass = WeightClass.Light;
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
         }
     }
 }

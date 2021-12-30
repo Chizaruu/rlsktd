@@ -1,4 +1,3 @@
-using System;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
@@ -28,6 +27,7 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
         public Seed(SubType subType){
             _SubType = subType;
+            _Type = Type.Food;
             _FoodType = FoodType.Seed;
             _Material = ItemHelpers.Material.MaterialEnum.Organic;
             IsIdentified = true;

@@ -15,31 +15,42 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        [ShowInInspector]public SubType _SubType
-        {
-            get => subType; set
-            {
-                subType = value;
+        [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
 
-                switch (subType)
-                {
-                    case SubType.Gauntlets:
-                        Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
-                        _WeightClass = WeightClass.Heavy;
-                        break;
-                    case SubType.Vambraces:
-                        Weight = 0.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
-                        _WeightClass = WeightClass.Medium;
-                        break;
-                    case SubType.Gloves:
-                        Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
-                        _WeightClass = WeightClass.Medium;
-                        break;
-                    default:
-                        Weight = 0.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
-                        _WeightClass = WeightClass.Light;
-                        break;
-                }
+        public Hand(){}
+
+        public Hand(SubType subType, Material.MaterialEnum material){
+            _SubType = subType;
+            _Material = material;
+            _Type = Type.Armor;
+            _ArmorType = ArmorType.Hand;
+            GenerateQuality();
+            GenerateProtectionValue();
+            GenerateDefensiveValue();
+            SetWeightAndArmorClass();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
+        }
+
+        private void SetWeightAndArmorClass(){
+            switch (subType)
+            {
+                case SubType.Gauntlets:
+                    Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    _WeightClass = WeightClass.Heavy;
+                    break;
+                case SubType.Vambraces:
+                    Weight = 0.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                    _WeightClass = WeightClass.Medium;
+                    break;
+                case SubType.Gloves:
+                    Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                    _WeightClass = WeightClass.Medium;
+                    break;
+                default:
+                    Weight = 0.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    _WeightClass = WeightClass.Light;
+                    break;
             }
         }
 

@@ -55,11 +55,5 @@ namespace RLSKTD.General.ItemCategories{
         }
         [ShowInInspector]public float Satiety { get => satiety; set => satiety = value; }
         [ShowInInspector]public int StackAmount { get => stackamount; set => stackamount = value; }
-
-        public Food()
-        {
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
-        }
     }
 }
