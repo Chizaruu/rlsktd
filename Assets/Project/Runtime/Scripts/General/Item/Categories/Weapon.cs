@@ -37,7 +37,6 @@ namespace RLSKTD.General.ItemCategories{
                 default: 
                     switch (_Quality)
                     {
-                        case Quality.Normal:
                         case Quality.Superior:
                         case Quality.Exceptional:
                             Dice = 2;

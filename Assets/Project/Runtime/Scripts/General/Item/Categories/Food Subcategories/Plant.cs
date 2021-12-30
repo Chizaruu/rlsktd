@@ -19,16 +19,17 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                 
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
             }
+        }
+
+        public Plant(){
+            _FoodType = FoodType.Plant;
         }
 
         public Plant(SubType subType){
             _SubType = subType;
-            _Type = Type.Food;
             _FoodType = FoodType.Plant;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription()
@@ -57,13 +58,13 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
 
-        private void SetWeight(){
+        private void SetBaseWeight(){
             switch (subType)
             {
                 case SubType.SugarCane:
-                    Weight = 2f;
+                    BaseWeight = 2f;
                     break;
-                default: Weight = 0.1f; break;
+                default: BaseWeight = 0.1f; break;
             }
         }
     }

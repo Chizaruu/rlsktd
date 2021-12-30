@@ -1,4 +1,3 @@
-using RLSKTD.General.ItemHelpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
@@ -16,9 +15,21 @@ namespace RLSKTD.General.ItemCategories{
         [OdinSerialize, UnityEngine.HideInInspector]private FoodType foodType;
         [OdinSerialize, UnityEngine.HideInInspector]private bool isCooked;
         [OdinSerialize, UnityEngine.HideInInspector]private float satiety;
+        [OdinSerialize, UnityEngine.HideInInspector]private float baseWeight;
         [OdinSerialize, UnityEngine.HideInInspector]private int stackamount = 1;
         
-        [ShowInInspector]public FoodType _FoodType { get => foodType; set => foodType = value; } 
+        /// <summary> Used to get and set foodType, also sets _Type, _Material and IsIdentified </summary>
+        [ShowInInspector, ReadOnly]public FoodType _FoodType
+        {
+            get => foodType; set
+            {
+                foodType = value;
+
+                _Type = Type.Food;
+                _Material = ItemHelpers.Material.MaterialEnum.Organic;
+                IsIdentified = true;
+            }
+        }
         [ShowInInspector]public bool IsCooked
         {
             get => isCooked; set
@@ -30,11 +41,7 @@ namespace RLSKTD.General.ItemCategories{
                         case FoodType.Meat:
                         case FoodType.Seafood:
                         case FoodType.Vegetable:
-                            if(Name.Contains("Raw")){
-                                Name = Name.Replace("Raw", "Cooked");
-                            } else{
-                                Name = "Cooked " + Name;
-                            }
+                            Name = Name.Replace("Raw", "Cooked");
                             break;
                         default:
                             break;
@@ -45,7 +52,7 @@ namespace RLSKTD.General.ItemCategories{
                         case FoodType.Meat:
                         case FoodType.Seafood:
                         case FoodType.Vegetable:
-                            Name = "Raw " + Name;
+                            Name = Name.Replace("Cooked", "Raw");
                             break;
                         default:
                             break;
@@ -54,6 +61,27 @@ namespace RLSKTD.General.ItemCategories{
             }
         }
         [ShowInInspector]public float Satiety { get => satiety; set => satiety = value; }
-        [ShowInInspector]public int StackAmount { get => stackamount; set => stackamount = value; }
+        [ShowInInspector, ReadOnly]public float BaseWeight
+        {
+            get => baseWeight; set
+            {
+                baseWeight = value;
+
+                Weight = baseWeight;
+            }
+        }
+        [ShowInInspector]public int StackAmount
+        {
+            get => stackamount; set
+            {
+                if(value > 0){
+                    stackamount = value;
+                } else {
+                    stackamount = 1;
+                }
+
+                Weight = baseWeight * stackamount;
+            }
+        }
     }
 }

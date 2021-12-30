@@ -21,16 +21,17 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
             }
+        }
+
+        public Seed(){
+            _FoodType = FoodType.Seed;
         }
 
         public Seed(SubType subType){
             _SubType = subType;
-            _Type = Type.Food;
             _FoodType = FoodType.Seed;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription(){
@@ -107,16 +108,16 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
         
-        private void SetWeight(){
+        private void SetBaseWeight(){
             switch(subType){
                 case SubType.Coconut:
-                    Weight = 0.5f;
+                    BaseWeight = 0.5f;
                     break;
                 case SubType.Corn:
-                    Weight = 0.2f;
+                    BaseWeight = 0.2f;
                     break;
                 default:
-                    Weight = 0.02f;
+                    BaseWeight = 0.02f;
                     break;
             }
         }

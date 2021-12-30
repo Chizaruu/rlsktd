@@ -18,7 +18,10 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
 
         [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
 
-        public Body(){}
+        public Body(){
+            _Type = Type.Armor;
+            _ArmorType = ArmorType.Body;
+        }
 
         public Body(SubType subType, Material.MaterialEnum material){
             _SubType = subType;

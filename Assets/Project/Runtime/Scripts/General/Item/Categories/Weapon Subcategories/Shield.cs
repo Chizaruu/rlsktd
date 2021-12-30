@@ -15,9 +15,12 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
+        [ShowInInspector, ReadOnly]public SubType _SubType { get => subType; set => subType = value; }
 
-        public Shield(){}
+        public Shield(){
+            _Type = Type.Weapon;
+            _WeaponType = WeaponType.Shield;
+        }
 
         public Shield(SubType subType, Material.MaterialEnum material){
             _SubType = subType;

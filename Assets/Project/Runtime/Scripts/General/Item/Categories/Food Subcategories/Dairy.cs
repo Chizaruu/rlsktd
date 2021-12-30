@@ -6,7 +6,7 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
     public class Dairy : Food{
         public enum SubType
         {
-            Butter, Cheese, Cream, IceCream, Milk, Yogurt
+            Butter, Cheese, Cream, IceCream, Yogurt
         }
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
@@ -19,16 +19,17 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                 
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
             }
+        }
+
+        public Dairy(){
+            _FoodType = FoodType.Dairy;
         }
 
         public Dairy(SubType subType){
             _SubType = subType;
-            _Type = Type.Food;
             _FoodType = FoodType.Dairy;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription()
@@ -49,9 +50,6 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                 case SubType.IceCream:
                     Description = "A creamy substance";
                     break;
-                case SubType.Milk:
-                    Description = "A milky substance";
-                    break;
                 case SubType.Yogurt:
                     Description = "A creamy substance";
                     break;
@@ -66,28 +64,25 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
 
-        private void SetWeight(){
+        private void SetBaseWeight(){
             switch (subType)
             {
                 case SubType.Butter:
-                    Weight = 0.2f;
+                    BaseWeight = 0.2f;
                     break;
                 case SubType.Cheese:
-                    Weight = 0.3f;
+                    BaseWeight = 0.3f;
                     break;
                 case SubType.Cream:
-                    Weight = 0.2f;
+                    BaseWeight = 0.2f;
                     break;
                 case SubType.IceCream:
-                    Weight = 0.2f;
-                    break;
-                case SubType.Milk:
-                    Weight = 0.5f;
+                    BaseWeight = 0.2f;
                     break;
                 case SubType.Yogurt:
-                    Weight = 0.4f;
+                    BaseWeight = 0.4f;
                     break;
-                default: Weight = 0.1f; break;
+                default: BaseWeight = 0.1f; break;
             }
         }       
     }

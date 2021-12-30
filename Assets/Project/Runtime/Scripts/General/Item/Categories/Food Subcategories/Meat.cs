@@ -19,22 +19,24 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                 subType = value;
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
+                
             }
+        }
+
+        public Meat(){
+            _FoodType = FoodType.Meat;
         }
 
         public Meat(SubType subType, bool isCooked){
             _SubType = subType;
             IsCooked = isCooked;
-            _Type = Type.Food;
             _FoodType = FoodType.Meat;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription()
         {
-            Name = subType.ToString();
+            Name = "Raw " + subType.ToString();
 
             switch (subType)
             {
@@ -99,37 +101,37 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
 
-        private void SetWeight(){
+        private void SetBaseWeight(){
             switch (subType)
             {
                 case SubType.Beef:
-                    Weight = 200f;
+                    BaseWeight = 200f;
                     break;
                 case SubType.Chicken:
-                    Weight = 3f;
+                    BaseWeight = 3f;
                     break;
                 case SubType.Duck:
-                    Weight = 7f;
+                    BaseWeight = 7f;
                     break;
                 case SubType.Goat:
-                    Weight = 70f;
+                    BaseWeight = 70f;
                     break;
                 case SubType.Lamb:
-                    Weight = 80f;
+                    BaseWeight = 80f;
                     break;
                 case SubType.Mutton:
-                    Weight = 80f;
+                    BaseWeight = 80f;
                     break;
                 case SubType.Ox:
-                    Weight = 200f;
+                    BaseWeight = 200f;
                     break;
                 case SubType.Rabbit:
-                    Weight = 3f;
+                    BaseWeight = 3f;
                     break;
                 case SubType.Turkey:
-                    Weight = 5f;
+                    BaseWeight = 5f;
                     break;
-                default: Weight = 10f; break;
+                default: BaseWeight = 10f; break;
             }
         }
     }

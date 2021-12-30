@@ -4,6 +4,7 @@ using RLSKTD.General.ItemCategories;
 using RLSKTD.General.ItemCategories.WeaponSubcategories;
 using RLSKTD.General.ItemCategories.ArmorSubcategories;
 using RLSKTD.General.ItemCategories.FoodSubcategories;
+using RLSKTD.General.ItemCategories.PotionSubcategories;
 
 namespace RLSKTD.General{
     /*
@@ -12,12 +13,11 @@ namespace RLSKTD.General{
         - Magic Items
     */
     public class RandomItemGenerator{
-
         public static List<Item> GenerateItem(int requiredItemAmount){
             List<Item> items = new List<Item>();
             while(requiredItemAmount > 0){
                 //Randomly get an item type
-                switch((Item.Type)Random.Range(0, System.Enum.GetNames(typeof(Item.Type)).Length + 1)){
+                switch((Item.Type)Random.Range(0, System.Enum.GetNames(typeof(Item.Type)).Length)){
                     case Item.Type.Weapon: 
                         items.Add(GenerateWeapon()); break;
                     case Item.Type.Armor: 
@@ -48,105 +48,116 @@ namespace RLSKTD.General{
         }
 
         //Randomly get a weapon type and subtype then return the item
-        private static Item GenerateWeapon()
+        public static Item GenerateWeapon()
         {
-            switch ((Weapon.WeaponType)Random.Range(0, System.Enum.GetNames(typeof(Weapon.WeaponType)).Length + 1)){
+            switch ((Weapon.WeaponType)Random.Range(0, System.Enum.GetNames(typeof(Weapon.WeaponType)).Length)){
                 case Weapon.WeaponType.OneHanded:
-                    return new OneHanded((OneHanded.SubType)Random.Range(0, System.Enum.GetNames(typeof(OneHanded.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new OneHanded((OneHanded.SubType)Random.Range(0, System.Enum.GetNames(typeof(OneHanded.SubType)).Length), GenerateMaterialEnum());
                 case Weapon.WeaponType.TwoHanded:
-                    return new TwoHanded((TwoHanded.SubType)Random.Range(0, System.Enum.GetNames(typeof(TwoHanded.SubType)).Length + 1), GenerateMaterialEnum());   
+                    return new TwoHanded((TwoHanded.SubType)Random.Range(0, System.Enum.GetNames(typeof(TwoHanded.SubType)).Length), GenerateMaterialEnum());   
                 case Weapon.WeaponType.Shield:
-                    return new Shield((Shield.SubType)Random.Range(0, System.Enum.GetNames(typeof(Shield.SubType)).Length + 1), GenerateMaterialEnum()); 
+                    return new Shield((Shield.SubType)Random.Range(0, System.Enum.GetNames(typeof(Shield.SubType)).Length), GenerateMaterialEnum()); 
                 case Weapon.WeaponType.Ranged:
-                    return new Ranged((Ranged.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ranged.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Ranged((Ranged.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ranged.SubType)).Length), GenerateMaterialEnum());
                 case Weapon.WeaponType.Ammo:
-                    return new Ammo((Ammo.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ammo.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Ammo((Ammo.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ammo.SubType)).Length), GenerateMaterialEnum());
                 default: Debug.Log("RandomItemGenerator: GenerateWeapon: Weapon type not found"); return null;
             }
         }
 
         //Randomly get an armor type, subtype then return the item
-        private static Item GenerateArmor()
+        public static Item GenerateArmor()
         {
-            switch ((Armor.ArmorType)Random.Range(0, System.Enum.GetNames(typeof(Armor.ArmorType)).Length + 1)){
+            switch ((Armor.ArmorType)Random.Range(0, System.Enum.GetNames(typeof(Armor.ArmorType)).Length)){
                 case Armor.ArmorType.Head:
-                    return new Head((Head.SubType)Random.Range(0, System.Enum.GetNames(typeof(Head.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Head((Head.SubType)Random.Range(0, System.Enum.GetNames(typeof(Head.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Back:
-                    return new Back((Back.SubType)Random.Range(0, System.Enum.GetNames(typeof(Back.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Back((Back.SubType)Random.Range(0, System.Enum.GetNames(typeof(Back.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Body:
-                    return new Body((Body.SubType)Random.Range(0, System.Enum.GetNames(typeof(Body.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Body((Body.SubType)Random.Range(0, System.Enum.GetNames(typeof(Body.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Hand: 
-                    return new Hand((Hand.SubType)Random.Range(0, System.Enum.GetNames(typeof(Hand.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Hand((Hand.SubType)Random.Range(0, System.Enum.GetNames(typeof(Hand.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Waist:
-                    return new Waist((Waist.SubType)Random.Range(0, System.Enum.GetNames(typeof(Waist.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Waist((Waist.SubType)Random.Range(0, System.Enum.GetNames(typeof(Waist.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Foot:
-                    return new Foot((Foot.SubType)Random.Range(0, System.Enum.GetNames(typeof(Foot.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Foot((Foot.SubType)Random.Range(0, System.Enum.GetNames(typeof(Foot.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Neck:
-                    return new Neck((Neck.SubType)Random.Range(0, System.Enum.GetNames(typeof(Neck.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Neck((Neck.SubType)Random.Range(0, System.Enum.GetNames(typeof(Neck.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Finger:
-                    return new Finger((Finger.SubType)Random.Range(0, System.Enum.GetNames(typeof(Finger.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Finger((Finger.SubType)Random.Range(0, System.Enum.GetNames(typeof(Finger.SubType)).Length), GenerateMaterialEnum());
                 case Armor.ArmorType.Ear:
-                    return new Ear((Ear.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ear.SubType)).Length + 1), GenerateMaterialEnum());
+                    return new Ear((Ear.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ear.SubType)).Length), GenerateMaterialEnum());
                 default: Debug.Log("RandomItemGenerator: GenerateArmor: Armor type not found"); return null;
             }
         }
 
         //Randomly get a food type and subtype then return the item
-        private static Item GenerateFood()
+        public static Item GenerateFood()
         {
-            switch ((Food.FoodType)Random.Range(0, System.Enum.GetNames(typeof(Food.FoodType)).Length + 1))
+            switch ((Food.FoodType)Random.Range(0, System.Enum.GetNames(typeof(Food.FoodType)).Length))
             {
                 case Food.FoodType.Dairy:
-                    return new Dairy((Dairy.SubType)Random.Range(0, System.Enum.GetNames(typeof(Dairy.SubType)).Length + 1));
+                    return new Dairy((Dairy.SubType)Random.Range(0, System.Enum.GetNames(typeof(Dairy.SubType)).Length));
                 case Food.FoodType.Fruit:
-                    return new Fruit((Fruit.SubType)Random.Range(0, System.Enum.GetNames(typeof(Fruit.SubType)).Length + 1));
+                    return new Fruit((Fruit.SubType)Random.Range(0, System.Enum.GetNames(typeof(Fruit.SubType)).Length));
                 case Food.FoodType.Meat:
-                    return new Meat((Meat.SubType)Random.Range(0, System.Enum.GetNames(typeof(Meat.SubType)).Length + 1), Random.Range(0, 2) == 0);
+                    return new Meat((Meat.SubType)Random.Range(0, System.Enum.GetNames(typeof(Meat.SubType)).Length), Random.Range(0, 2) == 0);
                 case Food.FoodType.Plant:
-                    return new Plant((Plant.SubType)Random.Range(0, System.Enum.GetNames(typeof(Plant.SubType)).Length + 1));
+                    return new Plant((Plant.SubType)Random.Range(0, System.Enum.GetNames(typeof(Plant.SubType)).Length));
                 case Food.FoodType.Processed:
-                    return new Processed((Processed.SubType)Random.Range(0, System.Enum.GetNames(typeof(Processed.SubType)).Length + 1));
+                    return new Processed((Processed.SubType)Random.Range(0, System.Enum.GetNames(typeof(Processed.SubType)).Length));
                 case Food.FoodType.Seafood: 
-                    return new Seafood((Seafood.SubType)Random.Range(0, System.Enum.GetNames(typeof(Seafood.SubType)).Length + 1), Random.Range(0, 2) == 0);
+                    return new Seafood((Seafood.SubType)Random.Range(0, System.Enum.GetNames(typeof(Seafood.SubType)).Length), Random.Range(0, 2) == 0);
                 case Food.FoodType.Seed:
-                    return new Seed((Seed.SubType)Random.Range(0, System.Enum.GetNames(typeof(Seed.SubType)).Length + 1));
+                    return new Seed((Seed.SubType)Random.Range(0, System.Enum.GetNames(typeof(Seed.SubType)).Length));
                 case Food.FoodType.Vegetable:
-                    return new Vegetable((Vegetable.SubType)Random.Range(0, System.Enum.GetNames(typeof(Vegetable.SubType)).Length + 1), Random.Range(0, 2) == 0);
+                    return new Vegetable((Vegetable.SubType)Random.Range(0, System.Enum.GetNames(typeof(Vegetable.SubType)).Length), Random.Range(0, 2) == 0);
                 default: Debug.Log("RandomItemGenerator: GenerateFood: Food type not found"); return null;
             }
         }
 
-        private static Item GeneratePotion()
+        public static Item GeneratePotion()
+        {
+            switch ((Potion.PotionType)Random.Range(0, System.Enum.GetNames(typeof(Potion.PotionType)).Length))
+            {
+                case Potion.PotionType.Beverage:
+                    return new Beverage((Beverage.SubType)Random.Range(0, System.Enum.GetNames(typeof(Beverage.SubType)).Length));
+                case Potion.PotionType.Positive:
+                    return new Positive((Positive.SubType)Random.Range(0, System.Enum.GetNames(typeof(Positive.SubType)).Length));
+                case Potion.PotionType.Negative:
+                    return new Negative((Negative.SubType)Random.Range(0, System.Enum.GetNames(typeof(Negative.SubType)).Length));
+                case Potion.PotionType.Dye:
+                    return new Dye((Dye.SubType)Random.Range(0, System.Enum.GetNames(typeof(Dye.SubType)).Length));
+                default: Debug.Log("RandomItemGenerator: GeneratePotion: Potion type not found"); return null;
+            }
+        }
+
+        public static Item GenerateScroll()
         {
             throw new System.NotImplementedException();
         }
 
-        private static Item GenerateScroll()
+        public static Item GenerateRod()
         {
             throw new System.NotImplementedException();
         }
 
-        private static Item GenerateRod()
+        public static Item GenerateBook()
         {
             throw new System.NotImplementedException();
         }
 
-        private static Item GenerateBook()
+        public static Item GenerateTool()
         {
             throw new System.NotImplementedException();
         }
 
-        private static Item GenerateTool()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private static Item GenerateFurniture()
+        public static Item GenerateFurniture()
         {
             throw new System.NotImplementedException();
         }
 
         /// <summary> Generates a random material enum </summary>
-        private static ItemHelpers.Material.MaterialEnum GenerateMaterialEnum() => (ItemHelpers.Material.MaterialEnum)Random.Range(0, System.Enum.GetNames(typeof(ItemHelpers.Material.MaterialEnum)).Length + 1);
+        private static ItemHelpers.Material.MaterialEnum GenerateMaterialEnum() => (ItemHelpers.Material.MaterialEnum)Random.Range(0, System.Enum.GetNames(typeof(ItemHelpers.Material.MaterialEnum)).Length);
     }
 }

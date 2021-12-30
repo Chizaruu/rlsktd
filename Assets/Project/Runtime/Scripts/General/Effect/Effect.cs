@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
 namespace RLSKTD.General
 {   
@@ -8,10 +7,22 @@ namespace RLSKTD.General
     [System.Serializable]
     public class Effect
     {
-        [SerializeField]private string name, description; // Name and description of the effect.
+        public enum Type{
+            None, Buff, Debuff, Damage, Utility
+        }
 
-        [SerializeField]private int rollAmount, damage; // Amount of dice to roll and damage of the effect. 
+        [OdinSerialize, UnityEngine.HideInInspector]private Type type; // Type of the effect.
 
-        [SerializeField]private bool isSkill, isSpell, isAnimated;// Is the effect a skill, spell, or animated effect.
+        [OdinSerialize, UnityEngine.HideInInspector]private string name, description; // Name and description of the effect.
+
+        [OdinSerialize, UnityEngine.HideInInspector]private bool isAnimated; // Is the effect animated?
+
+        [OdinSerialize, UnityEngine.HideInInspector]private int duration; // Duration of the effect.
+
+        [ShowInInspector, ReadOnly]public Type _Type { get => type; set => type = value; }
+        [ShowInInspector, ReadOnly]public string Name { get => name; set => name = value; }
+        [ShowInInspector, ReadOnly]public string Description { get => description; set => description = value; }
+        [ShowInInspector, ReadOnly]public bool IsAnimated { get => isAnimated; set => isAnimated = value; }
+        [ShowInInspector, ReadOnly]public int Duration { get => duration; set => duration = value; }
     }
 }

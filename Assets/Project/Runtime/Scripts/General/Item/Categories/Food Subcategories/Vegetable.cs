@@ -23,21 +23,22 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
             }
+        }
+
+        public Vegetable(){
+            _FoodType = FoodType.Vegetable;
         }
 
         public Vegetable(SubType subType, bool isCooked){
             _SubType = subType;
             IsCooked = isCooked;
-            _Type = Type.Food;
             _FoodType = FoodType.Vegetable;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         public void SetNameAndDescription(){
-            Name = _SubType.ToString();
+            Name = "Raw " + subType.ToString();
 
             switch (subType){
                 case SubType.Asparagus:
@@ -92,7 +93,7 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                     Description = "Its nutrients and antioxidants may boost your immune system, protect your eyesight, lower your risk of certain cancers and promote heart and skin health.";
                     break;
                 case SubType.Potato:
-                    Description = "A great source of fiber, which can help you lose weight by keeping you full longer.";
+                    Description = "A great source of fiber, which can help you lose Baseweight by keeping you full longer.";
                     break;
                 case SubType.Radish:
                     Description = "Its rich in antioxidants and minerals like calcium and potassium.";
@@ -137,14 +138,14 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
 
-        private void SetWeight(){
+        private void SetBaseWeight(){
             switch (subType){
                 case SubType.Broccoli:
                 case SubType.Cabbage:
                 case SubType.Cauliflower:
                 case SubType.Lettuce:
                 case SubType.Pumpkin:
-                    Weight = 3f;
+                    BaseWeight = 3f;
                     break;
                 case SubType.BrusselSprout:
                 case SubType.Garlic:
@@ -152,9 +153,9 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                 case SubType.Radish:
                 case SubType.Squash:
                 case SubType.Turnip:
-                    Weight = 0.05f;
+                    BaseWeight = 0.05f;
                     break;
-                default: Weight = 0.1f; break;
+                default: BaseWeight = 0.1f; break;
             }
         }
     }

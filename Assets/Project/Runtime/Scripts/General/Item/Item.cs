@@ -27,7 +27,7 @@ namespace RLSKTD.General{
             /// <summary> The item is of unique quality. </summary>
             Unique,
             /// <summary> The item is of legendary quality. </summary>
-            Legendary,
+            Legendary
         }
 
         /// <summary> Enums of all item types. </summary>
@@ -131,7 +131,7 @@ namespace RLSKTD.General{
         }
 
         public void GenerateQuality(){
-            _Quality = (Quality)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(Quality)).Length + 1); //TODO: Generate quality based on meaningful rules
+            _Quality = (Quality)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(Quality)).Length); //TODO: Generate quality based on meaningful rules
         }
 
         public void GenerateValue(){

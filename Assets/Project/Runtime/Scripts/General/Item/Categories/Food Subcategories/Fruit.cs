@@ -22,17 +22,18 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
             }
+        }
+
+        public Fruit(){
+            _FoodType = FoodType.Fruit;
         }
 
         public Fruit(SubType subType)
         {
             _SubType = subType;
-            _Type = Type.Food;
             _FoodType = FoodType.Fruit;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription()
@@ -137,26 +138,26 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
 
-        private void SetWeight()
+        private void SetBaseWeight()
         {
             switch (subType)
             {
-                case SubType.Apple: Weight = 0.2f; break;
-                case SubType.Banana: Weight = 0.2f; break;
-                case SubType.Blackberry: Weight = 0.01f; break;
-                case SubType.Cantaloupe: Weight = 1f; break;
-                case SubType.Cherry: Weight = 0.01f; break;
-                case SubType.Grape: Weight = 0.01f; break;
-                case SubType.Olive: Weight = 0.01f; break;
-                case SubType.Grapefruit: Weight = 0.5f; break;
-                case SubType.Orange: Weight = 0.2f; break;
-                case SubType.Papaya: Weight = 0.4f; break;
-                case SubType.Peach: Weight = 0.2f; break;
-                case SubType.Pear: Weight = 0.2f; break;
-                case SubType.Pineapple: Weight = 1f; break;
-                case SubType.Strawberry: Weight = 0.03f; break;
-                case SubType.Watermelon: Weight = 1f; break;
-                default: Weight = 0.1f; break;
+                case SubType.Apple: BaseWeight = 0.2f; break;
+                case SubType.Banana: BaseWeight = 0.2f; break;
+                case SubType.Blackberry: BaseWeight = 0.01f; break;
+                case SubType.Cantaloupe: BaseWeight = 1f; break;
+                case SubType.Cherry: BaseWeight = 0.01f; break;
+                case SubType.Grape: BaseWeight = 0.01f; break;
+                case SubType.Olive: BaseWeight = 0.01f; break;
+                case SubType.Grapefruit: BaseWeight = 0.5f; break;
+                case SubType.Orange: BaseWeight = 0.2f; break;
+                case SubType.Papaya: BaseWeight = 0.4f; break;
+                case SubType.Peach: BaseWeight = 0.2f; break;
+                case SubType.Pear: BaseWeight = 0.2f; break;
+                case SubType.Pineapple: BaseWeight = 1f; break;
+                case SubType.Strawberry: BaseWeight = 0.03f; break;
+                case SubType.Watermelon: BaseWeight = 1f; break;
+                default: BaseWeight = 0.1f; break;
             }
         }
     }

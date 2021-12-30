@@ -18,7 +18,10 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
         [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
 
         /// <summary> Constructor for the Back class. </summary>
-        public Back(){}
+        public Back(){
+            _Type = Type.Armor;
+            _ArmorType = ArmorType.Back;
+        }
 
         public Back(SubType subType, Material.MaterialEnum material){
             _SubType = subType;

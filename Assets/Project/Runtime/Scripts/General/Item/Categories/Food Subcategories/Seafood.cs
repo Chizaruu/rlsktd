@@ -21,22 +21,23 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
             }
+        }
+
+        public Seafood(){
+            _FoodType = FoodType.Seafood;
         }
 
         public Seafood(SubType subType, bool isCooked){
             _SubType = subType;
             IsCooked = isCooked;
-            _Type = Type.Food;
             _FoodType = FoodType.Seafood;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription()
         {
-            Name = subType.ToString();
+            Name = "Raw " + subType.ToString();
 
             switch (subType)
             {
@@ -75,65 +76,65 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
 
-        private void SetWeight(){
+        private void SetBaseWeight(){
             switch (subType)
             {
                 case SubType.Carp:
-                    Weight = 1.7f;
+                    BaseWeight = 1.7f;
                     break;
                 case SubType.Cod:
-                    Weight = 1.1f;
+                    BaseWeight = 1.1f;
                     break;
                 case SubType.Crab:
-                    Weight = 0.7f;
+                    BaseWeight = 0.7f;
                     break;
                 case SubType.Crayfish:
-                    Weight = 0.5f;
+                    BaseWeight = 0.5f;
                     break;
                 case SubType.Eel:
-                    Weight = 3f;
+                    BaseWeight = 3f;
                     break;
                 case SubType.Lobster:
-                    Weight = 2f;
+                    BaseWeight = 2f;
                     break;
                 case SubType.Mussel:
-                    Weight = 0.2f;
+                    BaseWeight = 0.2f;
                     break;
                 case SubType.Octopus:
-                    Weight = 2f;
+                    BaseWeight = 2f;
                     break;
                 case SubType.Winkle:
-                    Weight = 0.1f;
+                    BaseWeight = 0.1f;
                     break;
                 case SubType.Prawn:
-                    Weight = 0.1f;
+                    BaseWeight = 0.1f;
                     break;
                 case SubType.Salmon:
-                    Weight = 0.8f;
+                    BaseWeight = 0.8f;
                     break;
                 case SubType.Scallop:
-                    Weight = 0.2f;
+                    BaseWeight = 0.2f;
                     break;
                 case SubType.Shrimp:
-                    Weight = 0.1f;
+                    BaseWeight = 0.1f;
                     break;
                 case SubType.Snapper:
-                    Weight = 1f;
+                    BaseWeight = 1f;
                     break;
                 case SubType.Squid:
-                    Weight = 1.5f;
+                    BaseWeight = 1.5f;
                     break;
                 case SubType.Turtle:
-                    Weight = 3f;
+                    BaseWeight = 3f;
                     break;
                 case SubType.Trout:
-                    Weight = 1.3f;
+                    BaseWeight = 1.3f;
                     break;
                 case SubType.Tuna:
-                    Weight = 20f;
+                    BaseWeight = 20f;
                     break;
                 default:
-                    Weight = 0.1f;
+                    BaseWeight = 0.1f;
                     break;
             }
         }

@@ -24,16 +24,17 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
 
                 SetNameAndDescription();
                 SetSatiety();
-                SetWeight();
+                SetBaseWeight();
             }
+        }
+
+        public Processed(){
+            _FoodType = FoodType.Processed;
         }
 
         public Processed(SubType subType){
             _SubType = subType;
-            _Type = Type.Food;
             _FoodType = FoodType.Processed;
-            _Material = ItemHelpers.Material.MaterialEnum.Organic;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription(){
@@ -65,13 +66,13 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
             }
         }
 
-        private void SetWeight(){
+        private void SetBaseWeight(){
             switch (subType)
             {
                 case SubType.Dough:
-                    Weight = 0.3f;
+                    BaseWeight = 0.3f;
                     break;
-                default: Weight = 0.2f; break;
+                default: BaseWeight = 0.2f; break;
             }
         }
     }

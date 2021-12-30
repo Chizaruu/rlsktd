@@ -17,9 +17,12 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
 
-        [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
+        [ShowInInspector, ReadOnly]public SubType _SubType { get => subType; set => subType = value; }
 
-        public TwoHanded(){}
+        public TwoHanded(){
+            _Type = Type.Weapon;
+            _WeaponType = WeaponType.TwoHanded;
+        }
 
         public TwoHanded(SubType subType, Material.MaterialEnum material){
             _SubType = subType;
@@ -91,5 +94,19 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             }                 
         }
 
+        [Button("Generate New TwoHanded")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
+            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Type = Type.Weapon;
+            _WeaponType = WeaponType.TwoHanded;
+            SetDamageType();
+            GenerateQuality();
+            GenerateDice();
+            GenerateDamage();
+            SetWeight();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
+        }
     }
 }
