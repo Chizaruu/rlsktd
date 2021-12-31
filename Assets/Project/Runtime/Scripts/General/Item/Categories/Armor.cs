@@ -18,7 +18,15 @@ namespace RLSKTD.General.ItemCategories{
 
         [ShowInInspector, ReadOnly]public int ProtectionValue { get => protectionValue; set => protectionValue = value; }
         [ShowInInspector, ReadOnly]public int DefensiveValue { get => defensiveValue; set => defensiveValue = value; }
-        [ShowInInspector, ReadOnly]public ArmorType _ArmorType { get => armorType; set => armorType = value; } 
+        [ShowInInspector, ReadOnly]public ArmorType _ArmorType
+        {
+            get => armorType; set
+            {
+                armorType = value;
+
+                _Type = Type.Armor;
+            }
+        }
         [ShowInInspector, ReadOnly]public WeightClass _WeightClass { get => weightClass; set => weightClass = value; }
 
         public void GenerateProtectionValue(){

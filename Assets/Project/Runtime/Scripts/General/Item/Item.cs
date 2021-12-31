@@ -42,12 +42,10 @@ namespace RLSKTD.General{
             Food,
             /// <summary> The item is a potion. </summary>
             Potion,
-            /// <summary> The item is a scroll. </summary>
-            Scroll,
+            /// <summary> The item is readable. </summary>
+            Readable,
             /// <summary> The item is a rod. </summary>
             Rod,
-            /// <summary> The item is a book. </summary>
-            Book,
             /// <summary> The item is a tool. </summary>
             Tool,
             /// <summary> The item is furniture. </summary>

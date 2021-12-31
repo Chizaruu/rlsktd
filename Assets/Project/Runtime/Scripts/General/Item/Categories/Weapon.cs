@@ -21,7 +21,15 @@ namespace RLSKTD.General.ItemCategories{
         [OdinSerialize, UnityEngine.HideInInspector]private int dice;
         [OdinSerialize, UnityEngine.HideInInspector]private int damage;
 
-        [ShowInInspector, ReadOnly]public WeaponType _WeaponType { get => weaponType; set => weaponType = value; } 
+        [ShowInInspector, ReadOnly]public WeaponType _WeaponType
+        {
+            get => weaponType; set
+            {
+                weaponType = value;
+
+                _Type = Type.Weapon;
+            }
+        }
         [ShowInInspector, ReadOnly]public DamageType _DamageType { get => damageType; set => damageType = value; }
         [ShowInInspector, ReadOnly]public int Dice { get => dice; set => dice = value; }
         [ShowInInspector, ReadOnly]public int Damage { get => damage; set => damage = value; }

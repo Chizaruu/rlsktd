@@ -84,6 +84,12 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                     break;
                 default: BaseWeight = 0.1f; break;
             }
-        }       
+        }     
+
+        [Button("Generate New Dairy")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            _FoodType = FoodType.Dairy;
+        }  
     }
 }

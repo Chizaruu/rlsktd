@@ -5,6 +5,7 @@ using RLSKTD.General.ItemCategories.WeaponSubcategories;
 using RLSKTD.General.ItemCategories.ArmorSubcategories;
 using RLSKTD.General.ItemCategories.FoodSubcategories;
 using RLSKTD.General.ItemCategories.PotionSubcategories;
+using RLSKTD.General.ItemCategories.ReadableSubcategories;
 
 namespace RLSKTD.General{
     /*
@@ -26,12 +27,10 @@ namespace RLSKTD.General{
                         items.Add(GenerateFood()); break;
                     case Item.Type.Potion: 
                         items.Add(GeneratePotion()); break;
-                    case Item.Type.Scroll: 
-                        items.Add(GenerateScroll()); break;
+                    case Item.Type.Readable: 
+                        items.Add(GenerateReadable()); break;
                     case Item.Type.Rod: 
                         items.Add(GenerateRod()); break;
-                    case Item.Type.Book: 
-                        items.Add(GenerateBook()); break;
                     case Item.Type.Tool: 
                         items.Add(GenerateTool()); break;
                     case Item.Type.Furniture: 
@@ -132,17 +131,19 @@ namespace RLSKTD.General{
             }
         }
 
-        public static Item GenerateScroll()
+        public static Item GenerateReadable()
         {
-            throw new System.NotImplementedException();
+            switch ((Readable.ReadableType)Random.Range(0, System.Enum.GetNames(typeof(Readable.ReadableType)).Length))
+            {
+                case Readable.ReadableType.Book:
+                    return new Book((Book.SubType)Random.Range(0, System.Enum.GetNames(typeof(Book.SubType)).Length));
+                case Readable.ReadableType.Scroll:
+                    return new Scroll((Scroll.SubType)Random.Range(0, System.Enum.GetNames(typeof(Scroll.SubType)).Length));
+                default : Debug.Log("RandomItemGenerator: GenerateReadable: Readable type not found"); return null;
+            }
         }
 
         public static Item GenerateRod()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public static Item GenerateBook()
         {
             throw new System.NotImplementedException();
         }

@@ -18,16 +18,13 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [ShowInInspector, ReadOnly]public SubType _SubType { get => subType; set => subType = value; }
 
         public Shield(){
-            _Type = Type.Weapon;
             _WeaponType = WeaponType.Shield;
         }
 
         public Shield(SubType subType, Material.MaterialEnum material){
             _SubType = subType;
             _Material = material;
-            _Type = Type.Weapon;
             _WeaponType = WeaponType.Shield;
-            _DamageType = DamageType.Bludgeoning;
             GenerateQuality();
             GenerateDice();
             GenerateDamage();
@@ -52,6 +49,19 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
                     Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
                     break;
             }
+        }
+
+        [Button("Generate New Shield")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
+            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _WeaponType = WeaponType.OneHanded;
+            GenerateQuality();
+            GenerateDice();
+            GenerateDamage();
+            SetWeight();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
         }
     }
 }

@@ -158,5 +158,12 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                 default: BaseWeight = 0.1f; break;
             }
         }
+
+        [Button("Generate New Vegetable")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            IsCooked = UnityEngine.Random.Range(0, 2) == 0;
+            _FoodType = FoodType.Vegetable;
+        }  
     }
 }

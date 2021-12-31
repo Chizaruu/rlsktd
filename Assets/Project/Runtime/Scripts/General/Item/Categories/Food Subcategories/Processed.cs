@@ -75,5 +75,11 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                 default: BaseWeight = 0.2f; break;
             }
         }
+
+        [Button("Generate New Processed")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            _FoodType = FoodType.Processed;
+        }  
     }
 }

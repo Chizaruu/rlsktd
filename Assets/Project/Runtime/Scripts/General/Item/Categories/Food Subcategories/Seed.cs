@@ -121,5 +121,11 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                     break;
             }
         }
+
+        [Button("Generate New Seed")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            _FoodType = FoodType.Seed;
+        }  
     }
 }

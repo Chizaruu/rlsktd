@@ -19,14 +19,12 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [ShowInInspector, ReadOnly]public SubType _SubType { get => subType; set => subType = value; }
     
         public OneHanded(){
-            _Type = Type.Weapon;
             _WeaponType = WeaponType.OneHanded;
         }
 
         public OneHanded(SubType subType, Material.MaterialEnum material){
             _SubType = subType;
             _Material = material;
-            _Type = Type.Weapon;
             _WeaponType = WeaponType.OneHanded;
             GenerateQuality();
             SetDamageType();
@@ -84,6 +82,20 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
                     _DamageType = DamageType.Slashing;
                     break;
             }
+        }
+
+        [Button("Generate New OneHanded")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
+            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _WeaponType = WeaponType.OneHanded;
+            SetDamageType();
+            GenerateQuality();
+            GenerateDice();
+            GenerateDamage();
+            SetWeight();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
         }
     }
 }

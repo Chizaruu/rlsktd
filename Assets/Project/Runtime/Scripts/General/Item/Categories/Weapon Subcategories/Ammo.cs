@@ -18,14 +18,12 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [ShowInInspector, ReadOnly]public SubType _SubType { get => subType; set => subType = value; }
 
         public Ammo(){
-            _Type = Type.Weapon;
             _WeaponType = WeaponType.Ammo;
         }
 
         public Ammo(SubType subType, Material.MaterialEnum material){
             _SubType = subType;
             _Material = material;
-            _Type = Type.Weapon;
             _WeaponType = WeaponType.Ammo;
             GenerateQuality();
             SetDamageType();
@@ -46,6 +44,20 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
                     _DamageType = Weapon.DamageType.Piercing;
                     break;
             }
+        }
+
+        [Button("Generate New Ammo")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _WeaponType = WeaponType.Ammo;
+            SetDamageType();
+            GenerateQuality();
+            GenerateDice();
+            GenerateDamage();
+            Weight = 0.1f;
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
         }
     }
 }

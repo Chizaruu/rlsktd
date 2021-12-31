@@ -21,18 +21,17 @@ namespace RLSKTD.General.ItemCategories.PotionSubcategories
                 SetNameAndDescription();
                 SetThirst();
                 SetBaseWeight();
+                IsIdentified = true;
             }
         }
 
         public Beverage(){
             _PotionType = PotionType.Beverage;
-            IsIdentified = true;
         }
 
         public Beverage(SubType subType){
             _SubType = subType;
             _PotionType = PotionType.Beverage;
-            IsIdentified = true;
         }
 
         private void SetNameAndDescription()
@@ -78,6 +77,12 @@ namespace RLSKTD.General.ItemCategories.PotionSubcategories
             {
                 default: BaseWeight = 0.25f; break;
             }
+        }
+
+        [Button("Generate New Beverage")]
+        public void GenerateNewBeverage(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            _PotionType = PotionType.Beverage;
         }
     }
 }

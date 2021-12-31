@@ -19,14 +19,12 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
 
         /// <summary> Constructor for the Back class. </summary>
         public Back(){
-            _Type = Type.Armor;
             _ArmorType = ArmorType.Back;
         }
 
         public Back(SubType subType, Material.MaterialEnum material){
             _SubType = subType;
             _Material = material;
-            _Type = Type.Armor;
             _ArmorType = ArmorType.Back;
             GenerateQuality();
             GenerateProtectionValue();
@@ -52,6 +50,19 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
                     _WeightClass = WeightClass.Light;
                     break;
             }
+        }
+
+        [Button("Generate New Back")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
+            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _ArmorType = ArmorType.Back;
+            GenerateQuality();
+            GenerateProtectionValue();
+            GenerateDefensiveValue();
+            SetWeightAndArmorClass();
+            GenerateName(subType.ToString());
+            //GenerateDescription(isArtifact);
         }
     }
 }

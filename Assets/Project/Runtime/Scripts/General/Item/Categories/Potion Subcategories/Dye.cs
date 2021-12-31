@@ -92,5 +92,11 @@ namespace RLSKTD.General.ItemCategories.PotionSubcategories
                 return UnityEngine.Color.white;
             }
         }
+
+        [Button("Generate New Dye")]
+        public void GenerateNewDye(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            _PotionType = PotionType.Dye;
+        }
     }
 }

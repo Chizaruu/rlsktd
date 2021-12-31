@@ -18,14 +18,12 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
         [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
 
         public Hand(){
-            _Type = Type.Armor;
             _ArmorType = ArmorType.Hand;
         }
 
         public Hand(SubType subType, Material.MaterialEnum material){
             _SubType = subType;
             _Material = material;
-            _Type = Type.Armor;
             _ArmorType = ArmorType.Hand;
             GenerateQuality();
             GenerateProtectionValue();
@@ -57,5 +55,16 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             }
         }
 
+        [Button("Generate New Hand")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(SubType)).Length);
+            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetValues(typeof(Material.MaterialEnum)).Length);
+            _ArmorType = ArmorType.Hand;
+            GenerateQuality();
+            GenerateProtectionValue();
+            GenerateDefensiveValue();
+            SetWeightAndArmorClass();
+            GenerateName(_SubType.ToString());
+        }
     }
 }

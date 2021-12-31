@@ -18,14 +18,12 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
         [ShowInInspector]public SubType _SubType { get => subType; set => subType = value; }
 
         public Waist(){
-            _Type = Type.Armor;
             _ArmorType = ArmorType.Waist;
         }
 
         public Waist(SubType subType, Material.MaterialEnum material){
             _SubType = subType;
             _Material = material;
-            _Type = Type.Armor;
             _ArmorType = ArmorType.Waist;
             GenerateQuality();
             GenerateProtectionValue();
@@ -51,6 +49,18 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
                     _WeightClass = WeightClass.Light;
                     break;
             }
+        }
+
+        [Button("Generate New Waist")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
+            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _ArmorType = ArmorType.Waist;
+            GenerateQuality();
+            GenerateProtectionValue();
+            GenerateDefensiveValue();
+            SetWeightAndArmorClass();
+            GenerateName(_SubType.ToString());
         }
     }
 }

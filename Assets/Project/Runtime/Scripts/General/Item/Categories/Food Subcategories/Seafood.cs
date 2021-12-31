@@ -138,5 +138,12 @@ namespace RLSKTD.General.ItemCategories.FoodSubcategories{
                     break;
             }
         }
+    
+        [Button("Generate New Seafood")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            IsCooked = UnityEngine.Random.Range(0, 2) == 0;
+            _FoodType = FoodType.Seafood;
+        }  
     }
 }

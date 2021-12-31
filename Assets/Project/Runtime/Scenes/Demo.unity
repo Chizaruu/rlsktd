@@ -28522,15 +28522,15 @@ PrefabInstance:
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"Inventory","value":{"$id":0,"$type":"System.Collections.Generic.List`1[[RLSKTD.General.Item,
-        Project.Runtime]], mscorlib","$rlength":1,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.ItemCategories.PotionSubcategories.Negative,
-        Project.Runtime","name":null,"description":null,"material":0,"quality":0,"type":0,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0,0,0,0},"potionType":0,"stackAmount":0,"thirst":0,"subType":0,"effect":null}]}'
+        Project.Runtime]], mscorlib","$rlength":1,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.ItemCategories.ReadableSubcategories.Scroll,
+        Project.Runtime","name":null,"description":null,"material":13,"quality":0,"type":5,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.9607843,0.9607843,0.8627451,1},"readableType":0,"difficulty":0,"baseWeight":0,"stackAmount":1,"effect":null,"subType":0}]}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
-      value: '"path":"Inventory.[0]","value":{"$id":0,"$type":"RLSKTD.General.ItemCategories.PotionSubcategories.Positive,
-        Project.Runtime","name":null,"description":null,"material":0,"quality":0,"type":0,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0,0,0,0},"potionType":0,"stackAmount":0,"thirst":0,"subType":0,"effect":null}'
+      value: '"path":"Inventory.[0]","value":{"$id":0,"$type":"RLSKTD.General.ItemCategories.ReadableSubcategories.Scroll,
+        Project.Runtime","name":null,"description":null,"material":13,"quality":0,"type":5,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.9607843,0.9607843,0.8627451,1},"readableType":0,"difficulty":0,"baseWeight":0,"stackAmount":1,"effect":null,"subType":0}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[2]

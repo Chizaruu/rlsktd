@@ -106,5 +106,11 @@ namespace RLSKTD.General.ItemCategories.PotionSubcategories
                 default: BaseWeight = 0.25f; break;
             }
         }
+
+        [Button("Generate New Positive")]
+        public void Generate(){
+            _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
+            _PotionType = PotionType.Positive;
+        }
     }
 }
