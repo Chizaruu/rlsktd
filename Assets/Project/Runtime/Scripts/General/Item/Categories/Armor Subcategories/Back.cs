@@ -22,7 +22,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             _ArmorType = ArmorType.Back;
         }
 
-        public Back(SubType subType, Material.MaterialEnum material){
+        public Back(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _ArmorType = ArmorType.Back;
@@ -38,15 +38,15 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             switch (subType)
             {
                 case SubType.Cloak:
-                    Weight = 0.8f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    Weight = 0.8f + (float)Math.Round(_Material.Weight/4.5, 1);
                     _WeightClass = WeightClass.Heavy;
                     break;
                 case SubType.Cape:
-                    Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    Weight = 0.7f + (float)Math.Round(_Material.Weight/4.5, 1);
                     _WeightClass = WeightClass.Medium;
                     break;
                 default:
-                    Weight = 0.6f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    Weight = 0.6f + (float)Math.Round(_Material.Weight/4.5, 1);
                     _WeightClass = WeightClass.Light;
                     break;
             }
@@ -55,7 +55,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
         [Button("Generate New Back")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(true, false);
             _ArmorType = ArmorType.Back;
             GenerateQuality();
             GenerateProtectionValue();

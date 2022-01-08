@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using RLSKTD.General.ItemHelpers.SoftMaterials;
 
 namespace RLSKTD.General.ItemCategories{
     /// <summary> This is the Food class </summary>
@@ -26,7 +27,7 @@ namespace RLSKTD.General.ItemCategories{
                 foodType = value;
 
                 _Type = Type.Food;
-                _Material = ItemHelpers.Material.MaterialEnum.Organic;
+                _Material = new Common(Common.Material.Organic);
                 IsIdentified = true;
             }
         }

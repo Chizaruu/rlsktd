@@ -21,7 +21,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             _WeaponType = WeaponType.Ammo;
         }
 
-        public Ammo(SubType subType, Material.MaterialEnum material){
+        public Ammo(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _WeaponType = WeaponType.Ammo;
@@ -49,7 +49,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [Button("Generate New Ammo")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(false, true);
             _WeaponType = WeaponType.Ammo;
             SetDamageType();
             GenerateQuality();

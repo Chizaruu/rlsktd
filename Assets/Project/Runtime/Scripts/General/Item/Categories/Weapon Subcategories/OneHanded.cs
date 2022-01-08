@@ -22,7 +22,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             _WeaponType = WeaponType.OneHanded;
         }
 
-        public OneHanded(SubType subType, Material.MaterialEnum material){
+        public OneHanded(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _WeaponType = WeaponType.OneHanded;
@@ -40,28 +40,28 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             switch(subType){
                 case SubType.Scimitar:
                 case SubType.Flail:
-                    Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1.7f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Cutlass:
                 case SubType.Saber:
                 case SubType.Morningstar:
-                    Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1.5f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Kris:
                 case SubType.Whip:
-                    Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 0.7f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Mace:
                 case SubType.Handaxe:
                 case SubType.Longsword:
-                    Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1.2f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Sickle:
                 case SubType.Dagger:
-                    Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 0.4f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 default:
-                    Weight = 1.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1.1f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
             }
         }
@@ -87,7 +87,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [Button("Generate New OneHanded")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(false, true);
             _WeaponType = WeaponType.OneHanded;
             SetDamageType();
             GenerateQuality();

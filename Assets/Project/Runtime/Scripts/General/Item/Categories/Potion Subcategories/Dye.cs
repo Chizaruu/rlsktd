@@ -32,8 +32,8 @@ namespace RLSKTD.General.ItemCategories.PotionSubcategories
         }
 
         public Dye(SubType subType){
-            _SubType = subType;
             _PotionType = PotionType.Dye;
+            _SubType = subType; //This is set after PotionType for Color reasons 
             IsIdentified = true;
         }
 

@@ -23,7 +23,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             _WeaponType = WeaponType.TwoHanded;
         }
 
-        public TwoHanded(SubType subType, Material.MaterialEnum material){
+        public TwoHanded(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _WeaponType = WeaponType.TwoHanded;
@@ -40,34 +40,34 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             switch (subType)
             {
                 case SubType.Halberd:
-                    Weight = 2.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.3f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Greatsword:
-                    Weight = 2.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.2f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Claymore:
-                    Weight = 2.35f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.35f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Greatclub:
                 case SubType.Warhammer:
                 case SubType.Longspear:
                 case SubType.Battleaxe:
-                    Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.5f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Quarterstaff:
-                    Weight = 2.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.25f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Lance:
-                    Weight = 3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 3f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Trident:
-                    Weight = 2.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.4f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Maul:
-                    Weight = 2.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.7f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 default: 
-                    Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2.5f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
             }
         }
@@ -95,7 +95,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [Button("Generate New TwoHanded")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(false, true);
             _WeaponType = WeaponType.TwoHanded;
             SetDamageType();
             GenerateQuality();

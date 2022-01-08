@@ -1,3 +1,4 @@
+using RLSKTD.General.ItemHelpers.HardMaterials;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
@@ -29,7 +30,7 @@ namespace RLSKTD.General.ItemCategories
                 potionType = value;
 
                 _Type = Type.Potion;
-                _Material = ItemHelpers.Material.MaterialEnum.Glass;
+                _Material = new Uncommon(Uncommon.Material.Glass);
             }
         }
         [ShowInInspector, ReadOnly]public float BaseWeight

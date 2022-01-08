@@ -22,7 +22,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             _WeaponType = WeaponType.Ranged;
         }
 
-        public Ranged(SubType subType, Material.MaterialEnum material){
+        public Ranged(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _WeaponType = WeaponType.Ranged;
@@ -38,31 +38,31 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         {
             switch (subType){
                 case SubType.Crossbow:
-                    Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1.2f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Bow:
-                    Weight = 1.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1.15f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Pistol:
-                    Weight = 0.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 0.5f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Rifle:
-                    Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1.7f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Shotgun:
-                    Weight = 2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 2f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Lasergun:
-                    Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 0.4f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Sling:
-                    Weight = 0.3f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 0.3f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 case SubType.Blowgun:
-                    Weight = 0.15f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 0.15f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
                 default:
-                    Weight = 1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3, 1);
+                    Weight = 1f + (float)Math.Round(_Material.Weight/3, 1);
                     break;
             }
         }
@@ -70,7 +70,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [Button("Generate New Ranged")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(false, true);
             _WeaponType = WeaponType.Ranged;
             GenerateQuality();
             GenerateDice();

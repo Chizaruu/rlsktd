@@ -21,7 +21,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             _ArmorType = ArmorType.Foot;
         }
 
-        public Foot(SubType subType, Material.MaterialEnum material){
+        public Foot(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _ArmorType = ArmorType.Foot;
@@ -37,15 +37,15 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             switch (subType)
             {
                 case SubType.Greaves:
-                    Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    Weight = 0.4f + (float)Math.Round(_Material.Weight/2.5, 1);
                     _WeightClass = WeightClass.Heavy;
                     break;
                 case SubType.Boots:
-                    Weight = 0.25f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                    Weight = 0.25f + (float)Math.Round(_Material.Weight/3.5, 1);
                     _WeightClass = WeightClass.Medium;
                     break;
                 default:
-                    Weight = 0.1f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    Weight = 0.1f + (float)Math.Round(_Material.Weight/4.5, 1);
                     _WeightClass = WeightClass.Light;
                     break;
             }
@@ -54,7 +54,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
         [Button("Generate New Foot")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(true, false);
             _ArmorType = ArmorType.Foot;
             GenerateQuality();
             GenerateProtectionValue();

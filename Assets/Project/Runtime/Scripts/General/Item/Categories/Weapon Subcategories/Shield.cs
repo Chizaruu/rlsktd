@@ -21,7 +21,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             _WeaponType = WeaponType.Shield;
         }
 
-        public Shield(SubType subType, Material.MaterialEnum material){
+        public Shield(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _WeaponType = WeaponType.Shield;
@@ -37,16 +37,16 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
             switch (subType)
             {
                 case SubType.Buckler:
-                    Weight = 0.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    Weight = 0.7f + (float)Math.Round(_Material.Weight/2.5, 1);
                     break;
                 case SubType.Shield:
-                    Weight = 1.2f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    Weight = 1.2f + (float)Math.Round(_Material.Weight/2.5, 1);
                     break;
                 case SubType.Towershield:
-                    Weight = 1.7f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    Weight = 1.7f + (float)Math.Round(_Material.Weight/2.5, 1);
                     break;
                 default: 
-                    Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    Weight = 1.5f + (float)Math.Round(_Material.Weight/2.5, 1);
                     break;
             }
         }
@@ -54,7 +54,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         [Button("Generate New Shield")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(false, true);
             _WeaponType = WeaponType.OneHanded;
             GenerateQuality();
             GenerateDice();

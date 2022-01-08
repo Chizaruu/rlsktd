@@ -22,7 +22,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             _ArmorType = ArmorType.Body;
         }
 
-        public Body(SubType subType, Material.MaterialEnum material){
+        public Body(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _ArmorType = ArmorType.Body;
@@ -38,20 +38,20 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             switch (subType)
             {
                 case SubType.Robe:
-                    Weight = 0.4f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    Weight = 0.4f + (float)Math.Round(_Material.Weight/4.5, 1);
                     _WeightClass = WeightClass.Light;
                     break;
                 case SubType.Kimono:
-                    Weight = 0.6f + (float)Math.Round(Material.GetMaterialWeight(_Material)/4.5, 1);
+                    Weight = 0.6f + (float)Math.Round(_Material.Weight/4.5, 1);
                     _WeightClass = WeightClass.Light;
                     break;
                 case SubType.Leatherarmor:
                 case SubType.Scalemail:
-                    Weight = 1.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/3.5, 1);
+                    Weight = 1.5f + (float)Math.Round(_Material.Weight/3.5, 1);
                     _WeightClass = WeightClass.Medium;
                     break;
                 default:
-                    Weight = 2.5f + (float)Math.Round(Material.GetMaterialWeight(_Material)/2.5, 1);
+                    Weight = 2.5f + (float)Math.Round(_Material.Weight/2.5, 1);
                     _WeightClass = WeightClass.Heavy;
                     break;
             }
@@ -60,7 +60,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
         [Button("Generate New Body")]
         public void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetNames(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetNames(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(true, false);
             _ArmorType = ArmorType.Body;
             GenerateQuality();
             GenerateProtectionValue();

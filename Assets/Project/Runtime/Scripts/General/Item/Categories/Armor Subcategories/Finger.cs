@@ -21,7 +21,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
             _ArmorType = ArmorType.Finger;
         }
 
-        public Finger(SubType subType, Material.MaterialEnum material){
+        public Finger(SubType subType, Material material){
             _SubType = subType;
             _Material = material;
             _ArmorType = ArmorType.Finger;
@@ -37,7 +37,7 @@ namespace RLSKTD.General.ItemCategories.ArmorSubcategories{
         [Button("Generate New Finger")]
         private void Generate(){
             _SubType = (SubType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(SubType)).Length);
-            _Material = (Material.MaterialEnum)UnityEngine.Random.Range(0, Enum.GetValues(typeof(Material.MaterialEnum)).Length);
+            _Material = RandomItemGenerator.GenerateMaterial(false, true);
             _ArmorType = ArmorType.Finger;
             GenerateQuality();
             GenerateProtectionValue();

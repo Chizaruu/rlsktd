@@ -1,3 +1,4 @@
+using RLSKTD.General.ItemHelpers.SoftMaterials;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
@@ -32,7 +33,7 @@ namespace RLSKTD.General.ItemCategories
                 readableType = value;
 
                 _Type = Type.Readable;
-                _Material = ItemHelpers.Material.MaterialEnum.Paper;
+                _Material = new Common(Common.Material.Paper);
             }
         }
 
@@ -47,6 +48,7 @@ namespace RLSKTD.General.ItemCategories
                 Weight = baseWeight;
             }
         }
+        
         [ShowInInspector, ReadOnly]public int StackAmount
         {
             get => stackAmount; set

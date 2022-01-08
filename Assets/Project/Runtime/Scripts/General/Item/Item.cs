@@ -1,4 +1,3 @@
-using RLSKTD.General.ItemHelpers;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
@@ -59,7 +58,7 @@ namespace RLSKTD.General{
         /// <summary> The description of the item. </summary>
         [OdinSerialize, UnityEngine.HideInInspector]private string description;
         /// <summary> The material of the item. </summary>
-        [OdinSerialize, UnityEngine.HideInInspector]private Material.MaterialEnum material;
+        [OdinSerialize, UnityEngine.HideInInspector]private ItemHelpers.Material material;
         /// <summary> The quality of the item. </summary>
         [OdinSerialize, UnityEngine.HideInInspector]private Quality quality;
         /// <summary> The type of the item. </summary>
@@ -76,12 +75,13 @@ namespace RLSKTD.General{
         [ShowInInspector]public string Name { get => name; set => name = value; }
         [ShowInInspector]public string Description { get => description; set => description = value; }
         [ShowInInspector]public bool IsIdentified { get => isIdentified; set => isIdentified = value; }
-        [ShowInInspector, ReadOnly]public Material.MaterialEnum _Material
+        [ShowInInspector]public ItemHelpers.Material _Material
         {
             get => material; set
             {
                 material = value;
-                Color = Material.GetMaterialColor(material);
+                Weight = value.Weight;
+                Color = value.Color;
             }
         }
         [ShowInInspector, ReadOnly]public Quality _Quality { get => quality; set => quality = value; }
@@ -94,32 +94,18 @@ namespace RLSKTD.General{
         public Item(){}
 
         /// <summary> Constructor for the Item class with material parameter. </summary>
-        public Item(Material.MaterialEnum material){
+        public Item(ItemHelpers.Material material){
             _Material = material;
             _Type = Type.Material;
             _Quality = Quality.Normal;
-            Weight = Material.GetMaterialWeight(material);
             IsIdentified = true; //Set to true by default
-            Name = material.ToString();
-            Description = "It's " + material.ToString() + ".";
-        }
-
-        /// <summary> Constructor for the Item class. </summary>
-        public Item(string name, string description, Material.MaterialEnum material, Quality quality, Type type, float weight, bool isIdentified, int value, UnityEngine.Color color){
-            Name = name;
-            Description = description;
-            _Material = material;
-            _Quality = quality;
-            _Type = type;
-            Weight = weight;
-            IsIdentified = isIdentified;
-            Value = value;
-            Color = color;
+            Name = material.Name;
+            Description = material.Description;
         }
 
         public void GenerateName(string item){
             //Generate name using the quality, material and item parameter
-            Name = _Quality.ToString() + " " + _Material.ToString() + " " + item;
+            Name = _Quality.ToString() + " " + _Material.Name + " " + item;
 
             //TODO: Add more name generation options
         }
