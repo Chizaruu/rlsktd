@@ -3,7 +3,9 @@ using Sirenix.Serialization;
 
 namespace RLSKTD.General.ItemHelpers{
     /*
-        The plan is at some point to have materials referenceable through scriptable objects. This will allow for more flexibility in the future and stop the need for hard coding materials.
+        The plan is at some point to have materials referenceable through scriptable objects. 
+        
+        This will allow for more flexibility in the future and stop the need for hard coding materials.
     */
 
     [System.Serializable]

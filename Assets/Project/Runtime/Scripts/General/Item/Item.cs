@@ -31,8 +31,6 @@ namespace RLSKTD.General{
 
         /// <summary> Enums of all item types. </summary>
         public enum Type {
-            /// <summary> The item is misc. </summary>
-            Misc,
             /// <summary> The item is a weapon. </summary>
             Weapon,
             /// <summary> The item is an armor piece. </summary>
@@ -51,6 +49,8 @@ namespace RLSKTD.General{
             Furniture,
             /// <summary> The item is a material. </summary>
             Material,
+            /// <summary> The item is miscellaneous. </summary>
+            Miscellaneous,
         }
 
         /// <summary> The name of the item. </summary>
