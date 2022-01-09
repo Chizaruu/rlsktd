@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using RLSKTD.General.ItemCategories;
 
 namespace RLSKTD.General{
-    /*
-        Currently lacking support for:
-        - Artifacts
-        - Magic Items
-    */
     public class ItemGenerator{
         public static List<Item> GenerateItems(int requiredItemAmount, bool isRandom, Item.Type type){
             List<Item> items = new List<Item>();
@@ -45,7 +40,7 @@ namespace RLSKTD.General{
                     return new Item(ItemHelpers.MaterialGenerator.Generate(true, false));
                 case Item.Type.Miscellaneous: 
                     return MiscellaneousGenerator.Generate();
-                default: Debug.Log("GetItem: Type not found"); return null;
+                default: Debug.Log("GenerateItem: Type not found"); return null;
             }
         }
     }
