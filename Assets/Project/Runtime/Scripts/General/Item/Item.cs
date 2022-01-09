@@ -41,8 +41,6 @@ namespace RLSKTD.General{
             Potion,
             /// <summary> The item is readable. </summary>
             Readable,
-            /// <summary> The item is a rod. </summary>
-            Rod,
             /// <summary> The item is a tool. </summary>
             Tool,
             /// <summary> The item is furniture. </summary>
@@ -50,7 +48,7 @@ namespace RLSKTD.General{
             /// <summary> The item is a material. </summary>
             Material,
             /// <summary> The item is miscellaneous. </summary>
-            Miscellaneous,
+            Miscellaneous
         }
 
         /// <summary> The name of the item. </summary>

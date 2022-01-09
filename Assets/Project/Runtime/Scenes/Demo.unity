@@ -2912,7 +2912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 288/289
+  m_text: 200/200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3725,8 +3725,8 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: material
-      Entry: 3
-      Data: 0
+      Entry: 6
+      Data: 
     - Name: quality
       Entry: 3
       Data: 0
@@ -12946,9 +12946,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1655239042}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 289
+  m_MaxValue: 200
   m_WholeNumbers: 1
-  m_Value: 288
+  m_Value: 200
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -21639,8 +21639,44 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: material
+      Entry: 7
+      Data: 1|RLSKTD.General.ItemHelpers.Material, Project.Runtime
+    - Name: type
       Entry: 3
       Data: 0
+    - Name: rarity
+      Entry: 3
+      Data: 0
+    - Name: name
+      Entry: 6
+      Data: 
+    - Name: description
+      Entry: 6
+      Data: 
+    - Name: weight
+      Entry: 4
+      Data: 0
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: quality
       Entry: 3
       Data: 0
@@ -28450,7 +28486,7 @@ PrefabInstance:
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.size
       value: 0
@@ -28509,7 +28545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].weight.weightClass
@@ -28522,26 +28558,22 @@ PrefabInstance:
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"Inventory","value":{"$id":0,"$type":"System.Collections.Generic.List`1[[RLSKTD.General.Item,
-        Project.Runtime]], mscorlib","$rlength":2,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.Shield,
-        Project.Runtime","name":"Exceptional Paper Towershield","description":null,"material":13,"quality":3,"type":1,"weight":1.7,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0.9607843,0.9607843,0.8627451,1},"weaponType":0,"damageType":0,"dice":2,"damage":1,"subType":2},{"$id":2,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.OneHanded,
-        Project.Runtime","name":null,"description":null,"material":0,"quality":0,"type":1,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0,0,0,0},"weaponType":0,"damageType":0,"dice":0,"damage":0,"subType":0}]}'
+        Project.Runtime]], mscorlib","$rlength":1,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.OneHanded,
+        Project.Runtime","name":"Superior HardPlastic Kris","description":null,"material":{"$id":2,"$type":"RLSKTD.General.ItemHelpers.HardMaterials.Rare,
+        Project.Runtime","type":0,"rarity":2,"name":"HardPlastic","description":null,"weight":1,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",1,1,1,1},"material":6},"quality":2,"type":1,"weight":1,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",1,1,1,1},"weaponType":0,"damageType":2,"dice":2,"damage":1,"subType":6}]}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
-      value: '"path":"Inventory.[0]","value":{"$id":0,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.Shield,
-        Project.Runtime","name":"Exceptional Paper Towershield","description":null,"material":13,"quality":3,"type":1,"weight":1.7,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0.9607843,0.9607843,0.8627451,1},"weaponType":0,"damageType":0,"dice":2,"damage":1,"subType":2}'
+      value: '"path":"Inventory.[0]","value":{"$id":0,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.OneHanded,
+        Project.Runtime","name":"Superior HardPlastic Kris","description":null,"material":{"$id":1,"$type":"RLSKTD.General.ItemHelpers.HardMaterials.Rare,
+        Project.Runtime","type":0,"rarity":2,"name":"HardPlastic","description":null,"weight":1,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",1,1,1,1},"material":6},"quality":2,"type":1,"weight":1,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",1,1,1,1},"weaponType":0,"damageType":2,"dice":2,"damage":1,"subType":6}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[2]
-      value: '"path":"Inventory.[1]","value":{"$id":0,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.OneHanded,
-        Project.Runtime","name":null,"description":null,"material":0,"quality":0,"type":1,"weight":0,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",0,0,0,0},"weaponType":0,"damageType":0,"dice":0,"damage":0,"subType":0}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
-      propertyPath: serializationData.PrefabModifications.Array.data[3]
       value: '"path":"isPlayer","value":{"$id":0,"$type":"System.Boolean, mscorlib",true}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}

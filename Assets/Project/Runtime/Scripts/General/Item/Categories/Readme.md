@@ -1,3 +1,3 @@
 # Categories
 
-Just basic stuff here..
+Just basic stuff here.

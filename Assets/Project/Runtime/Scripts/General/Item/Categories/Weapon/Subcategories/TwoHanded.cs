@@ -12,7 +12,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         {
             Halberd, Greatsword, Claymore, Greatclub, Quarterstaff,
             Longspear, Battleaxe, Lance, Trident, Warhammer,
-            Maul,
+            Maul
         }
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;

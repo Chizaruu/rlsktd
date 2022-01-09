@@ -11,7 +11,7 @@ namespace RLSKTD.General.ItemCategories.WeaponSubcategories{
         {
             Shortsword, Longsword, Dagger, Scimitar, Cutlass,
             Rapier, Kris, Saber, Club, Mace, Shortspear,
-            Sickle , Morningstar , Whip, Flail, Handaxe,
+            Sickle, Morningstar , Whip, Flail, Handaxe
         }
 
         [OdinSerialize, UnityEngine.HideInInspector]private SubType subType;
