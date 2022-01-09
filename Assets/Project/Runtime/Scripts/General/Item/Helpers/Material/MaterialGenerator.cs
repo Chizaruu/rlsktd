@@ -12,6 +12,7 @@ namespace RLSKTD.General.ItemHelpers{
             switch (isHard){
                 case true :
                     switch ((Material.Rarity)Random.Range(0, System.Enum.GetNames(typeof(Material.Rarity)).Length)){
+                        default:
                         case Material.Rarity.Common:
                             return new HardMaterials.Common(
                                 (HardMaterials.Common.Material)Random.Range(0, System.Enum.GetNames(typeof(HardMaterials.Common.Material)).Length)
@@ -28,10 +29,10 @@ namespace RLSKTD.General.ItemHelpers{
                             return new HardMaterials.Epic(
                                 (HardMaterials.Epic.Material)Random.Range(0, System.Enum.GetNames(typeof(HardMaterials.Epic.Material)).Length)
                                 );
-                        default : Debug.Log("RandomItemGenerator: GenerateMaterial: Material rarity not found"); return null;
                     }    
                 case false:
                     switch ((Material.Rarity)Random.Range(0, System.Enum.GetNames(typeof(Material.Rarity)).Length)){
+                        default:
                         case Material.Rarity.Common:
                             return new SoftMaterials.Common(
                                 (SoftMaterials.Common.Material)Random.Range(0, System.Enum.GetNames(typeof(SoftMaterials.Common.Material)).Length)
@@ -48,7 +49,6 @@ namespace RLSKTD.General.ItemHelpers{
                             return new SoftMaterials.Epic(
                                 (SoftMaterials.Epic.Material)Random.Range(0, System.Enum.GetNames(typeof(SoftMaterials.Epic.Material)).Length)
                                 );
-                        default : Debug.Log("RandomItemGenerator: GenerateMaterial: Material rarity not found"); return null;
                     }
             }
         }

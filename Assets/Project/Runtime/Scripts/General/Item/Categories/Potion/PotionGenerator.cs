@@ -1,5 +1,4 @@
 using RLSKTD.General.ItemCategories.PotionSubcategories;
-using RLSKTD.General.ItemHelpers;
 using UnityEngine;
 
 namespace RLSKTD.General.ItemCategories{
@@ -7,6 +6,7 @@ namespace RLSKTD.General.ItemCategories{
         public static Item Generate(){
             switch ((Potion.PotionType)Random.Range(0, System.Enum.GetNames(typeof(Potion.PotionType)).Length))
             {
+                default:
                 case Potion.PotionType.Beverage:
                     return new Beverage((Beverage.SubType)Random.Range(0, System.Enum.GetNames(typeof(Beverage.SubType)).Length));
                 case Potion.PotionType.Positive:
@@ -15,7 +15,6 @@ namespace RLSKTD.General.ItemCategories{
                     return new Negative((Negative.SubType)Random.Range(0, System.Enum.GetNames(typeof(Negative.SubType)).Length));
                 case Potion.PotionType.Dye:
                     return new Dye((Dye.SubType)Random.Range(0, System.Enum.GetNames(typeof(Dye.SubType)).Length));
-                default: Debug.Log("Generate: Potion type not found"); return null;
             }
         }
     }

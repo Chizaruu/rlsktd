@@ -6,6 +6,7 @@ namespace RLSKTD.General.ItemCategories{
     public class WeaponGenerator{
         public static Item Generate(){
             switch ((Weapon.WeaponType)Random.Range(0, System.Enum.GetNames(typeof(Weapon.WeaponType)).Length)){
+                default:
                 case Weapon.WeaponType.OneHanded:
                     return new OneHanded((OneHanded.SubType)Random.Range(0, System.Enum.GetNames(typeof(OneHanded.SubType)).Length), MaterialGenerator.Generate(false, true));
                 case Weapon.WeaponType.TwoHanded:
@@ -16,7 +17,6 @@ namespace RLSKTD.General.ItemCategories{
                     return new Ranged((Ranged.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ranged.SubType)).Length), MaterialGenerator.Generate(false, true));
                 case Weapon.WeaponType.Ammo:
                     return new Ammo((Ammo.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ammo.SubType)).Length), MaterialGenerator.Generate(false, true));
-                default: Debug.Log("Generate: Weapon type not found"); return null;
             }
         }
     }

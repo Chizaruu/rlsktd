@@ -5,6 +5,7 @@ namespace RLSKTD.General.ItemCategories{
     public class FurnitureGenerator{
         public static Item Generate(){
             switch ((Furniture.FurnitureType)Random.Range(0, System.Enum.GetNames(typeof(Tool.ToolType)).Length)){
+                default:
                 case Furniture.FurnitureType.Bed: 
                     return new Furniture(Furniture.FurnitureType.Bed, MaterialGenerator.Generate(false, true));
                 case Furniture.FurnitureType.Chair: 
@@ -21,7 +22,6 @@ namespace RLSKTD.General.ItemCategories{
                     return new Furniture(Furniture.FurnitureType.Entertainment, MaterialGenerator.Generate(false, false));
                 case Furniture.FurnitureType.Art: 
                     return new Furniture(Furniture.FurnitureType.Art, MaterialGenerator.Generate(false, false));
-                default: Debug.Log("GetItem: Type not found"); return null;
             }
         }
     }

@@ -6,6 +6,7 @@ namespace RLSKTD.General.ItemCategories{
     public class ArmorGenerator{
         public static Item Generate(){
             switch ((Armor.ArmorType)Random.Range(0, System.Enum.GetNames(typeof(Armor.ArmorType)).Length)){
+                default:
                 case Armor.ArmorType.Head:
                     return new Head((Head.SubType)Random.Range(0, System.Enum.GetNames(typeof(Head.SubType)).Length), MaterialGenerator.Generate(true, false));
                 case Armor.ArmorType.Back:
@@ -24,7 +25,6 @@ namespace RLSKTD.General.ItemCategories{
                     return new Finger((Finger.SubType)Random.Range(0, System.Enum.GetNames(typeof(Finger.SubType)).Length), MaterialGenerator.Generate(false, true));
                 case Armor.ArmorType.Ear:
                     return new Ear((Ear.SubType)Random.Range(0, System.Enum.GetNames(typeof(Ear.SubType)).Length), MaterialGenerator.Generate(false, true));
-                default: Debug.Log("Generate: Armor type not found"); return null;
             }
         }
     }
