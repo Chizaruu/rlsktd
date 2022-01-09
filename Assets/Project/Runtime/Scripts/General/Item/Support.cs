@@ -9,7 +9,7 @@ namespace RLSKTD.General{
                 return color;
             } else
             {
-                UnityEngine.Debug.Log("RandomItemGenerator: GetColourFromHex: Could not parse colour from string");
+                UnityEngine.Debug.Log("GetColourFromHex: Could not parse colour from string");
                 return UnityEngine.Color.white;
             }
         }
