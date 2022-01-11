@@ -19,7 +19,6 @@ Not all of the features have been implemented yet to an acceptable state.
 For example, the framework is currently missing the following:
 
 - Items
-    - Item generation
     - Item sprites
 - Monsters
     - Monster generation
@@ -36,11 +35,9 @@ For example, the framework is currently missing the following:
 ## How to get started
 This repository heavily uses Sirenix OdinInspector for Serialization.
 
-To use this repository properly, place either OdinInspector or OdinSerializer within the Project/External directory.
+To use this repository properly, place OdinInspector within the Project/External directory.
 
 OdinInspector - https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041 (Highly Recommended)
-
-OdinSerializer - https://odininspector.com/download#serializer (Desired namespace is Sirenix)
 
 ## Notes
 Please note that this is a work in progress and is not yet complete.
