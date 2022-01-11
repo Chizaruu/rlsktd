@@ -28486,7 +28486,7 @@ PrefabInstance:
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.size
       value: 0
@@ -28545,7 +28545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: state.inventory.Array.data[0].weight.weightClass
@@ -28558,11 +28558,15 @@ PrefabInstance:
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"Inventory","value":{"$id":0,"$type":"System.Collections.Generic.List`1[[RLSKTD.General.Item,
-        Project.Runtime]], mscorlib","$rlength":1,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.OneHanded,
+        Project.Runtime]], mscorlib","$rlength":2,"$rcontent":[{"$id":1,"$type":"RLSKTD.General.ItemCategories.WeaponSubcategories.OneHanded,
         Project.Runtime","name":"Superior HardPlastic Kris","description":null,"material":{"$id":2,"$type":"RLSKTD.General.ItemHelpers.HardMaterials.Rare,
         Project.Runtime","type":0,"rarity":2,"name":"HardPlastic","description":null,"weight":1,"color":{"$type":"UnityEngine.Color,
         UnityEngine.CoreModule",1,1,1,1},"material":6},"quality":2,"type":1,"weight":1,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
-        UnityEngine.CoreModule",1,1,1,1},"weaponType":0,"damageType":2,"dice":2,"damage":1,"subType":6}]}'
+        UnityEngine.CoreModule",1,1,1,1},"weaponType":0,"damageType":2,"dice":2,"damage":1,"subType":6},{"$id":3,"$type":"RLSKTD.General.ItemCategories.FurnitureSubcategories.Chair,
+        Project.Runtime","name":null,"description":null,"material":{"$id":4,"$type":"RLSKTD.General.ItemHelpers.HardMaterials.Common,
+        Project.Runtime","type":0,"rarity":0,"name":"Copper","description":null,"weight":1,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.721568644,0.4509804,0.2,1},"material":0},"quality":0,"type":6,"weight":1,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.721568644,0.4509804,0.2,1},"furnitureType":1,"subType":0}]}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
@@ -28574,6 +28578,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"Inventory.[1]","value":{"$id":0,"$type":"RLSKTD.General.ItemCategories.FurnitureSubcategories.Chair,
+        Project.Runtime","name":null,"description":null,"material":{"$id":1,"$type":"RLSKTD.General.ItemHelpers.HardMaterials.Common,
+        Project.Runtime","type":0,"rarity":0,"name":"Copper","description":null,"weight":1,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.721568644,0.4509804,0.2,1},"material":0},"quality":0,"type":6,"weight":1,"isIdentified":false,"value":0,"color":{"$type":"UnityEngine.Color,
+        UnityEngine.CoreModule",0.721568644,0.4509804,0.2,1},"furnitureType":1,"subType":0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[3]
       value: '"path":"isPlayer","value":{"$id":0,"$type":"System.Boolean, mscorlib",true}'
       objectReference: {fileID: 0}
     - target: {fileID: 4018929822063868566, guid: a5580010c9b901d4f87755e7ffc8772b, type: 3}
