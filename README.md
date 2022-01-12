@@ -28,9 +28,6 @@ For example, the framework is currently missing the following:
 - Maps
     - Map generation
     - Dungeon generation
-- Modularization (i.e. ability to add new features)
-    - Ability to add new features
-    - Ability to add new features to existing features
 
 ## How to get started
 This repository heavily uses Sirenix OdinInspector for Serialization.
