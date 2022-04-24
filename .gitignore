@@ -74,5 +74,5 @@ Library/il2cpp_android_armeabi-v7a
 Library/ArtifactDB
 
 # Ignore Sirenix and Infinity Code
-/Assets/Project/External/Sirenix/
-/Assets/Project/External/Infinity Code/
+/Assets/Plugins/Sirenix/
+/Assets/Plugins/Infinity Code/
