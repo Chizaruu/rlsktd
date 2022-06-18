@@ -681,7 +681,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;UCONTEXT;UCONTEXT_PRO;UEE
+    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;UEE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
